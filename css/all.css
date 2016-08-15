@@ -14,7 +14,9 @@
 
 /*------ TYPOGRAPHIC STYLES ------*/
 body{
-	font: 14px/30px Arial, Helvetica, sans-serif;
+	font-family: 'proximanova-light', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
 	height: 100%;
 	color: #333;
 	background: #fff;
@@ -71,17 +73,19 @@ hr{
 	margin-bottom: 29px;
 }
 a{
-	color: #00f;
+	color: #00abc7;
 	outline: none;
 	text-decoration: underline;
 	cursor: default;
 }
-a:link{
-	cursor: pointer;
+a:link{ cursor: pointer; }
+.desktop a:hover{ text-decoration: none; }
+a[href^="tel"],
+.desktop a[href^="tel"]:hover{
+	text-decoration: none !important;
+	color: inherit;
 }
-a:hover{
-	text-decoration: none;
-}
+a[href^="javascript:"]{ cursor: default; }
 img{
 	border: none;
 	vertical-align: top;
@@ -93,32 +97,26 @@ mark {
 	font-style: inherit;
 	font-weight: inherit;
 }
-/*
-************************************************************
-***  If custom font is used globally through css style  ***
-***  use this template for tags "b, strong, i, em"       ***
-************************************************************
 b, strong, th{
-	font-family:'fontNameBold';
+	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
 i, em{
-	font-family:'fontNameItalic';
+	font-family: 'proximanova-light-italic', Arial, Helvetica, sans-serif;
 	font-style:normal;
 }
 i b,
-i strong
+i strong,
 em b,
 em strong,
 b i,
 b em,
 strong i,
 strong em{
-	font-family: 'fontNameBoldItalic';
+	font-family: 'proximanova-bold-italic', Arial, Helvetica, sans-serif;
 	font-weight:normal;
 	font-style:normal;
 }
-*/
 /*------ TYPOGRAPHIC STYLES end ------*/
 
 /*sp*/
@@ -933,6 +931,7 @@ label{
 	display: block;
 	height: 100%;
 }
+.logo-print{ display: none; }
 /*logo end*/
 /*HEADER end*/
 
