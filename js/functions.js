@@ -36,9 +36,29 @@ function printShow() {
 }
 /*print end*/
 
+/*drop language*/
+function languageEvents() {
+	$('.lang-current').on('click', function (e) {
+		e.preventDefault();
+		$(this).closest('.lang').toggleClass('lang-opened');
+		e.stopPropagation();
+	});
+	$('.lang-list').on('click', function (e) {
+		e.stopPropagation();
+	});
+	$(document).on('click', function () {
+		closeDropLong();
+	});
+	function closeDropLong() {
+		$('.lang').removeClass('lang-opened');
+	}
+}
+/*drop language end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
 	placeholderInit();
 	printShow();
+	languageEvents();
 });
