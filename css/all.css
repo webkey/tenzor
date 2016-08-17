@@ -1312,6 +1312,13 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	resize: none;
 }
 /*callback form end*/
+
+/*promo*/
+.promo{
+	text-align: center;
+	margin: 0 0 40px;
+}
+/*promo end*/
 /*CONTENT*/
 
 /*SIDEBAR*/
