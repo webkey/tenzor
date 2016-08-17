@@ -1097,6 +1097,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .lang a{
 	display: block;
+	position: relative;
 	color: #fff;
 	text-decoration: none;
 	padding: 0 6px;
@@ -1108,6 +1109,17 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .desktop .lang a:hover{
 	background-color: #a80000;
+}
+.lang-current i{
+	position: absolute;
+	right: 4px;
+	top: 50%;
+	margin-top: -4px;
+}
+.lang-opened .lang-current i{
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 .lang-list,
 .user-content .lang-list{
@@ -1319,13 +1331,179 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	margin: 0 0 40px;
 }
 /*promo end*/
+
+/*brief*/
+.brief{ padding: 0 0 40px; }
+.brief:before,
+.brief:after { content: ""; display: table; }
+.brief:after { clear: both; }
+.brief__content{
+	float: left;
+	width: 100%;
+}
+.brief__frame{
+	margin-right: 280px;
+	padding-right: 50px;
+	min-height: 50px;
+}
+.brief__content h2{
+	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	color: #ca0503;
+	font-size: 36px;
+	line-height: 47px;
+	padding: 0 0 30px;
+}
+.brief__text{
+	margin: 0 0 20px;
+	max-height: 192px;
+	overflow: hidden;
+}
+.brief__buttons{ text-align: left; }
+.brief__aside{
+	float: right;
+	width: 280px;
+	margin-left: -280px;
+}
+.brief__aside h2{
+	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	color: #000;
+	font-size: 36px;
+	line-height: 47px;
+	padding: 0 0 30px;
+}
+.brief-list__item{
+	position: relative;
+	padding: 0 0 0 72px;
+	margin-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing: border-box;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.brief-list__item:first-child{ margin-top: 0; }
+.brief-list__item:after{
+	content: '';
+	display: inline-block;
+	height: 50px;
+	letter-spacing: normal;
+	vertical-align: middle;
+}
+.brief-list__icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	width: 50px;
+	background: #ca0503;
+	border-radius: 50%;
+	font-size: 16px;
+	letter-spacing: normal;
+}
+.brief-list__text{
+	display: inline-block;
+	vertical-align: middle;
+	width: 98%;
+	white-space: normal;
+	font: 14px/20px 'proximanova-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: normal;
+	color: #000;
+}
+/*brief end*/
+
+/*traffic*/
+.traffic{
+	padding: 0 0 40px;
+}
+.traffic-head{
+	padding: 0 0 40px;
+}
+.traffic-head:before,
+.traffic-head:after { content: ""; display: table; }
+.traffic-head:after { clear: both; }
+.traffic-switcher{
+	float: right;
+}
+.traffic-head h2{
+	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	margin: 0;
+	color: #000;
+	font-size: 36px;
+	line-height: 47px;
+	padding: 0 0 30px;
+	overflow: hidden;
+}
+.map-container{
+	margin: 0 0 80px;
+	position: relative;
+}
+.map-container:before{
+	content: '';
+	display: block;
+	padding-top: 48.3%;
+	height: 0;
+	background: url(../img/empty.png);
+}
+.local-map{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #f3f3f3;
+}
+/*traffic end*/
+
+/*adt*/
+.adt{}
+.adt h2{}
+.adt-content{}
+.adt-slider{}
+.adt-slide{
+	position: relative;
+	padding: 0 0 0 72px;
+	white-space: nowrap;
+	overflow: hidden;
+	box-sizing: border-box;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.adt-slide:after{
+	content: '';
+	display: inline-block;
+	height: 80px;
+	letter-spacing: normal;
+	vertical-align: middle;
+}
+.adt-date{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	width: 50px;
+	background: #ca0503;
+	border-radius: 50%;
+	font-size: 16px;
+	letter-spacing: normal;
+}
+.adt-text{
+	display: inline-block;
+	vertical-align: middle;
+	width: 98%;
+	white-space: normal;
+	font: 14px/20px 'proximanova-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: normal;
+	color: #000;
+}
+/*adt end*/
 /*CONTENT*/
-
-/*SIDEBAR*/
-/*SIDEBAR end*/
-
-/*ASIDE*/
-/*ASIDE end*/
 /*MAIN end*/
 
 /*FOOTER*/

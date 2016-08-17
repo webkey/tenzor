@@ -233,7 +233,7 @@ function googleMap(){
 			map = new google.maps.Map(document.getElementById('map'),
 				mapOptions);
 			// placemark option
-			var mapIcon = 'img/map-pin.png';
+			var mapIcon = 'img/map-map-pin.png';
 			var marker = new google.maps.Marker({
 				position: markPosition,
 				map: map,
