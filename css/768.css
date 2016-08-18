@@ -1,1 +1,160 @@
 @media only screen and (max-width: 767px){}
+
+/*TYPOGRAPHIC STYLES*/
+/*TYPOGRAPHIC STYLES*/
+
+/*USER CONTENT*/
+/*USER CONTENT end*/
+
+/*MAIN BLOCKS*/
+/*MAIN BLOCKS end*/
+
+/*HEADER*/
+.header-contain { padding: 39px 0 76px; }
+/*main navigation*/
+.nav-list li{
+	padding: 9px 0 8px;
+	padding: 2vh 0 1.9vh;
+	font-size: 18px;
+	font-size: 4vh;
+	line-height: 26px;
+	line-height: 6vh;
+}
+/*main navigation end*/
+
+/*logo*/
+.logo-wrap {
+	position: relative;
+	width: auto;
+	top: auto;
+	padding: 0 12px 25px 0;
+}
+.logo{
+	position: relative;
+	top: auto;
+	left: auto;
+	display: block;
+	margin: 0 auto;
+	width: 254px;
+}
+/*logo end*/
+
+/*header info*/
+.header-info{ padding: 0; }
+/*header info end*/
+
+/*slogan*/
+.slogan{
+	display: block;
+	width: auto;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	padding-bottom: 32px;
+}
+.slogan span{
+	display: block;
+	max-width: none;
+}
+/*slogan end*/
+
+/*call*/
+.call {
+	display: block;
+	width: auto;
+	text-align: center;
+}
+.call__holder{
+	display: block;
+	max-width: none;
+	text-align: center;
+}
+.call__phone {
+	font-size: 32px;
+	line-height: 38px;
+}
+/*call end*/
+/*HEADER end*/
+
+/*MAIN*/
+/*CONTENT*/
+/*brief*/
+.brief__content,
+.brief__aside{
+	padding-left: 0;
+	padding-right: 0;
+}
+.brief-list{
+	margin: 0;
+}
+.brief-list__item{
+	display: block;
+	width: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+/*brief end*/
+
+/*traffic*/
+.traffic { padding: 0 0 80px; }
+.traffic-head { padding: 0 0 39px; }
+.traffic-head h2{
+	line-height: 43px;
+	padding: 0 0 30px;
+}
+.map-container:before { padding-top: 464px; }
+/*traffic end*/
+
+/*adt*/
+.adt { padding: 34px 0 44px; }
+.adt h2{ padding: 0 0 28px; }
+.adt-slider {
+	max-height: 230px;
+	padding: 0 36px;
+}
+.adt-slide{ padding: 0; }
+.no-js .adt-slide{ padding: 0 0 30px; }
+.adt-slide:after{ content: none; }
+.adt-date{
+	display: block;
+	position: relative;
+	left: auto;
+	top: auto;
+	margin-top: 0;
+	height: auto;
+	width: auto;
+	text-align: left;
+	padding-bottom: 32px;
+}
+.adt-date > strong{
+	display: inline;
+	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	margin-bottom: 0;
+}
+.adt-date > span{ display: inline; }
+.adt-text{
+	display: block;
+	width: auto;
+	max-height: 182px;
+}
+
+.adt-slider .slick-prev, .adt-slider .slick-next{ width: 36px; }
+/*adt end*/
+
+/*connect*/
+.connect{ padding: 0; }
+.connect-col{
+	display: block;
+	width: auto;
+}
+/*connect end*/
+/*CONTENT*/
+/*MAIN end*/
+
+/*FOOTER*/
+/*footer holder*/
+.footer-holder{ padding: 18px 0; }
+/*footer holder end*/
+/*FOOTER end*/

@@ -31,27 +31,37 @@
 		<!--header panel-->
 		<div class="header-panel">
 			<div class="max-wrap">
-				<!-- main navigation -->
-				<nav class="nav">
-					<ul class="nav-list">
-						<li><a href="about.html"><span>Компания</span></a></li>
-						<li><a href="car-park.html"><span>Автопарк</span></a></li>
-						<li><a href="geography.html"><span>География перевозок</span></a></li>
-						<li><a href="sale-trucks.html"><span>Продажа грузовых авто</span></a></li>
-						<li><a href="jobs.html"><span>Вакансии</span></a></li>
-						<li><a href="contacts.html"><span>Контакты</span></a></li>
-					</ul>
-				</nav>
-				<!-- main navigation end -->
-				<!--lang-->
-				<div class="lang">
-					<a class="lang-current" href="#">Ru<i class="depict-angle-down"></i></a>
-					<ul class="lang-list">
-						<li><a href="#"><span>Русский</span></a></li>
-						<li><a href="#"><span>English</span></a></li>
-					</ul>
+				<div class="header-panel__holder">
+					<!-- main navigation -->
+					<nav class="nav">
+						<ul class="nav-list">
+							<li><a href="about.html"><span>Компания</span></a></li>
+							<li><a href="car-park.html"><span>Автопарк</span></a></li>
+							<li><a href="geography.html"><span>География перевозок</span></a></li>
+							<li><a href="sale-trucks.html"><span>Продажа грузовых авто</span></a></li>
+							<li><a href="jobs.html"><span>Вакансии</span></a></li>
+							<li><a href="contacts.html"><span>Контакты</span></a></li>
+						</ul>
+					</nav>
+					<!-- main navigation end -->
+					<!--btn menu-->
+					<a href="#" class="btn-menu">
+						<span>Меню</span>
+						<div class="btn-lines">
+							<span></span> <span></span> <span></span>
+						</div>
+					</a>
+					<!--btn menu end-->
+					<!--lang-->
+					<div class="lang">
+						<a class="lang-current" href="#">Ru<i class="depict-angle-down"></i></a>
+						<ul class="lang-list">
+							<li><a href="#"><span>Русский</span></a></li>
+							<li><a href="#"><span>English</span></a></li>
+						</ul>
+					</div>
+					<!--lang end-->
 				</div>
-				<!--lang end-->
 			</div>
 		</div>
 		<!--header panel end-->
@@ -66,17 +76,21 @@
 						<img class="logo-print" src="img/logo.png" alt="Группа Компаний Tenzor">
 					</div>
 					<!--logo end-->
-					<!--slogan-->
-					<strong class="slogan">международные перевозки автомобильным транспортом</strong>
-					<!--slogan end-->
-					<!--call-->
-					<div class="call">
-						<div class="call__holder">
-							<strong class="call__title">Узнать стоимость</strong>
-							<div class="call__phone"><a href="tel:+37517 500-20-02"><span>+37517 500-20-02</span></a></div>
+					<!--header info-->
+					<div class="header-info">
+						<!--slogan-->
+						<strong class="slogan"><span>международные перевозки автомобильным транспортом</span></strong>
+						<!--slogan end-->
+						<!--call-->
+						<div class="call">
+							<div class="call__holder">
+								<strong class="call__title">Узнать стоимость</strong>
+								<div class="call__phone"><a href="tel:+37517 500-20-02"><span>+37517 500-20-02</span></a></div>
+							</div>
 						</div>
+						<!--call end-->
 					</div>
-					<!--call end-->
+					<!--header info-->
 				</div>
 			</div>
 		</div>
@@ -111,20 +125,28 @@
 							<h2>Услуги</h2>
 							<div class="brief-list">
 								<div class="brief-list__item">
-									<div class="brief-list__icon" style="background-image: url(img/depict-services-01.png);"></div>
-									<strong class="brief-list__text">Проектные перевозки</strong>
+									<div class="brief-list__box">
+										<div class="brief-list__icon" style="background-image: url(img/depict-services-01.png);"></div>
+										<strong class="brief-list__text">Проектные перевозки</strong>
+									</div>
 								</div>
 								<div class="brief-list__item">
-									<div class="brief-list__icon" style="background-image: url(img/depict-services-02.png);"></div>
-									<strong class="brief-list__text">Перевозка дорогостоящих грузов</strong>
+									<div class="brief-list__box">
+										<div class="brief-list__icon" style="background-image: url(img/depict-services-02.png);"></div>
+										<strong class="brief-list__text">Перевозка дорогостоящих грузов</strong>
+									</div>
 								</div>
 								<div class="brief-list__item">
-									<div class="brief-list__icon" style="background-image: url(img/depict-services-03.png);"></div>
-									<strong class="brief-list__text">Регулярные перевозки генеральных грузов</strong>
+									<div class="brief-list__box">
+										<div class="brief-list__icon" style="background-image: url(img/depict-services-03.png);"></div>
+										<strong class="brief-list__text">Регулярные перевозки генеральных грузов</strong>
+									</div>
 								</div>
 								<div class="brief-list__item">
-									<div class="brief-list__icon" style="background-image: url(img/depict-services-04.png);"></div>
-									<strong class="brief-list__text">Таможенное оформление</strong>
+									<div class="brief-list__box">
+										<div class="brief-list__icon" style="background-image: url(img/depict-services-04.png);"></div>
+										<strong class="brief-list__text">Таможенное оформление</strong>
+									</div>
 								</div>
 							</div>
 						</section>
@@ -133,12 +155,12 @@
 					<!--traffic-->
 					<section class="traffic">
 						<div class="traffic-head">
-							<div class="traffic-switcher">
-								<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js">карта</a></div>
-								<div class="traffic-switcher__tumbler"><a href="#" class="traffic-switcher__tumbler-js"></a></div>
-								<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js">список стран</a></div>
-							</div>
 							<h2>География перевозок</h2>
+							<div class="traffic-switcher">
+								<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js active"><span>карта</span></a></div>
+								<a href="#" class="traffic-switcher__tumbler traffic-switcher__tumbler-js active"><span></span></a>
+								<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js"><span>список стран</span></a></div>
+							</div>
 						</div>
 						<div class="traffic-tab">
 							<div class="map-container">
@@ -162,30 +184,30 @@
 								<div class="adt-slide">
 									<time class="adt-date" datetime="2016-07-28">
 										<strong>28</strong>
-										<span>июля 2015</span>
+										<span>июля 2016</span>
 									</time>
-									<strong class="adt-text">Автопарк группы компаний «Тензор» увеличится на 30 грузовиков Mercedes-Benz</strong>
+									<strong class="adt-text"><a href="typography.html">Автопарк группы компаний «Тензор» увеличится на 30 грузовиков Mercedes-Benz</a></strong>
 								</div>
 								<div class="adt-slide">
 									<time class="adt-date" datetime="2016-07-28">
-										<strong>28</strong>
-										<span>июля 2015</span>
+										<strong>01</strong>
+										<span>августа 2016</span>
 									</time>
-									<strong class="adt-text">Чем сложнее продукт, тем подробнее нужно рассказать о нём на сайте. Вот сравните.</strong>
+									<strong class="adt-text"><a href="typography.html">Чем сложнее продукт, тем подробнее нужно рассказать о нём на сайте. Вот сравните.</a></strong>
 								</div>
 								<div class="adt-slide">
 									<time class="adt-date" datetime="2016-07-28">
-										<strong>28</strong>
-										<span>июля 2015</span>
+										<strong>17</strong>
+										<span>октября 2016</span>
 									</time>
-									<strong class="adt-text">К подробному и длинному рассказу о продукте</strong>
+									<strong class="adt-text"><a href="typography.html">К подробному и длинному рассказу о продукте</a></strong>
 								</div>
 								<div class="adt-slide">
 									<time class="adt-date" datetime="2016-07-28">
-										<strong>28</strong>
-										<span>июля 2015</span>
+										<strong>31</strong>
+										<span>января 2016</span>
 									</time>
-									<strong class="adt-text">Как оформить контент для сайта, чтобы всё было понятно? Как обратить внимание на важные вещи? Как показать весь объём данных и не утомить прокруткой длинных страниц?</strong>
+									<strong class="adt-text"><a href="typography.html">Как оформить контент для сайта, чтобы всё было понятно? Как обратить внимание на важные вещи? Как показать весь объём данных и не утомить прокруткой длинных страниц?</a></strong>
 								</div>
 							</div>
 						</div>
@@ -196,22 +218,22 @@
 						<h2>Контакты</h2>
 						<div class="connect-cols">
 							<div class="connect-col">
-								<strong>Офис в Смоленске</strong>
-								<div class="connect__adr"> 214013, г. Смоленск, ул. Кирова, д. 22Б</div>
+								<strong class="connect__title">Офис в Смоленске</strong>
+								<div class="connect__adr"> 214013, г. Смоленск, <br> ул. Кирова, д. 22Б</div>
 								<div class="connect-on-map">
 									<a href="#" class="see-on-map-js">см. на карте</a>
 								</div>
 							</div>
 							<div class="connect-col">
-								<strong>Офис в Московской области</strong>
-								<div class="connect__adr">140180, Московская область, г. Жуковский, ул. Спасателей, д. 2А</div>
+								<strong class="connect__title">Офис в Московской области</strong>
+								<div class="connect__adr">140180, Московская область, <br> г. Жуковский, <br> ул. Спасателей, д. 2А</div>
 								<div class="connect-on-map">
 									<a href="#" class="see-on-map-js">см. на карте</a>
 								</div>
 							</div>
 							<div class="connect-col">
-								<strong>Офис в Минске</strong>
-								<div class="connect__adr">223060, Минский район, д. Большое Стиклево, ул. Фабричная, д. 16А</div>
+								<strong class="connect__title">Офис в Минске</strong>
+								<div class="connect__adr">223060, Минский район, <br> д. Большое Стиклево, <br> ул. Фабричная, д. 16А</div>
 								<div class="connect-on-map">
 									<a href="#" class="see-on-map-js">см. на карте</a>
 								</div>
