@@ -1,6 +1,13 @@
 @media only screen and (max-width: 979px){}
 
 /*TYPOGRAPHIC STYLES*/
+h1, h2{
+	text-align: center;
+}
+h1 {
+	font-size: 50px;
+	line-height: 68px;
+}
 /*TYPOGRAPHIC STYLES*/
 
 /*USER CONTENT*/
@@ -127,6 +134,14 @@
 
 /*MAIN*/
 /*CONTENT*/
+/*section*/
+.section{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.section h2{ text-align: center; }
+/*section end*/
+
 /*brief*/
 .brief{ padding: 0; }
 .brief__content{
@@ -218,6 +233,43 @@
 }
 .connect__adr br{ display: none; }
 /*connect end*/
+
+/*visual*/
+.visual__img{
+	display: block;
+	width: auto;
+	padding: 0 0 40px;
+}
+.visual__figure{
+	margin: 0 auto;
+}
+.visual__content{
+	width: auto;
+	display: block;
+	padding-left: 0;
+}
+.about-slider{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.about-slide__title{ padding: 0 0 26px; }
+.about-slider .slick-prev, .about-slider .slick-next { top: 50%; }
+/*visual end*/
+
+/*services*/
+.services-list__item{ width: 49.98%; }
+/*services end*/
+
+/*profits*/
+.profits-list{ margin: 0 -14px; }
+.profits-list__item{ padding: 0 14px 28px; }
+/*profits end*/
+
+/*acts*/
+.acts-list{
+	margin: 0 -40px;
+}
+/*acts end*/
 /*CONTENT*/
 /*MAIN end*/
 

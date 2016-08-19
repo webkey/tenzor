@@ -322,6 +322,19 @@ function slidersInit() {
 }
 /*sliders end*/
 
+/*equal height*/
+function equalHeightInit() {
+	var $actionList = $('.acts-list');
+	if (!$actionList.length) return false;
+
+	$('figure', $actionList).equalHeight({
+		useParent: true,
+		parent: $actionList,
+		resize: true
+	});
+}
+/*equal height end*/
+
 /*map init*/
 var largePinMap = 'img/map-pin.png';
 
@@ -600,6 +613,7 @@ $(document).ready(function(){
 	mainNavigationInit();
 	languageEvents();
 	slidersInit();
+	equalHeightInit();
 	mapMainInit();
 	if(DESKTOP){
 		customSelect($('select.cselect'));

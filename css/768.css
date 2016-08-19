@@ -78,6 +78,13 @@
 
 /*MAIN*/
 /*CONTENT*/
+/*section*/
+.section{
+	padding-left: 0;
+	padding-right: 0;
+}
+/*section end*/
+
 /*brief*/
 .brief__content,
 .brief__aside{
@@ -150,6 +157,37 @@
 	width: auto;
 }
 /*connect end*/
+
+/*services*/
+.services-list__item{
+	display: block;
+	width: auto;
+	max-width: 400px;
+	margin: 0 auto;
+}
+/*services end*/
+
+/*profits*/
+.profits-list__item{
+	padding: 0 14px 50px;
+	display: block;
+	width: auto;
+	max-width: 400px;
+	margin: 0 auto;
+}
+/*profits end*/
+
+/*acts*/
+.acts-list{
+	margin: 0 -10px;
+}
+.acts-list__item{
+	display: block;
+	width: auto;
+	max-width: 400px;
+	margin: 0 auto;
+}
+/*acts end*/
 /*CONTENT*/
 /*MAIN end*/
 
