@@ -1016,12 +1016,28 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	padding: 0 20px;
 	box-sizing: border-box;
 }
+/*overlay*/
+.overlay,
+.nav-overlay{
+	background: #000 url(../img/empty.png);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 6;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	visibility: hidden;
+}
+/*overlay end*/
 /*MAIN BLOCKS end*/
 
 /*HEADER*/
 .header{
 	position: relative;
-	z-index: 5;
+	z-index: 7;
 }
 .header-panel{
 	background: #ca0503;
