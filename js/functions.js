@@ -303,6 +303,22 @@ function slidersInit() {
 			arrows: true
 		});
 	}
+
+	// about-slider
+	var $aboutSlider = $('.about-slider');
+	if($aboutSlider.length){
+		$aboutSlider.on('init', function () {
+			$(this).css({'visibility':'visible'});
+		});
+		$aboutSlider.slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			speed: 500,
+			infinite: true,
+			dots: false,
+			arrows: true
+		});
+	}
 }
 /*sliders end*/
 
