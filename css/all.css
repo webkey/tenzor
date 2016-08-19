@@ -1684,6 +1684,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	height: 100%;
 	background: #f3f3f3;
 }
+.traffic-tab{ display: none; }
+.traffic-tab.active{ display: block; }
 /*traffic end*/
 
 /*adt*/
