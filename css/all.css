@@ -988,11 +988,10 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	overflow: hidden;
 	position: relative;
 }
-/*.wrapper:before{
-	content: '';
+.bg-page{
 	position: absolute;
 	left: 50%;
-	top: 1000px;
+	top: 0;
 	height: 100%;
 	width: 3200px;
 	margin-left: -1600px;
@@ -1003,7 +1002,12 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	background-image: linear-gradient(159.7deg,  transparent 0px,transparent 1137px,#f3f3f3 1137px, #f3f3f3 1799px,transparent 1799px,transparent);
 	-webkit-background-size: 100% 2092px;
 	background-size: 100% 2092px;
-}*/
+	background-position: 0 -825px;
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
 .main{
 	padding: 0;
 	position: relative;
