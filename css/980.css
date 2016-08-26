@@ -65,12 +65,9 @@ h1 {
 .nav-list li{
 	display: block;
 	position: relative;
-	padding: 10px 0 9px;
-	padding: 2vh 0 1.9vh;
+	padding: 12px;
 	font-size: 24px;
-	font-size: 5vh;
 	line-height: 36px;
-	line-height: 7vh;
 }
 .nav-list a{
 	display: block;

@@ -159,6 +159,11 @@ div.cselect.ui-multiselect-menu{}
 .header-panel{}
 /*main navigation*/
 .nav{}
+.nav-list li{
+	font-size: 18px;
+	line-height: 24px;
+	padding: 8px 12px;
+}
 /*main navigation end*/
 
 /*lang*/
