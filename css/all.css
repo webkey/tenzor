@@ -121,6 +121,12 @@ strong em{
 	font-weight:normal;
 	font-style:normal;
 }
+.color-scheme{
+	float: right;
+	margin: 0 0 20px 40px;
+	font-size: 13px;
+	line-height: 18px;
+}
 /*TYPOGRAPHIC STYLES end*/
 
 /*sp*/
@@ -977,6 +983,34 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .file__info{ color: #333; }
 /*files item end*/
 /*download files items end*/
+
+/*view print*/
+.view-print{
+	float: right;
+	padding: 6px 12px;
+	background: #f9f9f9;
+	line-height: 1;
+	color: #000;
+	text-decoration: none;
+	margin-left: 30px;
+	-webkit-transition-property: background;
+	transition-property: background;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.desktop .view-print:hover{
+	background-color: #eaeaea;
+}
+.view-print svg{
+	vertical-align: middle;
+	width: 16px;
+	margin-right: 5px;
+}
+.view-print span{
+	display: inline-block;
+	vertical-align: middle;
+}
+/*view print end*/
 /*USER CONTENT end*/
 
 /*MAIN BLOCKS*/
@@ -1122,7 +1156,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .btn-menu.active{
 	position: fixed;
-	left: 10px;
+	left: 20px;
 	z-index: 100;
 }
 .btn-menu:active{
@@ -1136,6 +1170,15 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	font-size: 16px;
 	line-height: 24px;
 	text-transform: uppercase;
+}
+.btn-menu.active > span{
+	display: none;
+}
+.btn-menu > span + span{
+	display: none;
+}
+.btn-menu.active > span + span{
+	display: block;
 }
 .btn-lines{
 	position: absolute;
@@ -1259,6 +1302,10 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	right: -9999px;
 	margin: 0;
 	padding: 0;
+	font-family: 'proximanova-light', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 30px;
+	text-transform: none;
 	opacity: 0;
 	-webkit-transition-property: opacity;
 	transition-property: opacity;

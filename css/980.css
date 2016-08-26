@@ -11,15 +11,24 @@ h1 {
 /*TYPOGRAPHIC STYLES*/
 
 /*USER CONTENT*/
+/*view print*/
+.view-print{
+	font-size: 14px;
+}
+/*view print end*/
 /*USER CONTENT end*/
 
 /*MAIN BLOCKS*/
 .max-wrap{
-	padding: 0 10px;
+	padding: 0 40px;
 }
 /*MAIN BLOCKS end*/
 
 /*HEADER*/
+.header-panel .max-wrap{
+	padding-left: 20px;
+	padding-right: 20px;
+}
 .header-panel__holder{ height: 50px; }
 /*main navigation*/
 .nav{
@@ -28,31 +37,13 @@ h1 {
 	top: 0;
 	width: 100%;
 	height: 100%;
-	padding-top: 50px;
 	text-align: center;
-	background: #848484;
+	background: #ca0503;
 	z-index: 99;
 	display: none;
 
 	font-size: 0;
 	letter-spacing: -4px;
-}
-.nav:before{
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0.4;
-	width: 100%;
-	height: 50px;
-	background: transparent;
-	-webkit-transition-property: background;
-	transition-property: background;
-	-webkit-transition-duration: 0.6s;
-	transition-duration: 0.6s;
-}
-.nav-opened .nav:before{
-	background: #505050;
 }
 .nav:after{
 	content: '';
@@ -83,21 +74,6 @@ h1 {
 	line-height: 36px;
 	line-height: 7vh;
 }
-.nav-list li:before{
-	content: '';
-	position: absolute;
-	left: 50%;
-	top: 0;
-	height: 0;
-	width: 60px;
-	width: 10vh;
-	border-top: 1px solid #fff;
-	opacity: 0.4;
-	-webkit-transform: translate(-50%, 0);
-	-ms-transform: translate(-50%, 0);
-	transform: translate(-50%, 0);
-}
-.nav-list li:first-child:before{ content: none; }
 .nav-list a{
 	display: block;
 	color: #fff;
@@ -119,7 +95,6 @@ h1 {
 /*logo end*/
 
 /*header info*/
-.header-info{ padding: 0 30px; }
 /*header info end*/
 
 /*slogan*/

@@ -4,6 +4,13 @@
 /*TYPOGRAPHIC STYLES*/
 
 /*USER CONTENT*/
+.imgl,
+.imgr{
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 /*USER CONTENT end*/
 
 /*MAIN BLOCKS*/
