@@ -1,9 +1,7 @@
 @media only screen and (max-width: 979px){}
 
 /*TYPOGRAPHIC STYLES*/
-h1, h2{
-	text-align: center;
-}
+h1, h2, h3, h4, h5{ text-align: center; }
 h1 {
 	font-size: 50px;
 	line-height: 68px;
@@ -114,11 +112,20 @@ h1 {
 
 /*MAIN*/
 /*CONTENT*/
+/*banner*/
+.banner{
+	margin-left: -41px;
+	margin-right: -41px;
+}
+.banner__inner{ padding-left: 6%; }
+/*banner end*/
+
 /*callback form*/
 .callback-form{
 	margin-left: -41px;
 	margin-right: -41px;
 }
+/*callback form end*/
 
 /*section*/
 .section{

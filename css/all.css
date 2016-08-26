@@ -1523,13 +1523,35 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 
 /*banner*/
 .banner{
-	margin: 0 0 20px;
+	background: #f9f9f9;
+	padding: 220px 20px 80px;
+	margin: 0 -200px 20px;
+}
+.banner__inner{
+	width: 970px;
+	max-width: 100%;
+	padding-right: 30%;
+	box-sizing: border-box;
+	margin: 0 auto;
+
+	font-size: 0;
+	letter-spacing: -4px;
 }
 .banner__title{
-	display: block;
+	display: inline-block;
+	vertical-align: bottom;
 	font-family: 'proximanova-semibold', Arial, Helvetica, sans-serif;
-	font-size: 61px;
-	line-height: 80px;
+	max-width: 98%;
+
+	font-size: 30px;
+	line-height: 40px;
+	letter-spacing: normal;
+}
+.banner__inner:before{
+	content: '';
+	display: inline-block;
+	height: 40px;
+	vertical-align: bottom;
 }
 /*banner end*/
 

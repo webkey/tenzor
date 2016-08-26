@@ -152,9 +152,7 @@ div.cselect.ui-multiselect-menu{}
 .wrapper{}
 .header{}
 .main{}
-.max-wrap {
-	padding: 0 20px;
-}
+.max-wrap { padding: 0 20px; }
 /*MAIN BLOCKS end*/
 
 /*HEADER*/
@@ -193,9 +191,9 @@ div.cselect.ui-multiselect-menu{}
 /*section end*/
 
 /*banner*/
-.banner__title {
-	font-size: 36px;
-	line-height: 47px;
+.banner{
+	margin-left: -21px;
+	margin-right: -21px;
 }
 /*banner end*/
 
