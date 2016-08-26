@@ -99,6 +99,9 @@
 	padding-left: 0;
 	padding-right: 0;
 }
+.brief__text {
+	text-align: center;
+}
 /*brief end*/
 
 /*traffic*/
@@ -116,7 +119,7 @@
 .adt h2{ padding: 0 0 28px; }
 .adt-slider {
 	max-height: 230px;
-	padding: 0 36px;
+	padding: 0 50px;
 }
 .adt-slide{ padding: 0; }
 .no-js .adt-slide{ padding: 0 0 30px; }
@@ -129,7 +132,7 @@
 	margin-top: 0;
 	height: auto;
 	width: auto;
-	text-align: left;
+	text-align: center;
 	padding-bottom: 32px;
 }
 .adt-date > strong{
@@ -143,6 +146,7 @@
 .adt-text{
 	display: block;
 	width: auto;
+	text-align: center;
 	max-height: 182px;
 }
 
@@ -154,6 +158,10 @@
 .connect-col{
 	display: block;
 	width: auto;
+	text-align: center;
+}
+.connect-on-map {
+	text-align: center;
 }
 /*connect end*/
 
