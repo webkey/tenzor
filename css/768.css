@@ -73,6 +73,22 @@
 	line-height: 38px;
 }
 /*call end*/
+
+/*visual*/
+.visual__content,
+.about-slider{
+	overflow: visible;
+}
+.about-slider{
+	padding: 0 20px;
+}
+.about-slider .slick-prev{
+	left: -10px;
+}
+.about-slider .slick-next{
+	right: -10px;
+}
+/*visual end*/
 /*HEADER end*/
 
 /*MAIN*/
