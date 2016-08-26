@@ -114,6 +114,12 @@ h1 {
 
 /*MAIN*/
 /*CONTENT*/
+/*callback form*/
+.callback-form{
+	margin-left: -41px;
+	margin-right: -41px;
+}
+
 /*section*/
 .section{
 	padding-left: 30px;
