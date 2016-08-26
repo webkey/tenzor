@@ -39,6 +39,7 @@ h1 {
 	background: #ca0503;
 	z-index: 99;
 	display: none;
+	overflow: auto;
 
 	font-size: 0;
 	letter-spacing: -4px;
@@ -65,13 +66,13 @@ h1 {
 .nav-list li{
 	display: block;
 	position: relative;
-	padding: 12px;
 	font-size: 24px;
 	line-height: 36px;
 }
 .nav-list a{
 	display: block;
 	color: #fff;
+	padding: 12px;
 }
 .nav-list a span{
 	border: none;
@@ -111,17 +112,14 @@ h1 {
 /*CONTENT*/
 /*banner*/
 .banner{
-	margin-left: -41px;
-	margin-right: -41px;
+	padding: 220px 20px 80px 0;
 }
-.banner__inner{ padding-left: 6%; }
+.banner__title{
+	padding: 6px 12px 6px 42px;
+}
 /*banner end*/
 
 /*callback form*/
-.callback-form{
-	margin-left: -41px;
-	margin-right: -41px;
-}
 /*callback form end*/
 
 /*section*/

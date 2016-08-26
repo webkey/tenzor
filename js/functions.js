@@ -93,11 +93,12 @@ function printShow() {
 
 		self.modifiers = {
 			active: 'active',
-			opened: 'nav-opened'
+			opened: 'nav-opened',
+			openStart: 'nav-opened-start'
 		};
 
 		self.createOverlay();
-		self.switchNav();
+		self.toggleNav();
 		self.clearStyles();
 	};
 
@@ -140,7 +141,7 @@ function printShow() {
 	};
 
 	// switch nav
-	MainNavigation.prototype.switchNav = function () {
+	MainNavigation.prototype.toggleNav = function () {
 		var self = this,
 			$buttonMenu = self.$btnMenu;
 
@@ -171,6 +172,7 @@ function printShow() {
 			$staggerItems = self.$staggerItems;
 
 		$buttonMenu.addClass(self.modifiers.active);
+		$html.addClass(self.modifiers.openStart);
 
 		$navContainer.css({
 			'-webkit-transition-duration': '0s',
@@ -201,12 +203,13 @@ function printShow() {
 			_animationSpeed = self._animateSpeedOverlay;
 
 		$html.removeClass(self.modifiers.opened);
+		$html.removeClass(self.modifiers.openStart);
 		$buttonMenu.removeClass(self.modifiers.active);
 
 		self.showOverlay(false);
 
 		TweenMax.to($navContainer, _animationSpeed / 1000, {
-			yPercent: 100, onComplete: function () {
+			yPercent: 120, onComplete: function () {
 				self.preparationAnimation();
 			}
 		});
@@ -222,7 +225,7 @@ function printShow() {
 			$btnMenu = self.$btnMenu;
 
 		if ($btnMenu.is(':visible')) {
-			TweenMax.set($navContainer, {yPercent: 100, onComplete: function () {
+			TweenMax.set($navContainer, {yPercent: 120, onComplete: function () {
 				$navContainer.show(0);
 			}});
 			TweenMax.set($staggerItems, {autoAlpha: 0, scale: 0.8});

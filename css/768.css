@@ -19,6 +19,15 @@
 /*HEADER*/
 .header-contain { padding: 39px 0 76px; }
 /*main navigation*/
+.nav-list li{
+	font-size: 18px;
+	line-height: 24px;
+}
+.nav-list a{
+	display: block;
+	color: #fff;
+	padding: 8px 12px;
+}
 /*main navigation end*/
 
 /*logo*/

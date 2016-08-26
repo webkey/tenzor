@@ -13,6 +13,16 @@
 /*normalize end*/
 
 /*TYPOGRAPHIC STYLES*/
+.mobile.nav-opened{
+	width: 100%!important;
+	height: 100%!important;
+	max-width: 100%!important;
+	max-height: 100%!important;
+	margin: 0!important;
+	padding: 0!important;
+	overflow: hidden!important;
+	background: #000;
+}
 body{
 	font-family: 'proximanova-light', Arial, Helvetica, sans-serif;
 	font-size: 18px;
@@ -1048,11 +1058,16 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	clear: both;
 	z-index: 4;
 }
-.max-wrap{
+.max-wrap,
+.max-wrap-md{
 	max-width: 1000px;
 	margin: 0 auto;
 	padding: 0 20px;
 	box-sizing: border-box;
+}
+.main .max-wrap{
+	max-width: 1360px;
+	padding: 0;
 }
 /*overlay*/
 .overlay,
@@ -1069,6 +1084,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 	visibility: hidden;
 }
+.nav-overlay{
+	background: #fff;
+}
 /*overlay end*/
 /*MAIN BLOCKS end*/
 
@@ -1079,6 +1097,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .header-panel{
 	background: #ca0503;
+	position: relative;
+	z-index: 2;
 }
 .header-panel__holder{
 	position: relative;
@@ -1095,8 +1115,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .nav-list{
 	list-style: none;
-	padding: 13px 0;
-	margin: 0 55px 0 -5px;
+	margin: 0 52px 0 -8px;
+	padding: 0;
 	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	text-align: justify;
@@ -1119,7 +1139,6 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .nav-list li{
 	display: inline;
-	padding: 0 5px;
 
 	font-size: 16px;
 	line-height: 24px;
@@ -1129,15 +1148,15 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	display: inline-block;
 	color: #fff;
 	text-decoration: none;
+	padding: 13px 8px;
+	-webkit-transition-property: background;
+	transition-property: background;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 }
 .desktop .nav-list a:hover{
 	text-decoration: none;
-}
-.nav-list a span{
-	border-bottom: 2px solid transparent;
-}
-.desktop .nav-list a:hover span{
-	border-bottom-color: #fff;
+	background: #980000;
 }
 /*main navigation end*/
 
@@ -1153,6 +1172,10 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	text-decoration: none;
 	box-sizing: border-box;
 	display: none;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 }
 .btn-menu.active{
 	position: fixed;
@@ -1254,6 +1277,28 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 /*third line menu end*/
 /*button menu end*/
 
+/*effect while open menu*/
+.header-contain,
+.main,
+.footer{
+	will-change: transform, opacity;
+	-webkit-transition-property: transform, opacity;
+	transition-property: transform, opacity;
+	-webkit-transition-duration: 0.6s;
+	transition-duration: 0.6s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.nav-opened-start .header-contain,
+.nav-opened-start .main,
+.nav-opened-start .footer{
+	opacity: 0.2;
+	-webkit-transform: scale(0.6, 0.6);
+	-ms-transform: scale(0.6, 0.6);
+	transform: scale(0.6, 0.6);
+}
+/*effect while open menu end*/
+
 /*lang*/
 .lang{
 	float: right;
@@ -1267,6 +1312,13 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	text-align: left;
 	cursor: pointer;
 	position: relative;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.nav-opened-start .lang{
+	opacity: 0;
 }
 .lang a{
 	display: block;
@@ -1332,7 +1384,11 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	padding: 1px 12px;
 }
 /*lang end*/
-.header-contain{ padding: 42px 0 76px; }
+.header-contain{
+	padding: 42px 0 76px;
+	position: relative;
+	z-index: 1;
+}
 .header-contain__holder{
 	position: relative;
 	min-height: 53px;
@@ -1526,9 +1582,11 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 
 /*banner*/
 .banner{
-	background: #f9f9f9;
 	padding: 220px 20px 80px;
-	margin: 0 -200px 20px;
+	margin: 0 0 20px;
+	background: #f9f9f9 no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 .banner__inner{
 	width: 970px;
@@ -1545,16 +1603,13 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	vertical-align: bottom;
 	font-family: 'proximanova-semibold', Arial, Helvetica, sans-serif;
 	max-width: 98%;
+	padding: 6px 12px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.21);
 
 	font-size: 30px;
 	line-height: 40px;
 	letter-spacing: normal;
-}
-.banner__inner:before{
-	content: '';
-	display: inline-block;
-	height: 40px;
-	vertical-align: bottom;
 }
 /*banner end*/
 
@@ -1571,8 +1626,11 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .callback-form{
 	border: 1px solid #e6e6e6;
 	background: #f3f3f3;
-	padding: 48px 58px;
-	margin-bottom: 60px;
+	padding: 48px 0;
+	margin: 0 -1px 60px;
+}
+.callback-form form{
+	display: block;
 }
 .callback-form h3{ padding-bottom: 21px; }
 .callback-form textarea{
@@ -2406,17 +2464,6 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 
 /* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-/*@media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi){
-
-}*/
-
-/* ==========================================================================
    Print styles
    ========================================================================== */
 
@@ -2451,3 +2498,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	.logo>*{ display: none; }
 	.logo>img{ display: inline-block !important; }
 }
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media only screen and (max-width: 980px){}
