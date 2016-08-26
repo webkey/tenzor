@@ -1328,6 +1328,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	right: 0;
 	opacity: 1;
 }
+.lang-list a{
+	padding: 1px 12px;
+}
 /*lang end*/
 .header-contain{ padding: 42px 0 76px; }
 .header-contain__holder{
