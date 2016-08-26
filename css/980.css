@@ -238,11 +238,10 @@ h1 {
 	display: block;
 	padding-left: 0;
 }
-.about-slider{
-	padding-left: 30px;
-	padding-right: 30px;
+.about-slide__title{
+	padding: 0 0 26px;
+	text-align: center;
 }
-.about-slide__title{ padding: 0 0 26px; }
 .about-slider .slick-prev, .about-slider .slick-next { top: 50%; }
 /*visual end*/
 
@@ -260,6 +259,10 @@ h1 {
 	margin: 0 -40px;
 }
 /*acts end*/
+
+.acts-list__item figcaption{
+	text-align: center;
+}
 /*CONTENT*/
 /*MAIN end*/
 
