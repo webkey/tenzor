@@ -17,16 +17,18 @@ h1 {
 /*USER CONTENT end*/
 
 /*MAIN BLOCKS*/
-.max-wrap{
-	padding: 0 40px;
+.max-wrap,
+.max-wrap-md{
+	padding-left: 40px !important;
+	padding-right: 40px !important;
+}
+.header-panel .max-wrap{
+	padding-left: 20px !important;
+	padding-right: 20px !important;
 }
 /*MAIN BLOCKS end*/
 
 /*HEADER*/
-.header-panel .max-wrap{
-	padding-left: 20px;
-	padding-right: 20px;
-}
 .header-panel__holder{ height: 50px; }
 /*main navigation*/
 .nav{
@@ -123,10 +125,6 @@ h1 {
 /*callback form end*/
 
 /*section*/
-.section{
-	padding-left: 30px;
-	padding-right: 30px;
-}
 .section h2{ text-align: center; }
 /*section end*/
 
@@ -135,7 +133,7 @@ h1 {
 .brief__content{
 	float: none;
 	width: auto;
-	padding: 0 30px 69px;
+	padding: 0 0 69px;
 }
 .brief__frame{
 	margin-right: 0;
@@ -144,24 +142,24 @@ h1 {
 .brief__content h2{
 	text-align: center;
 }
-.brief__text{
+.about-preview__text{
 	margin: 0 0 34px;
 }
-.brief__buttons{ text-align: center; }
+.about-preview__buttons{ text-align: center; }
 .brief__aside{
 	float: none;
 	width: auto;
 	margin-left: 0;
-	padding: 0 30px 51px;
+	padding: 0 0 51px;
 }
-.brief__aside h2{
+.offers h2{
 	text-align: center;
 	padding: 0 0 37px;
 }
-.brief-list{
+.offers-list{
 	margin: 0 -10px;
 }
-.brief-list__item{
+.offers-list__item{
 	display: inline-block;
 	vertical-align: top;
 	width: 49.98%;
@@ -171,7 +169,6 @@ h1 {
 /*brief end*/
 
 /*traffic*/
-.traffic{ padding: 0 0 40px; }
 .traffic-head{ padding: 0 0 79px; }
 .traffic-switcher{
 	position: relative;
@@ -193,10 +190,7 @@ h1 {
 /*traffic end*/
 
 /*adt*/
-.adt{
-	padding: 34px 0;
-}
-.adt h2{
+.adt-section h2{
 	float: none;
 	min-width: 0;
 	padding: 0 30px 25px;
@@ -209,10 +203,8 @@ h1 {
 .header-contain {
 	padding: 39px 0 76px;
 }
-.connect{
-	padding: 0 30px;
-}
-.connect h2{
+.connect-section{ padding: 0; }
+.connect-section h2{
 	text-align: center;
 	padding: 0 0 32px;
 }

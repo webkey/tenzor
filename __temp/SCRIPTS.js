@@ -883,6 +883,81 @@ bonusesList.find('.resources-item').equalHeight({
 });
 /*equalHeight end*/
 
+
+
+
+
+/*20160829*/
+/*parallax on mousemove*/
+(function () {
+	var ParallaxJs = function (setting){
+		var options = $.extend({
+			parallaxElement: null,
+			parallaxArea: null
+		}, setting || {});
+
+		this.parallaxElement = document.querySelector(options.parallaxElement);
+		this.parallaxArea = document.querySelector(options.parallaxArea);
+		this.win = {
+			width: window.innerWidth,
+			height: window.innerHeight
+		};
+
+		this.bindEvents();
+	};
+
+	// from http://www.sberry.me/articles/javascript-event-throttling-debouncing
+	ParallaxJs.prototype.throttle = function(fn, delay) {
+		var allowSample = true;
+
+		return function(e) {
+			if (allowSample) {
+				allowSample = false;
+				setTimeout(function() { allowSample = true; }, delay);
+				fn(e);
+			}
+		};
+	};
+
+	ParallaxJs.prototype.bindEvents = function () {
+		var self = this;
+		var parallaxElement = self.parallaxElement;
+		var win = self.win;
+		var area = self.parallaxArea;
+
+		//parallaxElement.style.WebkitTransition = '-webkit-transform 0.4s';
+		//parallaxElement.style.transition = 'transform 0.4s';
+
+		area.addEventListener('mousemove', self.throttle(function(ev) {
+			var offsetLeftArea = area.getBoundingClientRect().left;
+			var transX = - (ev.clientX - offsetLeftArea - area.offsetWidth / 2) / 20;
+			//var transX = 50/(win.width) * ev.clientX - 0;
+			//xVal = -1/(win.height/2)*ev.clientY + 1,
+			//yVal = 1/(win.width/2)*ev.clientX - 1,
+			//transY = 20/(win.height)*ev.clientY - 10,
+			//transZ = 100/(win.height)*ev.clientY - 50;
+
+			parallaxElement.style.WebkitTransform = 'translate(' + transX + 'px, ' + transX + 'px)';
+			parallaxElement.style.transform = 'translate(' + transX + 'px, ' + transX + 'px)';
+			//parallaxElement.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+			//parallaxElement.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+		}, 100));
+	};
+
+	window.ParallaxJs = ParallaxJs;
+}());
+
+function bgParallaxOnMousemove() {
+	var navBarBg = document.querySelector('.bg-page');
+	if (navBarBg) {
+		new ParallaxJs({
+			parallaxElement: '.bg-page',
+			parallaxArea: '.wrapper'
+		});
+	}
+}
+/*parallax on mousemove end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -910,6 +985,9 @@ $(document).ready(function(){
 
 
 	$( ".datepicker-inline" ).datepicker();
+
+	/*20160829*/
+	bgParallaxOnMousemove();
 });
 $(window).load(function(){
 	footerBottom();

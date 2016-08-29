@@ -115,22 +115,21 @@
 	padding-left: 0;
 	padding-right: 0;
 }
-.brief-list{
+.about-preview__text{
+	text-align: center;
+}
+.offers-list{
 	margin: 0;
 }
-.brief-list__item{
+.offers-list__item{
 	display: block;
 	width: auto;
 	padding-left: 0;
 	padding-right: 0;
 }
-.brief__text {
-	text-align: center;
-}
 /*brief end*/
 
 /*traffic*/
-.traffic { padding: 0 0 80px; }
 .traffic-head { padding: 0 0 39px; }
 .traffic-head h2{
 	line-height: 43px;
@@ -140,8 +139,7 @@
 /*traffic end*/
 
 /*adt*/
-.adt { padding: 34px 0 44px; }
-.adt h2{ padding: 0 0 28px; }
+.adt-section{ padding-bottom: 44px; }
 .adt-slider {
 	max-height: 230px;
 	padding: 0 50px;
@@ -179,7 +177,7 @@
 /*adt end*/
 
 /*connect*/
-.connect{ padding: 0; }
+.connect-section{ padding: 0; }
 .connect-col{
 	display: block;
 	width: auto;
