@@ -590,43 +590,84 @@ function selectResize(){
 /* multiselect init end */
 
 /*wide slider*/
-function contSlider() {
+function wideSlider() {
 	//wide slider
 	var $wideSlider = $('.wide-slider__slides');
 
 	if($wideSlider.length) {
 		$wideSlider.each(function() {
-			var currentSlider = $(this);
-			if(currentSlider.find('.wide-slider__item').length > 1) {
-				var $title = currentSlider.parents('.wide-slider').find('.wide-slider__title'),
-					$currentSlide = currentSlider.parents('.wide-slider').find('.wide-slider__curr'),
-					$totalSlides = currentSlider.parents('.wide-slider').find('.wide-slider__total');
+			var $currentSlider = $(this);
+			if($currentSlider.find('.wide-slider__item').length > 1) {
+				var $title = $currentSlider.parents('.wide-slider').find('.wide-slider__title'),
+					$currentSlide = $currentSlider.parents('.wide-slider').find('.wide-slider__curr'),
+					$totalSlides = $currentSlider.parents('.wide-slider').find('.wide-slider__total');
 
-				$totalSlides.text(currentSlider.find('.wide-slider__item').length);
+				$totalSlides.text($currentSlider.find('.wide-slider__item').length);
 
 				$(this).find('.wide-slider__list').slick({
 					infinite: true,
-					slidesToShow: currentSlider.find('.wide-slider__item').length - 1,
-					slidesToScroll: 1,
-					variableWidth: true
+					variableWidth: true,
+					slidesToShow: $currentSlider.find('.wide-slider__item').length - 1,
+					slidesToScroll: 1
 				});
 
-				currentSlider.find('.wide-slider__item.slick-active').eq(0).addClass('active');
+				$currentSlider.find('.wide-slider__item.slick-active').eq(0).addClass('active');
 
 				$(this).find('.wide-slider__list').on('afterChange init reInit', function(event, slick, currentSlide, nextSlide) {
 					$title.hide();
 					$title.eq(currentSlide).fadeIn();
 					$currentSlide.text(currentSlide + 1);
-					currentSlider.find('.wide-slider__item').removeClass('active');
-					currentSlider.find('.wide-slider__item.slick-active').eq(0).addClass('active');
+					$currentSlider.find('.wide-slider__item').removeClass('active');
+					$currentSlider.find('.wide-slider__item.slick-current').addClass('active');
 				});
 			} else {
-				currentSlider.find('.wide-slider__item').addClass('active');
+				$currentSlider.find('.wide-slider__item').addClass('active');
 			}
 		});
 	}
 }
 /*wide slider end*/
+
+/*visual slider*/
+function visualSlider() {
+	//visual slider
+	var $wideSlider = $('.visual-slider__slides');
+
+	if($wideSlider.length) {
+		$wideSlider.each(function() {
+			var $currentSlider = $(this);
+			if($currentSlider.find('.visual-slider__item').length > 1) {
+				var $title = $currentSlider.parents('.visual-slider').find('.visual-slider__title'),
+					$currentSlide = $currentSlider.parents('.visual-slider').find('.visual-slider__curr'),
+					$totalSlides = $currentSlider.parents('.visual-slider').find('.visual-slider__total');
+
+				$totalSlides.text($currentSlider.find('.visual-slider__item').length);
+
+				$(this).find('.visual-slider__list').slick({
+					infinite: true,
+					//slidesToShow: $currentSlider.find('.visual-slider__item').length - 1,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					centerMode: true,
+					dots: true
+				});
+
+				$currentSlider.find('.visual-slider__item.slick-active').eq(0).addClass('active');
+
+				$(this).find('.visual-slider__list').on('afterChange init reInit', function(event, slick, currentSlide, nextSlide) {
+					$title.hide();
+					$title.eq(currentSlide).fadeIn();
+					$currentSlide.text(currentSlide + 1);
+					$currentSlider.find('.visual-slider__item').removeClass('active');
+					$currentSlider.find('.visual-slider__item.slick-current').addClass('active');
+				});
+			} else {
+				$currentSlider.find('.visual-slider__item').addClass('active');
+			}
+		});
+	}
+}
+/*visual slider end*/
 
 /*parallax background page*/
 function parallaxBg(position) {
@@ -669,7 +710,8 @@ $(document).ready(function(){
 	if(DESKTOP){
 		customSelect($('select.cselect'));
 	}
-	contSlider();
+	wideSlider();
+	visualSlider();
 	$(window).on('load scroll', function () {
 		// parallaxBg($(window).scrollTop());
 	});
