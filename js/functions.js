@@ -631,21 +631,21 @@ function wideSlider() {
 /*visual slider*/
 function visualSlider() {
 	//visual slider
-	var $wideSlider = $('.visual-slider__slides');
+	var $visualSliders = $('.visual-slider__slides');
 
-	if($wideSlider.length) {
-		$wideSlider.each(function() {
-			var $currentSlider = $(this);
-			if($currentSlider.find('.visual-slider__item').length > 1) {
-				var $title = $currentSlider.parents('.visual-slider').find('.visual-slider__title'),
-					$currentSlide = $currentSlider.parents('.visual-slider').find('.visual-slider__curr'),
-					$totalSlides = $currentSlider.parents('.visual-slider').find('.visual-slider__total');
+	if($visualSliders.length) {
+		$visualSliders.each(function() {
+			var $currentSlider = $(this),
+				$currentSliderItem = $currentSlider.find('.visual-slider__item');
 
-				$totalSlides.text($currentSlider.find('.visual-slider__item').length);
+			if($currentSliderItem.length > 1) {
+				var $overallContainer = $currentSlider.closest('.visual-slider'),
+					$slideTitle = $overallContainer.find('.visual-slider__title'),
+					$slideLabel = $overallContainer.find('.visual-slider__label'),
+					$visualSlider = $currentSlider.find('.visual-slider__list');
 
-				$(this).find('.visual-slider__list').slick({
+				$visualSlider.slick({
 					infinite: true,
-					//slidesToShow: $currentSlider.find('.visual-slider__item').length - 1,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					centerMode: true,
@@ -654,15 +654,18 @@ function visualSlider() {
 
 				$currentSlider.find('.visual-slider__item.slick-active').eq(0).addClass('active');
 
-				$(this).find('.visual-slider__list').on('afterChange init reInit', function(event, slick, currentSlide, nextSlide) {
-					$title.hide();
-					$title.eq(currentSlide).fadeIn();
-					$currentSlide.text(currentSlide + 1);
+				$visualSlider.on('afterChange init reInit', function(event, slick, currentSlide) {
+					$slideTitle.hide();
+					$slideTitle.eq(currentSlide).fadeIn();
+
+					$slideLabel.hide();
+					$slideLabel.eq(currentSlide).fadeIn();
+
 					$currentSlider.find('.visual-slider__item').removeClass('active');
-					$currentSlider.find('.visual-slider__item.slick-current').addClass('active');
+					$currentSlider.find('.visual-slider__item.slick-active').addClass('active');
 				});
 			} else {
-				$currentSlider.find('.visual-slider__item').addClass('active');
+				$currentSliderItem.addClass('active');
 			}
 		});
 	}
@@ -670,12 +673,17 @@ function visualSlider() {
 /*visual slider end*/
 
 /*parallax background page*/
-function parallaxBg(position) {
-	var $pageBackground = $('.bg-page');
+function parallaxBg() {
+	var $pageBackground = $('body'),
+		startBgPositionY = +$pageBackground.css("background-position-y").replace(/[^\-\d]/g, "");
 
-	$pageBackground.css({
-		'background-position-y': - 825 + position/5
-	})
+	$(window).on('load scroll', function () {
+		var position = $(window).scrollTop();
+
+		$pageBackground.css({
+			'background-position-y': startBgPositionY - position/1.1
+		});
+	});
 }
 /*parallax background page end*/
 
@@ -712,9 +720,7 @@ $(document).ready(function(){
 	}
 	wideSlider();
 	visualSlider();
-	$(window).on('load scroll', function () {
-		// parallaxBg($(window).scrollTop());
-	});
+	parallaxBg();
 
 	footerBottom();
 });
