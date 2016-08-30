@@ -291,9 +291,6 @@ function slidersInit() {
 	// adt slider
 	var $adtSlider = $('.adt-slider');
 	if($adtSlider.length){
-		$adtSlider.on('init', function () {
-			$(this).css({'visibility':'visible'});
-		});
 		$adtSlider.slick({
 			fade: true,
 			autoplay: true,
@@ -310,9 +307,6 @@ function slidersInit() {
 	// about-slider
 	var $aboutSlider = $('.about-slider');
 	if($aboutSlider.length){
-		$aboutSlider.on('init', function () {
-			$(this).css({'visibility':'visible'});
-		});
 		$aboutSlider.slick({
 			slidesToShow: 1,
 			slidesToScroll: 1,
@@ -676,6 +670,10 @@ function visualSlider() {
 function parallaxBg() {
 	var $pageBackground = $('body'),
 		startBgPositionY = +$pageBackground.css("background-position-y").replace(/[^\-\d]/g, "");
+
+	$(window).load(function () {
+		$pageBackground.addClass('bg-ready');
+	});
 
 	$(window).on('load scroll', function () {
 		var position = $(window).scrollTop();

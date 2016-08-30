@@ -227,6 +227,12 @@ h1 {
 	width: auto;
 	display: block;
 	padding-left: 0;
+	padding-right: 0;
+}
+.about-slider,
+.about-slider.slick-dotted{
+	margin-left: 0;
+	margin-right: 0;
 }
 .about-slide__title{
 	padding: 0 0 26px;
@@ -248,11 +254,33 @@ h1 {
 .acts-list{
 	margin: 0 -40px;
 }
-/*acts end*/
-
 .acts-list__item figcaption{
 	text-align: center;
 }
+/*acts end*/
+
+/*wide slider*/
+.wide-slider{}
+/*wide slider end*/
+
+/*visual slider*/
+.visual-slider{}
+/*visual slider end*/
+
+/*trans*/
+.trans-list li{ width: 24.98%; }
+/*trans end*/
+
+/*other*/
+.other-between {
+	display: block;
+	width: auto;
+	margin: 0 0 50px;
+}
+.other-box{
+	width: 49.98%;
+}
+/*other end*/
 /*CONTENT*/
 /*MAIN end*/
 

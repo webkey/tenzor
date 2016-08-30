@@ -31,7 +31,9 @@ body{
 	color: #000;
 	min-width: 320px;
 	background: #fff;
-	background: url(../img/bg-line.png) fixed repeat-y 50% -133px;
+}
+body.bg-ready{
+	background: #fff url(../img/bg-line.png) fixed repeat-y 50% -133px;
 }
 body.home-page{
 	-ms-background-position-y: -879px;
@@ -47,7 +49,7 @@ h1{
 	font-family: 'proximanova-thin', Arial, Helvetica, sans-serif;
 	font-size: 60px;
 	line-height: 78px;
-	padding: 0 0 30px;
+	padding: 0 0 54px;
 }
 h2{
 	font-size: 40px;
@@ -188,7 +190,6 @@ input[type="reset"]:hover{
 /*btn end*/
 
 /*USER CONTENT*/
-.user-content h1{ padding: 0 0 54px; }
 .user-content p+h2,
 .user-content ul+h2,
 .user-content ol+h2,
@@ -1874,25 +1875,30 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .adt-content{
 	overflow: hidden;
 }
-.adt-slider{
-	max-height: 88px;
-	overflow: hidden;
-	visibility: hidden;
+.adt-slider,
+.adt-slide.slick-dots{
 	margin: 0;
 	padding: 0 50px;
-}
-.no-js .adt-slider{
-	max-height: none;
-	visibility: visible;
+
+	white-space: nowrap;
 }
 .adt-slide{
 	position: relative;
 	padding: 0 15px 0 125px;
-	white-space: nowrap;
 	overflow: hidden;
 	box-sizing: border-box;
+
+	float: none;
+	display: inline-block;
+	white-space: nowrap;
 	font-size: 0;
 	letter-spacing: -4px;
+	opacity: 0;
+}
+.slick-initialized .adt-slide{
+	float: left;
+	display: block;
+	opacity: 1;
 }
 .adt-slide:after{
 	content: '';
@@ -2072,42 +2078,61 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	letter-spacing: -4px;
 }
 .visual__img{
-	width: 49.98%;
+	width: 53%;
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
 	text-align: center;
-	padding-right: 25px;
 
 	font-size: 18px;
 	letter-spacing: normal;
 }
 .visual__figure{
 	display: block;
-	margin: 0;
+	margin: 0 auto;
 }
 .visual__content{
 	overflow: hidden;
 	display: inline-block;
 	vertical-align: middle;
-	width: 49.98%;
-	padding-left: 30px;
+	width: 46.98%;
+	padding-left: 55px;
+	padding-right: 55px;
 	box-sizing: border-box;
 
 	font-size: 18px;
 	letter-spacing: normal;
 }
 
-.about-slider{
+.visual__text{
 	overflow: hidden;
-	visibility: hidden;
-	padding: 0 55px;
+	font-size: 18px;
+	line-height: 24px;
+	max-height: 240px;
 }
-.no-js .about-slider{
-	max-height: none;
-	visibility: visible;
+
+.about-slider,
+.about-slider.slick-dotted{
+	padding: 0 45px;
+	margin: 0 -55px;
+
+	white-space: nowrap;
 }
-.about-slide{ min-height: 120px; }
+.about-slide{
+	min-height: 120px;
+	padding: 0 10px;
+
+	float: none;
+	display: inline-block;
+	vertical-align: top;
+	white-space: normal;
+	opacity: 0;
+}
+.slick-initialized .about-slide{
+	display: block;
+	float: left;
+	opacity: 1;
+}
 .about-slide__title{
 	display: block;
 	font-family: 'proximanova-light-italic', Arial, Helvetica, sans-serif;
@@ -2116,6 +2141,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	font-weight: normal;
 	padding: 0 0 66px;
 }
+.about-slide__text{ position: relative; }
 
 .about-slider .slick-prev,
 .about-slider .slick-next{
@@ -2809,6 +2835,168 @@ only screen and (min-device-pixel-ratio: 2) {
 	transition-duration: 0.2s;
 }
 /*visual slider end*/
+
+/*trans*/
+.trans{
+	position: relative;
+}
+.trans h3{
+	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	background: #ca0503;
+	padding: 14px 20px;
+	margin: 0;
+}
+.trans-box{
+	margin-bottom: -1px;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 27px 20px 20px;
+}
+.trans-box:before,
+.trans-box:after { content: ""; display: table; }
+.trans-box:after { clear: both; }
+.trans-title{
+	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	float: left;
+	width: 17.4%;
+	box-sizing: border-box;
+	padding-right: 18px;
+}
+
+.trans-content{
+	overflow: hidden;
+}
+.trans-list,
+.user-content .trans-list{
+	list-style: none;
+	padding: 0;
+	margin: 0 -8px;
+}
+.trans-list{
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.trans-list li,
+.user-content .trans-list li,
+.user-content .trans-list li:first-child{
+	padding: 0 8px 14px;
+}
+.trans-list li{
+	display: inline-block;
+	vertical-align: top;
+	width: 19.98%;
+	box-sizing: border-box;
+
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: normal;
+}
+.user-content .trans-list li:before,
+.user-content .trans-list li:first-child:before{
+	content: none;
+}
+.trans-list li .flag{
+	float: left;
+	margin-right: 15px;
+	margin-top: 6px;
+}
+.trans-list li span{
+	display: block;
+	overflow: hidden;
+}
+/*trans end*/
+
+/*other */
+.other{ position: relative; }
+.other h2{ padding-bottom: 12px; }
+.other-container{
+	text-align: center;
+
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.other-between{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 66.66%;
+}
+.other-box{
+	display: inline-block;
+	vertical-align: top;
+	width: 33.28%;
+	padding-top: 36px;
+	box-sizing: border-box;
+
+	font-size: 16px;
+	letter-spacing: normal;
+}
+.other-box_lg{
+	padding-top: 0;
+}
+.other-between .other-box{
+	width: 49.98%;
+}
+.other-separator{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 32px;
+	width: 74px;
+	margin: -30px 0 0 -37px;
+	border: solid #6b6b6b;
+	border-width: 1px 0;
+}
+.other-separator:before,
+.other-separator:after{
+	content: '';
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	border: inherit;
+	border-width: 1px 1px 0 0;
+}
+.other-separator:before{
+	-webkit-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	left: 3px;
+	top: -9px;
+}
+.other-separator:after{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	right: 3px;
+	bottom: -9px;
+}
+.other-box__img{
+	text-align: center;
+	margin-bottom: 37px;
+}
+.other-box__img img{
+	margin: 0 auto;
+}
+.other-box__title{
+	display: block;
+	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
+	color: #000;
+	font-size: 20px;
+	line-height: 26px;
+	text-align: center;
+}
+/*other end*/
+
+/*vehicle*/
+.vehicle{ position: relative; }
+.vehicle-content{ text-align: left; }
+/*vehicle end*/
+
 /*CONTENT*/
 /*MAIN end*/
 

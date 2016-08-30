@@ -191,7 +191,11 @@ div.cselect.ui-multiselect-menu{}
 /*breadcrumbs end*/
 
 /*section*/
-.section{}
+.section h2 {
+	font-size: 28px;
+	line-height: 36px;
+	padding-bottom: 42px;
+}
 /*section end*/
 
 /*banner*/
@@ -252,6 +256,57 @@ div.cselect.ui-multiselect-menu{}
 /*acts*/
 .acts{}
 /*acts end*/
+
+/*wide slider*/
+.wide-slider{}
+/*wide slider end*/
+
+/*visual slider*/
+.visual-slider{}
+/*visual slider end*/
+
+/*trans*/
+.trans-title {
+	float: none;
+	width: auto;
+	padding: 0 0 20px;
+}
+.trans-list li {
+	display: block;
+	width: auto;
+}
+/*trans end*/
+
+/*other*/
+.other-between{
+	margin-left: -30px;
+	margin-right: -30px;
+}
+.other-between .other-box{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.other-box_lg {
+	padding-top: 0;
+	width: auto;
+	display: block;
+}
+.other-box__title{
+	font-size: 18px;
+	line-height: 24px;
+	max-height: 24px;
+}
+.other-separator {
+	height: 25px;
+	width: 40px;
+	margin-left: -20px;
+	margin-top: -25px;
+}
+/*other end*/
+
+/*vehicle*/
+.vehicle{}
+/*vehicle end*/
 /*CONTENT*/
 /*MAIN end*/
 

@@ -258,6 +258,34 @@
 	margin: 20px 0 30px;
 }
 /*wide slider end*/
+
+/*wide slider*/
+.wide-slider{}
+/*wide slider end*/
+
+/*visual slider*/
+.visual-slider{}
+/*visual slider end*/
+
+/*trans*/
+.trans-title { width: 21%; }
+.trans-list li{ width: 33.28%; }
+/*trans end*/
+
+/*other*/
+.other{}
+/*other end*/
+
+/*vehicle*/
+.vehicle-content{
+	text-align: center;
+}
+.vehicle-list{
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+/*vehicle end*/
 /*CONTENT*/
 /*MAIN end*/
 
