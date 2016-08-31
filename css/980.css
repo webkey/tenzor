@@ -85,6 +85,16 @@ h1 {
 .btn-menu{ display: block; }
 /*button menu end*/
 
+/*lang*/
+.lang-list, .user-content .lang-list{
+	font-size: 20px;
+	line-height: 38px;
+}
+.lang-list a {
+	padding: 0 17px;
+}
+/*lang end*/
+
 /*logo*/
 .logo{
 	width: 234px;

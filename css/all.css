@@ -1269,7 +1269,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 /*third line menu end*/
 /*button menu end*/
 
-/*effect while open menu*/
+/*animation while open menu*/
 .header-contain,
 .main,
 .footer{
@@ -1289,7 +1289,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	-ms-transform: scale(0.6, 0.6);
 	transform: scale(0.6, 0.6);
 }
-/*effect while open menu end*/
+/*animation while open menu end*/
 
 /*lang*/
 .lang{
