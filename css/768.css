@@ -246,9 +246,7 @@
 .slick-prev:before {
 	left: 10px;
 }
-.slick-next:before {
-	right: 10px;
-}
+.slick-next:before { right: 10px; }
 
 .slick-bottom-nav {
 	position: relative;
@@ -286,6 +284,27 @@
 	text-align: left;
 }
 /*vehicle end*/
+
+/*jobs*/
+.jobs-salary{
+	float: none;
+	display: block;
+	margin: 0 auto 30px;
+	text-align: center;
+	max-width: 100%;
+}
+.jobs-title h2 {
+	text-align: center;
+	padding-right: 0;
+	padding-left: 0;
+}
+.job-img{
+	display: none;
+}
+.job-box{
+	width: 45%;
+}
+/*jobs end*/
 /*CONTENT*/
 /*MAIN end*/
 

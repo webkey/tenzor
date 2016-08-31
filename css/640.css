@@ -307,6 +307,25 @@ div.cselect.ui-multiselect-menu{}
 /*vehicle*/
 .vehicle{}
 /*vehicle end*/
+
+/*jobs*/
+.jobs-title h2 {
+	font-size: 24px;
+	line-height: 34px;
+}
+.job-box,
+.job-box:last-child{
+	display: block;
+	float: none;
+	width: auto;
+	padding-bottom: 40px;
+}
+.job-box:last-child{ padding-bottom: 0; }
+.job-box h3{
+	text-align: center;
+	padding: 0 0 40px;
+}
+/*jobs end*/
 /*CONTENT*/
 /*MAIN end*/
 

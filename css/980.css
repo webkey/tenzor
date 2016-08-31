@@ -229,6 +229,10 @@ h1 {
 	padding-left: 0;
 	padding-right: 0;
 }
+.visual__text{
+	max-height: none;
+	height: auto;
+}
 .about-slider,
 .about-slider.slick-dotted{
 	margin-left: 0;
@@ -281,7 +285,17 @@ h1 {
 	width: 49.98%;
 }
 /*other end*/
-/*CONTENT*/
+
+/*jobs*/
+.jobs-title h2 {
+	text-align: left;
+}
+.job-img {
+	left: 265px;
+	right: 265px;
+}
+/*jobs end*/
+/*CONTENT end*/
 /*MAIN end*/
 
 /*FOOTER*/
