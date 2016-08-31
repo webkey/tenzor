@@ -298,11 +298,19 @@
 	padding-right: 0;
 	padding-left: 0;
 }
-.job-img{
-	display: none;
+.job-img {
+	left: 0;
+	right: auto;
+	bottom: 0;
+	top: auto;
+	width: 140px;
 }
 .job-box{
 	width: 45%;
+}
+.job-claims,
+.user-content .job-claims {
+	padding: 0 0 160px;
 }
 /*jobs end*/
 /*CONTENT*/

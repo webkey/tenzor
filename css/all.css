@@ -2919,12 +2919,13 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	font-size: 18px;
 	line-height: 24px;
 	padding: 12px 30px;
+	margin: 5px 0 38px;
 	box-sizing: border-box;
 }
 .jobs-title h2{
 	overflow: hidden;
 	text-align: left;
-	padding-right: 20px;
+	padding: 0 20px 46px 0;
 }
 .job-container{
 	position: relative;
@@ -2935,28 +2936,35 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .job-img{
 	position: absolute;
 	top: 15px;
-	left: 280px;
-	right: 280px;
+	left: 281px;
+	right: 362px;
 	max-width: 398px;
-	background: no-repeat center center;
-	-webkit-background-size: contain;
-	background-size: contain;
 }
 .job-img:before{
 	content: '';
 	display: block;
 	height: 0;
-	padding-top: 80%;
+	padding-top: 100%;
+}
+.job-img__holder{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: -25.6%;
+	height: 100%;
+	background: url(../img/img-wheel.png) no-repeat center center;
+	-webkit-background-size: contain;
+	background-size: contain;
 }
 .job-img > span{
 	content: '';
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 317px;
-	width: 317px;
+	height: 100%;
+	width: 100%;
 	max-height: 100%;
-	/*background: url(../img/img-wheel-layer.png) no-repeat;*/
+	background: url(../img/img-wheel-rotate.png) no-repeat;
 	-webkit-background-size: contain;
 	background-size: contain;
 	-webkit-animation-name: rotateWheel;
@@ -2990,7 +2998,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	font-weight: normal;
 	font-size: 20px;
 	line-height: 26px;
-	padding: 0 0 55px;
+	padding: 0 0 53px;
 	text-align: left;
 }
 .job-claims,
@@ -3005,7 +3013,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	overflow: hidden;
 	position: relative;
 	min-height: 50px;
-	padding: 0 0 38px 72px;
+	padding: 0 0 36px 72px;
 }
 .job-claims > li:before,
 .user-content .job-claims > li:before{
@@ -3026,6 +3034,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	padding: 0;
 	border: 2px solid #ca0503;
 	box-sizing: border-box;
+}
+.job-guarantee{
+	padding-bottom: 20px;
 }
 /*jobs end*/
 /*CONTENT end*/

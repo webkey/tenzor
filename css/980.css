@@ -292,7 +292,7 @@ h1 {
 }
 .job-img {
 	left: 265px;
-	right: 265px;
+	right: 335px;
 }
 /*jobs end*/
 /*CONTENT end*/
@@ -309,3 +309,10 @@ h1 {
 }
 /*footer holder end*/
 /*FOOTER end*/
+
+@media only screen and (max-width: 859px){
+	.job-img {
+		left: 250px;
+		right: 295px;
+	}
+}
