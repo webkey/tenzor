@@ -1543,7 +1543,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 		background-size: 24px 598px;
 	}
 	.slick-slider .slick-prev:before{ background-position: 0 -31px; }
-	.slick-slide .slick-next:before{ background-position: 0 -99px; }
+	.slick-slider .slick-next:before{ background-position: 0 -99px; }
 }
 /*sliders arrows end*/
 
