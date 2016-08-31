@@ -1,1 +1,16 @@
 @media only screen and (max-width: 479px){}
+
+/*trans*/
+.trans-list li {
+	width: 49.98%;
+}
+/*trans end*/
+
+@media only screen and (max-width: 399px){
+	/*trans*/
+	.trans-list li {
+		display: block;
+		width: auto;
+	}
+	/*trans end*/
+}

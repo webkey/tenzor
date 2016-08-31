@@ -1,7 +1,5 @@
 @media only screen and (max-width: 639px){}
 
-@media only screen and (max-width: 979px){}
-
 /*TYPOGRAPHIC STYLES*/
 body{}
 h1, h2, h3, h4, h5, h6{}
@@ -270,10 +268,6 @@ div.cselect.ui-multiselect-menu{}
 	float: none;
 	width: auto;
 	padding: 0 0 20px;
-}
-.trans-list li {
-	display: block;
-	width: auto;
 }
 /*trans end*/
 

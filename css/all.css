@@ -1593,6 +1593,12 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 /*breadcrumbs end*/
 
+/*page title*/
+.page-title{
+	position: relative;
+}
+/*page title end*/
+
 /*section*/
 .section{ padding-bottom: 70px; }
 .section h2{
@@ -2077,6 +2083,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 /*connect end*/
 
 /*visual*/
+.visual-section{ position: relative; }
 .visual{
 	font-size: 0;
 	letter-spacing: -4px;
@@ -2094,10 +2101,28 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .visual__figure{
 	display: block;
 	margin: 0 auto;
+	position: relative;
+	max-width: 510px;
+}
+.visual__figure img{
+	position: relative;
+}
+.visual__bg{
+	position: absolute;
+	left: 100%;
+	top: 100%;
+	width: 492%;
+	height: 413%;
+	margin: -88.8% 0 0 -279.9%;
+	background: url(../img/temp-bg-section.jpg) no-repeat 50% 50%;
+	-webkit-background-size: contain;
+	background-size: contain;
+	z-index: -1;
 }
 .visual__content{
 	overflow: hidden;
 	display: inline-block;
+	position: relative;
 	vertical-align: middle;
 	width: 46.98%;
 	padding-left: 55px;
@@ -2931,7 +2956,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	height: 317px;
 	width: 317px;
 	max-height: 100%;
-	background: url(../img/img-wheel-layer.png) no-repeat;
+	/*background: url(../img/img-wheel-layer.png) no-repeat;*/
 	-webkit-background-size: contain;
 	background-size: contain;
 	-webkit-animation-name: rotateWheel;
