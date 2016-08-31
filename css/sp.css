@@ -5,7 +5,87 @@
 	display: inline-block;
 	vertical-align: top;
 }
+.depict-angle-down{ background-position: 0 0; width: 9px; height: 5px; }
+.depict-angle-down-h{ background-position: 0 -25px; width: 9px; height: 5px; }
+.depict-arrow-left{ background-position: 0 -50px; width: 13px; height: 24px; }
+.depict-arrow-left-h{ background-position: 0 -94px; width: 13px; height: 24px; }
+.depict-arrow-right{ background-position: 0 -138px; width: 13px; height: 24px; }
+.depict-arrow-right-h{ background-position: 0 -182px; width: 13px; height: 24px; }
+.depict-arrow-left-white{ background-position: 0 -226px; width: 13px; height: 24px; }
+.depict-arrow-left-white-h{ background-position: 0 -270px; width: 13px; height: 24px; }
+.depict-arrow-right-white{ background-position: 0 -314px; width: 13px; height: 24px; }
+.depict-arrow-right-white-h{ background-position: 0 -358px; width: 13px; height: 24px; }
+.depict-photos{ background-position: 0 -402px; width: 24px; height: 19px; }
+.depict-photos-h{ background-position: 0 -441px; width: 24px; height: 19px; }
+.depict-zoom-solid{ background-position: 0 -480px; width: 24px; height: 24px; }
+.depict-zoom-solid-h{ background-position: 0 -524px; width: 24px; height: 24px; }
+.depict-arrow-back{ background-position: 0 -568px; width: 8px; height: 12px; }
+.depict-arrow-back-h{ background-position: 0 -600px; width: 8px; height: 12px; }
+.depict-close{ background-position: 0 -632px; width: 23px; height: 23px; }
+.depict-close-h{ background-position: 0 -675px; width: 23px; height: 23px; }
+.depict-zoom{ background-position: 0 -718px; width: 24px; height: 24px; }
+.depict-zoom-h{ background-position: 0 -762px; width: 24px; height: 24px; }
+
 /*icons end*/
+
+/*icons-2x*/
+@media ( -webkit-min-device-pixel-ratio : 1.5 ), ( min-resolution : 144dpi ){
+	[class|="depict"],
+	[class*=" depict-"]{
+		background-image:url(../img/sprite-icons-2x.png);
+		-webkit-background-size: 24px 598px;
+		background-size: 24px 598px;
+	}
+	.depict-angle-down{ background-position: 0 0; }
+	.depict-angle-down-h{ background-position: 0 -16px; }
+	.depict-arrow-left{ background-position: 0 -31px; }
+	.depict-arrow-left-h{ background-position: 0 -65px; }
+	.depict-arrow-right{ background-position: 0 -99px; }
+	.depict-arrow-right-h{ background-position: 0 -133px; }
+	.depict-arrow-left-white{ background-position: 0 -167px; }
+	.depict-arrow-left-white-h{ background-position: 0 -201px; }
+	.depict-arrow-right-white{ background-position: 0 -235px; }
+	.depict-arrow-right-white-h{ background-position: 0 -269px; }
+	.depict-photos{ background-position: 0 -303px; }
+	.depict-photos-h{ background-position: 0 -332px; }
+	.depict-zoom-solid{ background-position: 0 -361px; }
+	.depict-zoom-solid-h{ background-position: 0 -395px; }
+	.depict-arrow-back{ background-position: 0 -429px; }
+	.depict-arrow-back-h{ background-position: 0 -451px; }
+	.depict-close{ background-position: 0 -473px; }
+	.depict-close-h{ background-position: 0 -507px; }
+	.depict-zoom{ background-position: 0 -540px; }
+	.depict-zoom-h{ background-position: 0 -574px; }
+}
+
+[class^="depict-2x"],
+[class*="depict-2x"]{
+	background:url(../img/sprite-icons-2x.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.depict-angle-down-2x{ background-position: 0 0; width: 18px; height: 11px; }
+.depict-angle-down-h-2x{ background-position: 0 -31px; width: 18px; height: 11px; }
+.depict-arrow-left-2x{ background-position: 0 -62px; width: 26px; height: 48px; }
+.depict-arrow-left-h-2x{ background-position: 0 -130px; width: 26px; height: 48px; }
+.depict-arrow-right-2x{ background-position: 0 -198px; width: 27px; height: 48px; }
+.depict-arrow-right-h-2x{ background-position: 0 -266px; width: 27px; height: 48px; }
+.depict-arrow-left-white-2x{ background-position: 0 -334px; width: 27px; height: 48px; }
+.depict-arrow-left-white-h-2x{ background-position: 0 -402px; width: 27px; height: 48px; }
+.depict-arrow-right-white-2x{ background-position: 0 -470px; width: 27px; height: 48px; }
+.depict-arrow-right-white-h-2x{ background-position: 0 -538px; width: 27px; height: 48px; }
+.depict-photos-2x{ background-position: 0 -606px; width: 48px; height: 38px; }
+.depict-photos-h-2x{ background-position: 0 -664px; width: 48px; height: 38px; }
+.depict-zoom-solid-2x{ background-position: 0 -722px; width: 48px; height: 48px; }
+.depict-zoom-solid-h-2x{ background-position: 0 -790px; width: 48px; height: 48px; }
+.depict-arrow-back-2x{ background-position: 0 -858px; width: 15px; height: 24px; }
+.depict-arrow-back-h-2x{ background-position: 0 -902px; width: 15px; height: 24px; }
+.depict-close-2x{ background-position: 0 -946px; width: 47px; height: 47px; }
+.depict-close-h-2x{ background-position: 0 -1013px; width: 47px; height: 47px; }
+.depict-zoom-2x{ background-position: 0 -1080px; width: 48px; height: 48px; }
+.depict-zoom-h-2x{ background-position: 0 -1148px; width: 48px; height: 48px; }
+/*icons-2x end*/
 
 /*social icons*/
 [class|="soc-depict"],
@@ -14,26 +94,6 @@
 	display: inline-block;
 	vertical-align: top;
 }
-.depict-angle-down{ background-position: 0 0; width: 10px; height: 7px; }
-.depict-angle-down-h{ background-position: 0 -27px; width: 10px; height: 7px; }
-.depict-arrow-left{ background-position: 0 -54px; width: 13px; height: 24px; }
-.depict-arrow-left-h{ background-position: 0 -98px; width: 13px; height: 24px; }
-.depict-arrow-left-white{ background-position: 0 -142px; width: 13px; height: 24px; }
-.depict-arrow-left-white-h{ background-position: 0 -186px; width: 13px; height: 24px; }
-.depict-arrow-right{ background-position: 0 -230px; width: 13px; height: 24px; }
-.depict-arrow-right-h{ background-position: 0 -274px; width: 13px; height: 24px; }
-.depict-arrow-right-white{ background-position: 0 -318px; width: 13px; height: 24px; }
-.depict-arrow-right-white-h{ background-position: 0 -362px; width: 13px; height: 24px; }
-.depict-zoom{ background-position: 0 -406px; width: 24px; height: 24px; }
-.depict-zoom-h{ background-position: 0 -450px; width: 24px; height: 24px; }
-.depict-photos{ background-position: 0 -494px; width: 24px; height: 19px; }
-.depict-zoom-solid{ background-position: 0 -533px; width: 23px; height: 23px; }
-.depict-zoom-solid-h{ background-position: 0 -576px; width: 23px; height: 23px; }
-.depict-arrow-back{ background-position: 0 -619px; width: 8px; height: 12px; }
-.depict-arrow-back-h{ background-position: 0 -651px; width: 8px; height: 12px; }
-.depict-arrows-double{ background-position: 0 -683px; width: 75px; height: 57px; }
-.depict-close{ background-position: 0 -760px; width: 24px; height: 24px; }
-.depict-close-h{ background-position: 0 -804px; width: 24px; height: 24px; }
 /*social icons end*/
 
 /*flags*/
@@ -287,10 +347,3 @@
 .flag.flag-zm {background-position: 0 -180px}
 .flag.flag-zw {background-position: -18px -180px}
 /*flags end*/
-
-@media ( -webkit-min-device-pixel-ratio : 1.5 ),
-( min-resolution : 144dpi ){
-	.iii {
-		background-size:38px 38px;
-	}
-}
