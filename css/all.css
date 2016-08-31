@@ -2543,33 +2543,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	margin-left: -10px;
 	background: url(../img/sprite-icons.png) no-repeat 0 -54px;
 }
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-moz-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-	.wide-slider__list .slick-prev:before {
-		background: url(../img/sprite-icons.png) no-repeat;
-		-webkit-background-size: 100% auto;
-		-moz-background-size: 100% auto;
-		background-size: 100% auto;
-	}
-}
 .wide-slider__list .slick-next:before {
 	margin-left: -3px;
 	background: url(../img/sprite-icons.png) no-repeat 0 -230px;
-}
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-moz-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-	.wide-slider__list .slick-next:before {
-		background: url(../img/sprite-icons.png) no-repeat;
-		-webkit-background-size: 100% auto;
-		-moz-background-size: 100% auto;
-		background-size: 100% auto;
-	}
 }
 
 .wide-slider__list .slick-arrow:after{
@@ -2724,34 +2700,10 @@ only screen and (min-device-pixel-ratio: 2) {
 	margin-left: -10px;
 	background: url(../img/sprite-icons.png) no-repeat 0 -54px;
 }
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-moz-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-	.visual-slider__list .slick-prev:before {
-		background: url(../img/sprite-icons.png) no-repeat;
-		-webkit-background-size: 100% auto;
-		-moz-background-size: 100% auto;
-		background-size: 100% auto;
-	}
-}
 
 .visual-slider__list .slick-next:before {
 	margin-left: -5px;
 	background: url(../img/sprite-icons.png) no-repeat 0 -230px;
-}
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-moz-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2) {
-	.visual-slider__list .slick-next:before {
-		background: url(../img/sprite-icons.png) no-repeat;
-		-webkit-background-size: 100% auto;
-		-moz-background-size: 100% auto;
-		background-size: 100% auto;
-	}
 }
 
 .visual-slider__list .slick-arrow:after{
