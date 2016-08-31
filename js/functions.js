@@ -321,14 +321,33 @@ function slidersInit() {
 
 /*equal height*/
 function equalHeightInit() {
-	var $actionList = $('.acts-list');
-	if (!$actionList.length) return false;
+	$(window).load(function () {
+		// acts list
+		var $actionList = $('.acts-list');
+		if ($actionList.length) {
+			$('figure', $actionList).equalHeight({
+				useParent: true,
+				parent: $actionList,
+				resize: true
+			});
+		}
 
-	$('figure', $actionList).equalHeight({
-		useParent: true,
-		parent: $actionList,
-		resize: true
-	});
+		// gallery list
+		var $galleryList = $('.gallery-list');
+		if ($galleryList.length) {
+			$('.gallery__img', $galleryList).equalHeight({
+				useParent: true,
+				parent: $galleryList,
+				resize: true
+			});
+
+			$('.gallery__footer', $galleryList).equalHeight({
+				useParent: true,
+				parent: $galleryList,
+				resize: true
+			});
+		}
+	})
 }
 /*equal height end*/
 
