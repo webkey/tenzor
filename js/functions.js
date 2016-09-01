@@ -319,6 +319,26 @@ function slidersInit() {
 }
 /*sliders end*/
 
+/*fotorama init*/
+function fotoramaInit() {
+	// product card gallery
+	$('.product-card__gallery').fotorama({
+		// width: 700,
+		// maxwidth: '100%',
+		// ratio: 16/9,
+		// allowfullscreen: true,
+		nav: 'thumbs',
+		// allowfullscreen: true,
+		transition: 'dissolve',
+		thumbmargin: 8,
+		thumbwidth: 91,
+		thumbheight: 68,
+		// ratio: 1/1
+		thumbborderwidth: 2
+	});
+}
+/*fotorama init end*/
+
 /*equal height*/
 function equalHeightInit() {
 	$(window).load(function () {
@@ -740,6 +760,7 @@ $(document).ready(function(){
 	mainNavigationInit();
 	languageEvents();
 	slidersInit();
+	fotoramaInit();
 	equalHeightInit();
 	mapMainInit();
 	if(DESKTOP){
