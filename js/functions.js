@@ -335,11 +335,11 @@ function equalHeightInit() {
 		// gallery list
 		var $galleryList = $('.gallery-list');
 		if ($galleryList.length) {
-			$('.gallery__img', $galleryList).equalHeight({
-				useParent: true,
-				parent: $galleryList,
-				resize: true
-			});
+			// $('.gallery__figure', $galleryList).equalHeight({
+			// 	useParent: true,
+			// 	parent: $galleryList,
+			// 	resize: true
+			// });
 
 			$('.gallery__footer', $galleryList).equalHeight({
 				useParent: true,
