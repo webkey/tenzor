@@ -323,6 +323,26 @@
 	width: 140px;
 }
 /*jobs end*/
+
+/*photos*/
+.photos{
+	padding: 0 33px;
+}
+.photos .photos__arrow{
+	width: 13px;
+	height: 24px;
+	margin-top: -45px;
+}
+.photos .photos__arrow:after{
+	content: none;
+}
+.photos .photos__arrow_prev{
+	left: 10px;
+}
+.photos .photos__arrow_next{
+	right: 10px;
+}
+/*photos end*/
 /*CONTENT*/
 /*MAIN end*/
 

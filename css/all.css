@@ -1594,6 +1594,55 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 /*breadcrumbs end*/
 
+/*to back*/
+.to-back{
+	font-family: 'proximanova-light', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+.to-back-link{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding-left: 28px;
+	color: #000;
+	text-decoration: none;
+}
+.to-back-link:before,
+.to-back-link:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	height: 0;
+	width: 10px;
+	border-top: 2px solid #000;
+}
+.to-back-link:before{
+	top: 7px;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.to-back-link:after{
+	top: 13px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.to-back-link > span{
+	border-bottom: 1px solid transparent;
+	-webkit-transition-property: border;
+	transition-property: border;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.desktop .to-back-link:hover > span{
+	border-bottom-color: #000;
+}
+/*to back end*/
+
 /*page title*/
 .page-title{
 	position: relative;
@@ -3207,7 +3256,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .photos{
 	position: relative;
 	max-width: 1980px;
-	margin: 0 auto;
+	margin: 0 auto 70px;
 	padding: 0 100px;
 	box-sizing: border-box;
 }
@@ -3228,14 +3277,26 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .photos .fotorama__wrap{
 	margin: 0 auto;
 }
+.photos .fotorama__stage:before,
+.photos .fotorama__stage:after{
+	display: none;
+	content: none;
+}
+.photos .fotorama__arr{
+	display: none;
+	opacity: 0;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
 .photos .photos__arrow{
 	position: absolute;
 	top: 50%;
 	background: none;
 	width: 60px;
 	height: 60px;
-	margin-top: -114px;
+	margin-top: -53px;
 	border-radius: 50%;
+	z-index: 3;
 }
 .photos .photos__arrow:before{
 	content: '';
@@ -3260,12 +3321,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	border-radius: 50%;
 	box-sizing: border-box;
 }
-.photos .photos__arrow_prev{
-	left: 20px;
-}
-.photos .photos__arrow_next{
-	right: 20px;
-}
+.photos .photos__arrow_prev{ left: 20px; }
+.photos .photos__arrow_next{ right: 20px; }
 .photos .photos__arrow_prev:before{ background-position: 0 -50px; }
 .photos .photos__arrow_next:before{ background-position: 0 -138px; }
 .desktop .photos .photos__arrow:active:before,

@@ -352,6 +352,25 @@ div.cselect.ui-multiselect-menu{}
 	border: none;
 }
 /*jobs end*/
+
+/*photos*/
+.photos{
+	padding: 0 20px;
+}
+.photos .fotorama__stage,
+.photos .fotorama__thumb{
+	background: #282828;
+}
+.photos .fotorama__arr{
+	display: block;
+	opacity: 1;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+.photos .photos__arrow{
+	display: none;
+}
+/*photos end*/
 /*CONTENT*/
 /*MAIN end*/
 

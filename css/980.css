@@ -304,6 +304,18 @@ h1 {
 	width: 45%;
 }
 /*jobs end*/
+
+/*photos*/
+.photos{
+	padding: 0 70px;
+}
+.photos .photos__arrow_prev{
+	left: 5px;
+}
+.photos .photos__arrow_next{
+	right: 5px;
+}
+/*photos end*/
 /*CONTENT end*/
 /*MAIN end*/
 
