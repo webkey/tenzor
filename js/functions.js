@@ -369,15 +369,19 @@ function equalHeightInit() {
 		// gallery list
 		var $galleryList = $('.gallery-list');
 		if ($galleryList.length) {
-			// $('.gallery__figure', $galleryList).equalHeight({
-			// 	useParent: true,
-			// 	parent: $galleryList,
-			// 	resize: true
-			// });
-
 			$('.gallery__footer', $galleryList).equalHeight({
 				useParent: true,
 				parent: $galleryList,
+				resize: true
+			});
+		}
+
+		// trucks list
+		var $trucksList = $('.trucks-list');
+		if ($trucksList.length) {
+			$('.trucks-item', $trucksList).equalHeight({
+				useParent: true,
+				parent: $trucksList,
 				resize: true
 			});
 		}
@@ -721,6 +725,7 @@ function visualSlider() {
 
 /*add hover class*/
 function addHoverClass() {
+	// hex
 	$('.hex-2').on('mouseenter', function () {
 		$(this).closest('.profits-list__img').addClass('hover');
 	}).on('mouseleave', function () {
@@ -728,6 +733,126 @@ function addHoverClass() {
 	});
 }
 /*add hover class end*/
+
+/*text toggle*/
+function textToggle() {
+	// btn show (truck item)
+	if(DESKTOP) return false;
+
+	var $showBtn = $('.btn-show-js'),
+		$showContainer = $('.show-container-js');
+
+	$showBtn.on('click', function (e) {
+
+		e.stopPropagation();
+
+		var $thisShowBtn = $(this),
+			$thisContainer = $thisShowBtn.closest('.show-container-js'),
+			hoverClass = 'hover';
+
+		if ($thisContainer.hasClass(hoverClass)) {
+			$thisContainer.removeClass(hoverClass);
+
+			$thisShowBtn.text($thisShowBtn.data('text-show'));
+
+			return false;
+		}
+		$showContainer.removeClass(hoverClass);
+
+		addTextShow();
+
+		$thisContainer.addClass(hoverClass);
+		$thisShowBtn.text($thisShowBtn.data('text-hide'));
+
+		e.preventDefault();
+	});
+
+	$(document).on('click', function () {
+		$showContainer.removeClass('hover');
+	});
+
+	function addTextShow() {
+		$showBtn.each(function () {
+			var $this = $(this);
+			$this.text($this.data('text-show'));
+		});
+	}
+	addTextShow();
+}
+/*text toggle end*/
+
+/*text slide events*/
+function textSlide() {
+	var $textSlide = $('.text-slide-js');
+
+	if (!$textSlide.length) return false;
+
+	var textFull = 'full description',
+		textShort = 'short description',
+		$tplSlideFull = $('<div class="text-full text-full-js"><a href="#" class="text-slide-switcher-js"><span>' + textFull + '</span><i class="depict-arrow-down"></i></a></div>'),
+		$tplTextSlideInner = $('<div class="text-slide-inner-js" />'),
+		$tplShadow = $('<div class="text-slide-shadow-js" >'),
+		textSlideHeight = $textSlide.outerHeight(),
+		isTextFull = false,
+		minHeight = 120;
+
+	// hide elements
+	TweenMax.set($tplShadow, {autoAlpha: 0});
+	$tplSlideFull.hide(0);
+
+	// build structure
+	$textSlide
+		.wrapInner($tplTextSlideInner)
+		.after($tplSlideFull)
+		.append($tplShadow);
+
+	$( window ).on('load resize', function () {
+		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
+
+		$textSlide.css('max-height', 'none');
+
+		if (wrapInnerHeight <= minHeight) {
+			TweenMax.set($textSlide, {height: 'auto'});
+			TweenMax.set($tplShadow, {autoAlpha: 0});
+			$tplSlideFull.hide(0);
+		} else if ( !isTextFull ) {
+			TweenMax.set($textSlide, {height: minHeight});
+			TweenMax.set($tplShadow, {autoAlpha: 1});
+			$tplSlideFull.show(0);
+
+			textSlideHeight = $textSlide.outerHeight();
+		}
+	});
+
+	$textSlide.parent().on('click', '.text-slide-switcher-js', function (e) {
+		e.preventDefault();
+
+		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
+
+		if (wrapInnerHeight <= minHeight) return false;
+
+		var $this = $(this);
+
+		if ( isTextFull ) {
+			TweenMax.to($textSlide, 0.5, {height: textSlideHeight, ease: Power3.easeInOut});
+			TweenMax.to($tplShadow, 0.5, {autoAlpha: 1});
+
+			$this.removeClass('active').children('span').text(textFull);
+
+			isTextFull = false;
+		} else {
+			TweenMax.to($textSlide, 0.5, {height: wrapInnerHeight, ease: Power3.easeInOut, onComplete: function () {
+				TweenMax.set($textSlide, {height: 'auto'});
+
+				isTextFull = true;
+			}});
+
+			TweenMax.to($tplShadow, 0.5, {autoAlpha: 0});
+			$this.addClass('active').children('span').text(textShort);
+		}
+	});
+}
+/*text slide events end*/
 
 /*parallax background page*/
 function parallaxBg() {
@@ -783,6 +908,8 @@ $(document).ready(function(){
 	wideSlider();
 	visualSlider();
 	addHoverClass();
+	textToggle();
+	// textSlide();
 	// parallaxBg();
 
 	footerBottom();
