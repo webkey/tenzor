@@ -236,17 +236,12 @@ h1 {
 .visual__content{
 	width: auto;
 	display: block;
-	padding-left: 0;
-	padding-right: 0;
+	max-width: 77%;
+	margin: 0 auto;
 }
 .visual__text{
 	max-height: none;
 	height: auto;
-}
-.about-slider,
-.about-slider.slick-dotted{
-	margin-left: 0;
-	margin-right: 0;
 }
 .about-slide__title{
 	padding: 0 0 26px;

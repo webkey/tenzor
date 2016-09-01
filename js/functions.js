@@ -685,6 +685,16 @@ function visualSlider() {
 }
 /*visual slider end*/
 
+/*add hover class*/
+function addHoverClass() {
+	$('.hex-2').on('mouseenter', function () {
+		$(this).closest('.profits-list__img').addClass('hover');
+	}).on('mouseleave', function () {
+		$(this).closest('.profits-list__img').removeClass('hover');
+	});
+}
+/*add hover class end*/
+
 /*parallax background page*/
 function parallaxBg() {
 	var $pageBackground = $('body'),
@@ -737,6 +747,7 @@ $(document).ready(function(){
 	}
 	wideSlider();
 	visualSlider();
+	addHoverClass();
 	// parallaxBg();
 
 	footerBottom();

@@ -85,6 +85,9 @@
 /*call end*/
 
 /*visual*/
+.visual__content {
+	max-width: 87%;
+}
 .visual__content,
 .about-slider{
 	overflow: visible;
