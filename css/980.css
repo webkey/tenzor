@@ -299,10 +299,14 @@ h1 {
 /*jobs*/
 .jobs-title h2 {
 	text-align: left;
+	padding-top: 7px;
+	padding-bottom: 39px;
 }
 .job-img {
-	left: 265px;
-	right: 335px;
+	display: none;
+}
+.job-box {
+	width: 45%;
 }
 /*jobs end*/
 /*CONTENT end*/

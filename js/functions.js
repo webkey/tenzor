@@ -737,7 +737,7 @@ $(document).ready(function(){
 	}
 	wideSlider();
 	visualSlider();
-	parallaxBg();
+	// parallaxBg();
 
 	footerBottom();
 });
