@@ -322,19 +322,34 @@ function slidersInit() {
 /*fotorama init*/
 function fotoramaInit() {
 	// product card gallery
-	$('.product-card__gallery').fotorama({
-		// width: 700,
-		// maxwidth: '100%',
-		// ratio: 16/9,
-		// allowfullscreen: true,
+	var $photos = $('.photos-list').fotorama({
+		maxheight: 768,
+		maxwidth: '100%',
+		width: '100%',
+		keyboard: true,
+		arrows: false,
+		fit: 'contain',
+		loop: true,
+		shadows: false,
+		transitionduration: 300,
+		allowfullscreen: false,
 		nav: 'thumbs',
-		// allowfullscreen: true,
-		transition: 'dissolve',
 		thumbmargin: 8,
 		thumbwidth: 91,
 		thumbheight: 68,
-		// ratio: 1/1
 		thumbborderwidth: 2
+	});
+
+	var photos = $photos.data('fotorama');
+
+	$('.photos-prev-js').on('click', function (e) {
+		e.preventDefault();
+		photos.show('<');
+	});
+
+	$('.photos-next-js').on('click', function (e) {
+		e.preventDefault();
+		photos.show('>');
 	});
 }
 /*fotorama init end*/

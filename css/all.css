@@ -2707,6 +2707,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	height: auto;
 	margin: 0;
 }
+.user-content .visual-slider .slick-dots li:before{ content: none; }
 .visual-slider .slick-dots li button {
 	width: 10px;
 	height: 10px;
@@ -3201,6 +3202,89 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	color: #999;
 }
 /*gallery end*/
+
+/*photos*/
+.photos{
+	position: relative;
+	max-width: 1980px;
+	margin: 0 auto;
+	padding: 0 100px;
+	box-sizing: border-box;
+}
+.photos-list{
+	white-space: nowrap;
+}
+.no-js .photos-list{
+	white-space: normal;
+}
+.photos-list img{
+	display: inline-block;
+	vertical-align: top;
+	opacity: 0;
+}
+.no-js .photos-list img{
+	opacity: 1;
+}
+.photos .fotorama__wrap{
+	margin: 0 auto;
+}
+.photos .photos__arrow{
+	position: absolute;
+	top: 50%;
+	background: none;
+	width: 60px;
+	height: 60px;
+	margin-top: -114px;
+	border-radius: 50%;
+}
+.photos .photos__arrow:before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -12px;
+	margin-left: -7px;
+	width: 13px;
+	height: 24px;
+	opacity: 1;
+	background: url(../img/sprite-icons.png) no-repeat;
+}
+.photos .photos__arrow:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #2b2a29;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.photos .photos__arrow_prev{
+	left: 20px;
+}
+.photos .photos__arrow_next{
+	right: 20px;
+}
+.photos .photos__arrow_prev:before{ background-position: 0 -50px; }
+.photos .photos__arrow_next:before{ background-position: 0 -138px; }
+.desktop .photos .photos__arrow:active:before,
+.desktop .photos .photos__arrow:active:after{
+	-webkit-transform: translate(0, 1px);
+	-ms-transform: translate(0, 1px);
+	transform: translate(0, 1px);
+}
+
+@media ( -webkit-min-device-pixel-ratio: 1.5 ), ( min-resolution: 144dpi ){
+	.photos .photos__arrow:before{
+		background-image: url(../img/sprite-icons-2x.png);
+		-webkit-background-size: 24px 598px;
+		background-size: 24px 598px;
+	}
+	.photos .photos__arrow_prev:before{ background-position: 0 -31px; }
+	.photos .photos__arrow_next:before{ background-position: 0 -99px; }
+}
+/*photos end*/
 /*CONTENT end*/
 /*MAIN end*/
 
