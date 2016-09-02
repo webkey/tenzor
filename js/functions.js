@@ -390,16 +390,19 @@ function equalHeightInit() {
 /*equal height end*/
 
 /*map init*/
-var largePinMap = 'img/map-pin.png';
+var pinMap = 'img/map-pin.png';
+var pinMapLarge = 'img/map-pin-lg.png';
+
+var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
 
 var localObjects = [
 	[
 		{lat: 50.4838, lng: 23.5353}, //coordinates of marker
 		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
-		largePinMap, //image pin
+		pinMap, //image pin
 		5,
 		{
-			title: 'Названиеу',
+			title: 'Название1',
 			address: '<b>Адрес:</b> <div>214013, г. Смоленск, <br> ул. Кирова, д. 22Б</div>',
 			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
 			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
@@ -407,18 +410,16 @@ var localObjects = [
 	],[
 		{lat: 50.4838, lng: 23.5353}, //coordinates of marker
 		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
-		largePinMap, //image pin
+		pinMapLarge, //image pin
 		5,
 		{
-			title: 'Названиеу',
+			title: 'Название2',
 			address: '<b>Адрес:</b> <div>214013, г. Смоленск, <br> ул. Кирова, д. 22Б</div>',
 			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
 			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
 		}
 	]
 ];
-
-var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
 
 function mapMainInit(){
 	if (!$('[id*="-map"]').length) {return;}
@@ -437,7 +438,7 @@ function mapMainInit(){
 	var markers = [],
 		elementById = [
 			document.getElementById('traffic-map'),
-			document.getElementById('local-02-map')
+			document.getElementById('contacts-map')
 		];
 
 	if($(elementById[0]).length){
@@ -860,10 +861,12 @@ function textSlide() {
 		var options = $.extend({
 			accordionContainer: null,
 			accordionItem: null,
+			accordionContent: null,
 			accordionHeader: 'h3',
-			active: '0',
+			indexInit: 0,
 			animateSpeed: 300,
-			scrollToTop: null
+			scrollToTop: false, // if true, scroll to current accordion;
+			clickOutside: false // if true, close current accordion's content on click outside accordion;
 		}, settings || {});
 
 		this.options = options;
@@ -871,79 +874,139 @@ function textSlide() {
 		this.$accordionContainer = container;
 		this.$accordionItem = $(options.accordionItem, container);
 		this.$accordionHeader = $(options.accordionHeader, container);
-		this.$accordionPanel = $(this.$accordionHeader.next());
+		this.$accordionContent = options.accordionContent ?
+			$(options.accordionContent, container) :
+			this.$accordionHeader.next();
+
 		this.scrollToTop = options.scrollToTop;
-		this._active = options.active;
+		this.clickOutside = options.clickOutside;
+		this._indexInit = options.indexInit;
 		this._animateSpeed = options.animateSpeed;
 
 		this.modifiers = {
-			active: 'active',
-			current: 'current'
+			activeAccordion: 'js-accordion_active',
+			activeHeader: 'js-accordion__header_active',
+			activeContent: 'js-accordion__content_active'
 		};
 
 		this.bindEvents();
+		this.showAccordionContent();
+	};
+
+	// it takes values current index of accordion's content
+	JsAccordion.prototype.indexActive = 0;
+
+	// it takes values false or current index of accordion's content
+	JsAccordion.prototype.activeState = false;
+
+	// show current accordion's content
+	JsAccordion.prototype.showAccordionContent = function () {
+		var self = this;
+		var indexInit = self._indexInit;
+		self.$accordionItem.eq(indexInit).find(self.$accordionContent).fadeIn('slow');
+
+		self.indexActive = indexInit;
+		self.toggleActiveClass();
 	};
 
 	JsAccordion.prototype.bindEvents = function () {
-		var self = this;
-		var $itemPanel = self.$accordionPanel;
-		var _modifiersActive = self.modifiers.active;
-		var _duration = self._animateSpeed;
+		var self = this,
+			$accordionContent = self.$accordionContent,
+			animateSpeed = self._animateSpeed;
 
-		self.$accordionItem.on('click', function () {
-			var $currentItem = $(this).closest(self.$accordionItem);
-			var $currentItemPanel = $currentItem.find($itemPanel);
+		self.$accordionHeader.on('click', function (e) {
+			e.preventDefault();
 
-			if($itemPanel.is(':animated')){
+			var $currentItem = $(this).closest(self.$accordionItem),
+				$currentItemContent = $currentItem.find($accordionContent),
+				currentIndex = $currentItem.index();
+
+			if($accordionContent.is(':animated')){
 				return;
 			}
 
-			if($currentItemPanel.is(':visible')){
-				self.closeAccordionPanels();
+			self.indexActive = currentIndex;
+
+			if(self.activeState === currentIndex){
+				self.closeAccordionContent();
 				return;
 			}
 
-			self.closeAccordionPanels();
+			self.closeAccordionContent();
 
-			$currentItemPanel.slideToggle(_duration);
-			$currentItem.toggleClass(_modifiersActive);
-
-			self.scrollPosition();
-
-			return false;
+			$currentItemContent.slideToggle(animateSpeed, function () {
+				self.scrollPosition();
+			});
 		});
 
 		$(document).click(function () {
-			self.closeAccordionPanels();
+			if (self.clickOutside) {
+				self.closeAccordionContent();
+			}
 		});
 
-		$itemPanel.on('click', function(e){
+		$accordionContent.on('click', function(e){
 			e.stopPropagation();
 		});
 	};
 
-	JsAccordion.prototype.closeAccordionPanels = function () {
+	JsAccordion.prototype.closeAccordionContent = function () {
 		var self = this;
-		self.$accordionPanel.slideUp(self._animateSpeed);
-		self.$accordionItem.removeClass(self.modifiers.active);
+		self.$accordionContent.slideUp(self._animateSpeed);
+		self.toggleActiveClass();
 	};
 
-	JsAccordion.prototype.scrollPosition = function (scrollElement) {
-		if (this.scrollToTop) {
-			$('html, body').animate({ scrollTop: scrollElement.offset().top }, this._animateSpeed);
+	// change active class
+	JsAccordion.prototype.toggleActiveClass = function () {
+		var self = this,
+			activeAccordion = self.modifiers.activeAccordion,
+			activeHeader = self.modifiers.activeHeader,
+			activeContent = self.modifiers.activeContent,
+			$accordionItem = self.$accordionItem,
+			$accordionHeader = self.$accordionHeader,
+			$accordionContent = self.$accordionContent,
+			indexActive = self.indexActive,
+			activeState = self.activeState;
+
+		$accordionItem.removeClass(activeAccordion);
+		$accordionHeader.removeClass(activeHeader);
+		$accordionContent.removeClass(activeContent);
+
+		if (indexActive !== activeState) {
+			$accordionItem.eq(indexActive).addClass(activeAccordion);
+			$accordionHeader.eq(indexActive).addClass(activeHeader);
+			$accordionContent.eq(indexActive).addClass(activeContent);
+			self.activeState = indexActive;
+
+			// console.log("indexActive1: ", self.indexActive);
+			// console.log("activeState1: ", self.activeState);
+			return false;
+		}
+
+		self.activeState = false;
+
+		// console.log("indexActive2: ", self.indexActive);
+		// console.log("activeState2: ", self.activeState);
+	};
+
+	JsAccordion.prototype.scrollPosition = function () {
+		var self = this;
+		if (self.scrollToTop) {
+			$('html, body').animate({ scrollTop: self.$accordionItem.eq(self.indexActive).offset().top }, self._animateSpeed);
 		}
 	};
 
 	window.JsAccordion = JsAccordion;
 }(jQuery));
 
-function faqBehaviorInit() {
-	if($('.faq-list').length){
+function contactsAccordion() {
+	if($('.contacts-info').length){
 		new JsAccordion({
-			accordionContainer: '.faq-list',
-			accordionItem: '.faq-item',
-			animateSpeed: 300,
-			scrollToTop: true
+			accordionContainer: '.contacts-info',
+			accordionItem: '.contacts',
+			accordionHeader: '.contacts__title',
+			accordionContent: '.contacts__body',
+			animateSpeed: 300
 		});
 	}
 }
@@ -1004,7 +1067,7 @@ $(document).ready(function(){
 	visualSlider();
 	addHoverClass();
 	textToggle();
-	faqBehaviorInit();
+	contactsAccordion();
 	// textSlide();
 	// parallaxBg();
 

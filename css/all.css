@@ -164,7 +164,7 @@ input[type="reset"]{
 	line-height: 22px;
 	text-transform: uppercase;
 	color: #ca0503;
-	padding: 12px 34px 10px;
+	padding: 12px 28px 10px;
 	margin: 0;
 	border: 3px solid #ca0503;
 	border-radius: 50px;
@@ -1082,6 +1082,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	background: #fff;
 }
 /*overlay end*/
+/*spacer*/
+.spacer{ clear: both; }
+/*spacer end*/
 /*MAIN BLOCKS end*/
 
 /*HEADER*/
@@ -1381,6 +1384,19 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	padding: 42px 0 76px;
 	position: relative;
 	z-index: 1;
+}
+.header-contain:before{
+	content: '';
+	position: absolute;
+	left: -50%;
+	top: -50%;
+	bottom: 0;
+	width: 200%;
+	background: #fff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjYiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 70%,rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 70%,rgba(255,255,255,0) 100%);
 }
 .header-contain__holder{
 	position: relative;
@@ -1899,6 +1915,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	margin: 0;
 	padding: 0;
 }
+.traffic-tab{ display: none; }
+.traffic-tab.active{ display: block; }
+/*local map*/
 .map-container{
 	position: relative;
 	overflow: hidden;
@@ -1937,8 +1956,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .local-map:after{
 	right: 0;
 }
-.traffic-tab{ display: none; }
-.traffic-tab.active{ display: block; }
+/*local map*/
 /*traffic end*/
 
 /*adt*/
@@ -3503,6 +3521,134 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	}
 }
 /*trucks end*/
+
+/*contacts section*/
+.contacts-section{
+	position: relative;
+}
+.contacts-holder{
+	float: left;
+	width: 308px;
+	box-sizing: border-box;
+	padding: 29px 30px 47px;
+	margin-bottom: 70px;
+	background: #fff;
+}
+.contacts-holder h1{
+	font-size: 36px;
+	line-height: 42px;
+	text-align: left;
+	padding: 0 0 25px;
+}
+.contacts-info{
+	position: relative;
+	padding: 0 0 20px;
+}
+.contacts{
+	position: relative;
+	padding-bottom: 18px;
+}
+.contacts__title{
+	display: block;
+	font-family: 'proximanova-bold', Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 24px;
+	color: #000;
+	text-decoration: none;
+}
+.contacts__title span{
+	border-bottom: 1px dotted #000;
+}
+.contacts__title.js-accordion__header_active span,
+.desktop .contacts__title:hover span{
+	border-bottom-color: transparent;
+}
+.desktop .contacts__title.js-accordion__header_active:hover span{
+	border-bottom-color: #000;
+}
+.contacts__body{
+	font-family: 'proximanova-light', Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	padding-top: 19px;
+	display: none;
+}
+.contacts__adr{
+	padding: 0 0 11px;
+}
+/*contacts dl*/
+.contacts__dl{
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	line-height: 22px;
+}
+.contacts__row{
+	padding: 0 0 12px;
+	overflow: hidden;
+}
+.contacts__dt{
+	padding: 0 6px 0 0;
+	margin: 0;
+	float: left;
+}
+.contacts__dd{
+	display: block;
+	margin: 0;
+}
+.contacts__dd a{
+	display: inline-block;
+	vertical-align: top;
+}
+.contacts__dd a:after{
+	content: ';';
+	display: inline-block;
+}
+.contacts__dd a:last-child:after{
+	content: none;
+}
+/*contacts dl end*/
+.contacts-on-map{
+	font-size: 16px;
+	line-height: 22px;
+	display: none;
+}
+.contacts-on-map a{
+	text-decoration: none;
+}
+.contacts-on-map a svg{
+	vertical-align: middle;
+	width: 10px;
+}
+.contacts-on-map a span{
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	border-bottom: 1px dotted #ca0503;
+}
+/*contacts section end*/
+
+/*contacts map*/
+.contacts-map-container{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+.contacts-map{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+.contacts-map .gmnoprint,
+.contacts-map .gm-svpc{
+	margin-top: -130px;
+}
+/*contacts map end*/
 /*CONTENT end*/
 /*MAIN end*/
 

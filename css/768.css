@@ -1,4 +1,3 @@
-
 @media only screen and (max-width: 767px){}
 
 /*TYPOGRAPHIC STYLES*/
@@ -343,6 +342,40 @@
 	right: 10px;
 }
 /*photos end*/
+
+/*contacts section*/
+.contacts-holder {
+	float: none;
+	width: auto;
+}
+.contacts-holder h1{
+	text-align: center;
+}
+.contacts-holder{
+	text-align: center;
+	padding: 0;
+}
+.contacts{
+	padding-bottom: 30px;
+}
+/*contacts dl*/
+.contacts__dt,
+.contacts__dd{
+	padding: 0;
+	float: none;
+	display: inline;
+}
+/*contacts dl end*/
+.contacts-on-map{
+	display: block;
+}
+/*contacts section end*/
+
+/*contacts map*/
+.contacts-map-container{
+	display: none;
+}
+/*contacts map end*/
 /*CONTENT*/
 /*MAIN end*/
 
