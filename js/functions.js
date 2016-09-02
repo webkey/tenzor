@@ -854,6 +854,101 @@ function textSlide() {
 }
 /*text slide events end*/
 
+/*accordion*/
+(function ($) {
+	var JsAccordion = function (settings) {
+		var options = $.extend({
+			accordionContainer: null,
+			accordionItem: null,
+			accordionHeader: 'h3',
+			active: '0',
+			animateSpeed: 300,
+			scrollToTop: null
+		}, settings || {});
+
+		this.options = options;
+		var container = $(options.accordionContainer);
+		this.$accordionContainer = container;
+		this.$accordionItem = $(options.accordionItem, container);
+		this.$accordionHeader = $(options.accordionHeader, container);
+		this.$accordionPanel = $(this.$accordionHeader.next());
+		this.scrollToTop = options.scrollToTop;
+		this._active = options.active;
+		this._animateSpeed = options.animateSpeed;
+
+		this.modifiers = {
+			active: 'active',
+			current: 'current'
+		};
+
+		this.bindEvents();
+	};
+
+	JsAccordion.prototype.bindEvents = function () {
+		var self = this;
+		var $itemPanel = self.$accordionPanel;
+		var _modifiersActive = self.modifiers.active;
+		var _duration = self._animateSpeed;
+
+		self.$accordionItem.on('click', function () {
+			var $currentItem = $(this).closest(self.$accordionItem);
+			var $currentItemPanel = $currentItem.find($itemPanel);
+
+			if($itemPanel.is(':animated')){
+				return;
+			}
+
+			if($currentItemPanel.is(':visible')){
+				self.closeAccordionPanels();
+				return;
+			}
+
+			self.closeAccordionPanels();
+
+			$currentItemPanel.slideToggle(_duration);
+			$currentItem.toggleClass(_modifiersActive);
+
+			self.scrollPosition();
+
+			return false;
+		});
+
+		$(document).click(function () {
+			self.closeAccordionPanels();
+		});
+
+		$itemPanel.on('click', function(e){
+			e.stopPropagation();
+		});
+	};
+
+	JsAccordion.prototype.closeAccordionPanels = function () {
+		var self = this;
+		self.$accordionPanel.slideUp(self._animateSpeed);
+		self.$accordionItem.removeClass(self.modifiers.active);
+	};
+
+	JsAccordion.prototype.scrollPosition = function (scrollElement) {
+		if (this.scrollToTop) {
+			$('html, body').animate({ scrollTop: scrollElement.offset().top }, this._animateSpeed);
+		}
+	};
+
+	window.JsAccordion = JsAccordion;
+}(jQuery));
+
+function faqBehaviorInit() {
+	if($('.faq-list').length){
+		new JsAccordion({
+			accordionContainer: '.faq-list',
+			accordionItem: '.faq-item',
+			animateSpeed: 300,
+			scrollToTop: true
+		});
+	}
+}
+/*accordion end*/
+
 /*parallax background page*/
 function parallaxBg() {
 	var $pageBackground = $('body'),
@@ -909,6 +1004,7 @@ $(document).ready(function(){
 	visualSlider();
 	addHoverClass();
 	textToggle();
+	faqBehaviorInit();
 	// textSlide();
 	// parallaxBg();
 

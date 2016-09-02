@@ -2140,7 +2140,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	letter-spacing: -4px;
 }
 .visual__img{
-	width: 53%;
+	width: 53.1%;
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
@@ -2164,7 +2164,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	top: 100%;
 	width: 494.6%;
 	height: 306.6%;
-	margin: -75.3% 0 0 -298.2%;
+	margin: -75.5% 0 0 -298.2%;
 	background: url(../img/temp-bg-section.png) no-repeat 50% 50%;
 	-webkit-background-size: contain;
 	background-size: contain;
@@ -2175,7 +2175,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
-	width: 46.98%;
+	width: 46.8%;
 	padding-left: 55px;
 	padding-right: 55px;
 	box-sizing: border-box;
@@ -3465,7 +3465,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .desktop .trucks__inner:hover .trucks__title,
 .mobile .trucks-item.hover .trucks__title,
 .no-js .trucks__title{
-	max-height: none;
+	max-height: 96px;
 }
 .desktop .trucks__inner:hover .trucks__text,
 .mobile .trucks-item.hover .trucks__text,
@@ -3479,7 +3479,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	float: left;
 	width: 100%;
 	text-align: center;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 24px;
 	padding: 10px 20px;
 	height: 44px;
