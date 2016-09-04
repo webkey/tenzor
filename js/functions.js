@@ -737,123 +737,58 @@ function addHoverClass() {
 
 /*text toggle*/
 function textToggle() {
-	// btn show (truck item)
-	if(DESKTOP) return false;
+	$(window).load(function () {
+		if(DESKTOP) {
+			$('.show-container-js a').on('mouseenter', function () {
+				$(this).closest('.show-container-js').addClass('hover');
+			}).on('mouseleave', function () {
+				$(this).closest('.show-container-js').removeClass('hover');
+			});
+		} else {
+			// btn show (truck item)
+			var $showBtn = $('.btn-show-js'),
+				$showContainer = $('.show-container-js');
 
-	var $showBtn = $('.btn-show-js'),
-		$showContainer = $('.show-container-js');
+			$showBtn.on('click', function (e) {
 
-	$showBtn.on('click', function (e) {
+				e.stopPropagation();
 
-		e.stopPropagation();
+				var $thisShowBtn = $(this),
+					$thisContainer = $thisShowBtn.closest('.show-container-js'),
+					hoverClass = 'hover';
 
-		var $thisShowBtn = $(this),
-			$thisContainer = $thisShowBtn.closest('.show-container-js'),
-			hoverClass = 'hover';
+				if ($thisContainer.hasClass(hoverClass)) {
+					$thisContainer.removeClass(hoverClass);
 
-		if ($thisContainer.hasClass(hoverClass)) {
-			$thisContainer.removeClass(hoverClass);
+					$thisShowBtn.text($thisShowBtn.data('text-show'));
 
-			$thisShowBtn.text($thisShowBtn.data('text-show'));
+					return false;
+				}
+				$showContainer.removeClass(hoverClass);
 
-			return false;
+				addTextShow();
+
+				$thisContainer.addClass(hoverClass);
+				$thisShowBtn.text($thisShowBtn.data('text-hide'));
+
+				e.preventDefault();
+			});
+
+			$(document).on('click', function () {
+				$showContainer.removeClass('hover');
+			});
+
+			function addTextShow() {
+				$showBtn.each(function () {
+					var $this = $(this);
+					$this.text($this.data('text-show'));
+				});
+			}
+			addTextShow();
 		}
-		$showContainer.removeClass(hoverClass);
-
-		addTextShow();
-
-		$thisContainer.addClass(hoverClass);
-		$thisShowBtn.text($thisShowBtn.data('text-hide'));
-
-		e.preventDefault();
-	});
-
-	$(document).on('click', function () {
-		$showContainer.removeClass('hover');
-	});
-
-	function addTextShow() {
-		$showBtn.each(function () {
-			var $this = $(this);
-			$this.text($this.data('text-show'));
-		});
-	}
-	addTextShow();
+	})
 }
 /*text toggle end*/
-
-/*text slide events*/
-function textSlide() {
-	var $textSlide = $('.text-slide-js');
-
-	if (!$textSlide.length) return false;
-
-	var textFull = 'full description',
-		textShort = 'short description',
-		$tplSlideFull = $('<div class="text-full text-full-js"><a href="#" class="text-slide-switcher-js"><span>' + textFull + '</span><i class="depict-arrow-down"></i></a></div>'),
-		$tplTextSlideInner = $('<div class="text-slide-inner-js" />'),
-		$tplShadow = $('<div class="text-slide-shadow-js" >'),
-		textSlideHeight = $textSlide.outerHeight(),
-		isTextFull = false,
-		minHeight = 120;
-
-	// hide elements
-	TweenMax.set($tplShadow, {autoAlpha: 0});
-	$tplSlideFull.hide(0);
-
-	// build structure
-	$textSlide
-		.wrapInner($tplTextSlideInner)
-		.after($tplSlideFull)
-		.append($tplShadow);
-
-	$( window ).on('load resize', function () {
-		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
-
-		$textSlide.css('max-height', 'none');
-
-		if (wrapInnerHeight <= minHeight) {
-			TweenMax.set($textSlide, {height: 'auto'});
-			TweenMax.set($tplShadow, {autoAlpha: 0});
-			$tplSlideFull.hide(0);
-		} else if ( !isTextFull ) {
-			TweenMax.set($textSlide, {height: minHeight});
-			TweenMax.set($tplShadow, {autoAlpha: 1});
-			$tplSlideFull.show(0);
-
-			textSlideHeight = $textSlide.outerHeight();
-		}
-	});
-
-	$textSlide.parent().on('click', '.text-slide-switcher-js', function (e) {
-		e.preventDefault();
-
-		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
-
-		if (wrapInnerHeight <= minHeight) return false;
-
-		var $this = $(this);
-
-		if ( isTextFull ) {
-			TweenMax.to($textSlide, 0.5, {height: textSlideHeight, ease: Power3.easeInOut});
-			TweenMax.to($tplShadow, 0.5, {autoAlpha: 1});
-
-			$this.removeClass('active').children('span').text(textFull);
-
-			isTextFull = false;
-		} else {
-			TweenMax.to($textSlide, 0.5, {height: wrapInnerHeight, ease: Power3.easeInOut, onComplete: function () {
-				TweenMax.set($textSlide, {height: 'auto'});
-
-				isTextFull = true;
-			}});
-
-			TweenMax.to($tplShadow, 0.5, {autoAlpha: 0});
-			$this.addClass('active').children('span').text(textShort);
-		}
-	});
-}
-/*text slide events end*/
 
 /*accordion*/
 (function ($) {
@@ -1012,6 +947,104 @@ function contactsAccordion() {
 }
 /*accordion end*/
 
+/*popup gallery*/
+function popupGallery() {
+	// build items array
+	var items = [
+		[
+			{
+				src: 'img/img-slider-02.jpg',
+				w: 564,
+				h: 419
+			},
+			{
+				src: 'img/img-slider-03.jpg',
+				w: 700,
+				h: 525
+			}
+		],[
+			{
+				src: 'img/img-slider-04.jpg',
+				w: 700,
+				h: 525
+			},
+			{
+				src: 'img/img-slider-05.jpg',
+				w: 700,
+				h: 525
+			},
+			{
+				src: 'img/img-slider-06.jpg',
+				w: 700,
+				h: 525
+			},
+			{
+				src: 'img/img-slider-07.jpg',
+				w: 700,
+				h: 525
+			}
+		],[
+			{
+				src: 'img/img-slider-08.jpg',
+				w: 700,
+				h: 525
+			},
+			{
+				src: 'img/img-slider-09.jpg',
+				w: 700,
+				h: 525
+			},
+			{
+				src: 'img/img-slider-10.jpg',
+				w: 700,
+				h: 525
+			}
+		]
+	];
+
+	var openPhotoSwipe = function(galleryIndex) {
+		var pswpElement = document.querySelectorAll('.pswp')[0];
+
+		if (items[galleryIndex] == undefined) return false;
+
+		var options = {
+			history: true,
+			focus: false,
+			// mainClass: 'pswp--minimal--dark',
+			closeOnScroll: false,
+			showHideOpacity: true,
+			bgOpacity: 0.75,
+			shareEl: false
+
+		};
+
+		var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items[galleryIndex], options);
+		gallery.init();
+	};
+
+	// count images
+	var $item = $('.trucks-item-js');
+	$item.addClass('no-images');
+
+	items.forEach(function(item, i, arr) {
+		$item
+			.eq(i)
+			.removeClass('no-images')
+			.find('.count-photos-js')
+			.text(item.length);
+	});
+
+	// openPhotoSwipe();
+	$('.gallery-open-js').on('click', function (e) {
+		e.preventDefault();
+
+		var galleryIndex = $(this).parent().index();
+		openPhotoSwipe(galleryIndex);
+	});
+}
+
+/*popup gallery end*/
+
 /*parallax background page*/
 function parallaxBg() {
 	var $pageBackground = $('body'),
@@ -1068,7 +1101,7 @@ $(document).ready(function(){
 	addHoverClass();
 	textToggle();
 	contactsAccordion();
-	// textSlide();
+	popupGallery();
 	// parallaxBg();
 
 	footerBottom();

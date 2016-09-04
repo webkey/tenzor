@@ -3398,15 +3398,13 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 }
-.desktop .trucks__inner:hover{
+.no-images .trucks__inner{
+	cursor: default;
+}
+.desktop .trucks-item.hover .trucks__inner{
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
-}
-.desktop .trucks__inner:active{
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-	-webkit-transition-duration: 0s;
-	transition-duration: 0s;
 }
 .trucks__figure{
 	position: relative;
@@ -3433,7 +3431,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	transition-duration: 0.6s;
 }
 .mobile .trucks__img,
-.desktop .trucks__inner:hover .trucks__img{
+.desktop .trucks-item.hover .trucks__img{
 	opacity: 1;
 }
 .trucks__img img{
@@ -3456,8 +3454,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	box-sizing: border-box;
 	position: relative;
 }
-.desktop .trucks__inner:hover .trucks__container,
-.mobile .trucks-item.hover .trucks__container,
+.trucks-item.hover .trucks__container,
 .no-js .trucks__container{
 	padding: 23px 20px 29px;
 }
@@ -3480,13 +3477,11 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	max-height: 76px;
 	color: #666;
 }
-.desktop .trucks__inner:hover .trucks__title,
-.mobile .trucks-item.hover .trucks__title,
+.trucks-item.hover .trucks__title,
 .no-js .trucks__title{
 	max-height: 96px;
 }
-.desktop .trucks__inner:hover .trucks__text,
-.mobile .trucks-item.hover .trucks__text,
+.trucks-item.hover .trucks__text,
 .no-js .trucks__text{
 	max-height: none;
 }
