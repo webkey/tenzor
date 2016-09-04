@@ -397,7 +397,7 @@ var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[
 
 var localObjects = [
 	[
-		{lat: 50.4838, lng: 23.5353}, //coordinates of marker
+		{lat: 54.7652, lng: 31.9457}, //coordinates of marker
 		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
 		pinMap, //image pin
 		5,
@@ -422,6 +422,76 @@ var localObjects = [
 ];
 
 function mapMainInit(){
+	if ($('#traffic-map').length) {
+		var neighborhoods = [
+			{lat: 54.7652, lng: 31.9457},
+			{lat: 53.8828, lng: 27.7188},
+			{lat: 51.48265070696638, lng: -0.14209550000004564},
+			{lat: 44.78898084979468, lng: 20.435190500000004},
+			{lat: 52.51859331561696, lng: 13.388684499999984},
+			{lat: 46.83827550269821, lng: 7.658038999999963},
+			{lat: 50.85515832404769, lng: 4.375505499999984},
+			{lat: 52.23316822285571, lng: 21.05546399999999},
+			{lat: 48.21522595150553, lng: 16.36892149999997},
+			{lat: 54.680808478682614, lng: 25.234085000000004},
+			{lat: 45.8299993013548, lng: 15.961499500000013},
+			{lat: 47.0003462905448, lng: 28.86084900000001},
+			{lat: 38.74407061995846, lng: -9.160076000000036},
+			{lat: 40.42307257746024, lng: -3.686147000000031},
+			{lat: 48.8591104093667, lng: 2.3337604999999537},
+			{lat: 50.07329247198044, lng: 14.468234499999994},
+			{lat: 56.97178335489475, lng: 24.127997999999998},
+			{lat: 41.8973973793116, lng: 12.49891149999997},
+			{lat: 42.697773059988016, lng: 23.367067000000002},
+			{lat: 59.33385040121799, lng: 17.98478849999999},
+			{lat: 60.20999990190396, lng: 25.016450000000006}
+		];
+
+		var markers = [];
+		var map;
+
+		map = new google.maps.Map(document.getElementById('traffic-map'), {
+			zoom: 4,
+			center: {lat: 51.6337, lng: 22.5991},
+			styles: styleMap,
+			scaleControl: false,
+			scrollwheel: false
+		});
+
+		function drop() {
+			clearMarkers();
+			for (var i = 0; i < neighborhoods.length; i++) {
+				addMarkerWithTimeout(neighborhoods[i], i * 200);
+			}
+		}
+
+		google.maps.event.addListenerOnce(map, 'idle', function(){
+			setTimeout(function () {
+				drop();
+			}, 1000);
+		});
+
+		function addMarkerWithTimeout(position, timeout) {
+			window.setTimeout(function() {
+				markers.push(new google.maps.Marker({
+					position: position,
+					map: map,
+					icon: pinMap,
+					animation: google.maps.Animation.DROP
+				}));
+			}, timeout);
+		}
+
+		function clearMarkers() {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
+			markers = [];
+		}
+	}
+}
+
+function mapMainInit2(){
 	if (!$('[id*="-map"]').length) {return;}
 
 	function mapCenter(index){
