@@ -1905,6 +1905,10 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	height: 14px;
 	background: #ca0503;
 	border-radius: 50%;
+	will-change: left;
+}
+.traffic-switcher__tumbler.active > span{
+	left: 18px;
 }
 .traffic-head h2{
 	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
@@ -1915,8 +1919,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	margin: 0;
 	padding: 0;
 }
-.traffic-tab{ display: none; }
-.traffic-tab.active{ display: block; }
+.traffic-content{ display: none; }
+.no-js .traffic-content{ display: block; }
 /*local map*/
 .map-container{
 	position: relative;
@@ -1938,7 +1942,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	height: 100%;
 	background: #f3f3f3;
 }
-.mobile .local-map:before,
+/*.mobile .local-map:before,
 .mobile .local-map:after{
 	content: '';
 	position: absolute;
@@ -1955,7 +1959,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .local-map:after{
 	right: 0;
-}
+}*/
 /*local map*/
 /*traffic end*/
 
@@ -2827,7 +2831,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .trans{
 	position: relative;
 }
-.trans h3{
+.trans-container h3{
 	font-family: 'proximanova-regular', Arial, Helvetica, sans-serif;
 	font-size: 24px;
 	line-height: 30px;

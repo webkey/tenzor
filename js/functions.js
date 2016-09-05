@@ -1,4 +1,6 @@
-/*resize only width*/
+/**!
+ * resize only width
+ * */
 var resizeByWidth = true;
 
 var prevWidth = -1;
@@ -12,7 +14,9 @@ $(window).resize(function () {
 });
 /*resize only width end*/
 
-/*device detected*/
+/**!
+ * device detected
+ * */
 var DESKTOP = device.desktop();
 //console.log('DESKTOP: ', DESKTOP);
 var MOBILE = device.mobile();
@@ -21,13 +25,17 @@ var TABLET = device.tablet();
 //console.log('MOBILE: ', MOBILE);
 /*device detected end*/
 
-/*placeholder */
+/**!
+ *  placeholder
+ *  */
 function placeholderInit(){
 	$('[placeholder]').placeholder();
 }
 /*placeholder end*/
 
-/*print*/
+/**!
+ * print
+ * */
 function printShow() {
 	$('.view-print').on('click', function (e) {
 		e.preventDefault();
@@ -36,7 +44,9 @@ function printShow() {
 }
 /*print end*/
 
-/*main navigation*/
+/**!
+ * main navigation
+ * */
 (function ($) {
 	// external js:
 	// 1) TweetMax VERSION: 1.19.0 (widgets.js);
@@ -267,7 +277,9 @@ function mainNavigationInit(){
 }
 /*main navigation end*/
 
-/*drop language*/
+/**!
+ * drop language
+ * */
 function languageEvents() {
 	$('.lang-current').on('click', function (e) {
 		e.preventDefault();
@@ -286,7 +298,9 @@ function languageEvents() {
 }
 /*drop language end*/
 
-/*sliders*/
+/**!
+ * sliders
+ * */
 function slidersInit() {
 	// adt slider
 	var $adtSlider = $('.adt-slider');
@@ -319,7 +333,9 @@ function slidersInit() {
 }
 /*sliders end*/
 
-/*fotorama init*/
+/**!
+ * fotorama init
+ * */
 function fotoramaInit() {
 	// product card gallery
 	var $photos = $('.photos-list').fotorama({
@@ -353,7 +369,9 @@ function fotoramaInit() {
 }
 /*fotorama init end*/
 
-/*equal height*/
+/**!
+ * equal height
+ * */
 function equalHeightInit() {
 	$(window).load(function () {
 		// acts list
@@ -389,14 +407,15 @@ function equalHeightInit() {
 }
 /*equal height end*/
 
-/*map init*/
+/**!
+ * map init
+ * */
 var pinMap = 'img/map-pin.png';
 var pinMapLarge = 'img/map-pin-lg.png';
 
 var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
 
-
-function trafficMainInit(){
+function trafficMapInit(){
 
 	if ($('#traffic-map').length) {
 		var center = {lat: 51.8636061, lng: 22.59570476},
@@ -404,28 +423,29 @@ function trafficMainInit(){
 			markers = [],
 			map,
 			neighborhoods = [
-			{lat: 54.7652, lng: 31.9457},
-			{lat: 53.90498896, lng: 27.56152507},
-			{lat: 51.48265070696638, lng: -0.14209550000004564},
-			{lat: 44.78898084979468, lng: 20.435190500000004},
-			{lat: 52.51859331561696, lng: 13.388684499999984},
-			{lat: 46.83827550269821, lng: 7.658038999999963},
-			{lat: 50.85515832404769, lng: 4.375505499999984},
-			{lat: 52.23316822285571, lng: 21.05546399999999},
-			{lat: 48.21522595150553, lng: 16.36892149999997},
-			{lat: 54.680808478682614, lng: 25.234085000000004},
-			{lat: 45.8299993013548, lng: 15.961499500000013},
-			{lat: 47.0003462905448, lng: 28.86084900000001},
-			{lat: 38.74407061995846, lng: -9.160076000000036},
-			{lat: 40.42307257746024, lng: -3.686147000000031},
-			{lat: 48.8591104093667, lng: 2.3337604999999537},
-			{lat: 50.07329247198044, lng: 14.468234499999994},
-			{lat: 56.97178335489475, lng: 24.127997999999998},
-			{lat: 41.8973973793116, lng: 12.49891149999997},
-			{lat: 42.697773059988016, lng: 23.367067000000002},
-			{lat: 59.33385040121799, lng: 17.98478849999999},
-			{lat: 60.20999990190396, lng: 25.016450000000006}
-		];
+				{lat: 54.7652, lng: 31.9457},
+				{lat: 51.1605227, lng: 71.4703558}, // Астана, Казахстан
+				{lat: 53.9045398, lng: 27.5615244}, // Минск, Беларусь
+				{lat: 52.5200066, lng: 13.404954}, // Берлин, Германия
+				{lat: 48.2081743, lng: 16.3738189}, // Вена, Австрия
+				// {lat: 48.1485965, lng: 17.1077477}, // Братислава, Словакия
+				{lat: 48.736277, lng: 19.1461917}, // Быстрица, Словакия
+				{lat: 47.497912, lng: 19.040235}, // Будапешт, Венгрия
+				{lat: 46.9479739, lng: 7.4474468}, // Берн, Швейцария
+				{lat: 50.8503396, lng: 4.3517103}, // Брюссель, Бельгия
+				{lat: 41.9027835, lng: 12.4963655}, // Рим, Италия
+				{lat: 52.2296756, lng: 21.0122287}, // Варшава, Польша
+				{lat: 40.4167754, lng: -3.7037902}, // Испания, Мадрид
+				{lat: 59.4369608, lng: 24.7535746}, // Таллин, Эстония
+				{lat: 52.3702157, lng: 4.8951679}, // Амстердам, Нидерланды
+				{lat: 55.6760968, lng: 12.5683371}, // Дания, Копенгаген
+				{lat: 46.0569465, lng: 14.5057515}, // Любляна, Словения
+				{lat: 49.61281536, lng: 6.13232958}, // Люксембург, Люксембург
+				{lat: 48.8565823, lng: 2.3522148}, // Париж, Франция
+				{lat: 50.0755381, lng: 14.4378005}, // Прага, Чехия
+				{lat: 60.1698557, lng: 24.938379}, // Хельсинки, Финляндия
+				{lat: 44.786568, lng: 20.4489216} // Сербия, Белград
+			];
 
 		map = new google.maps.Map(document.getElementById('traffic-map'), {
 			zoom: zoom,
@@ -639,8 +659,10 @@ function mapMainInit2(){
 }
 /*map init end*/
 
-/* multiselect init */
-/*add ui position add class*/
+/**!
+ *  multiselect init
+ * */
+/*! add ui position add class */
 function addPositionClass(position, feedback, obj){
 	removePositionClass(obj);
 	obj.css( position );
@@ -649,7 +671,7 @@ function addPositionClass(position, feedback, obj){
 		.addClass( feedback.horizontal );
 }
 
-/*add ui position remove class*/
+/*! add ui position remove class */
 function removePositionClass(obj){
 	obj.removeClass('top');
 	obj.removeClass('bottom');
@@ -740,7 +762,9 @@ function selectResize(){
 }
 /* multiselect init end */
 
-/*wide slider*/
+/**!
+ * wide slider
+ * */
 function wideSlider() {
 	//wide slider
 	var $wideSlider = $('.wide-slider__slides');
@@ -779,7 +803,9 @@ function wideSlider() {
 }
 /*wide slider end*/
 
-/*visual slider*/
+/**!
+ * visual slider
+ * */
 function visualSlider() {
 	//visual slider
 	var $visualSliders = $('.visual-slider__slides');
@@ -823,7 +849,9 @@ function visualSlider() {
 }
 /*visual slider end*/
 
-/*add hover class*/
+/**!
+ * add hover class
+ * */
 function addHoverClass() {
 	// hex
 	$('.hex-2').on('mouseenter', function () {
@@ -834,7 +862,9 @@ function addHoverClass() {
 }
 /*add hover class end*/
 
-/*text toggle*/
+/**!
+ * text toggle
+ * */
 function textToggle() {
 	$(window).load(function () {
 		if(DESKTOP) {
@@ -889,7 +919,9 @@ function textToggle() {
 }
 /*text toggle end*/
 
-/*accordion*/
+/**!
+ * accordion
+ * */
 (function ($) {
 	var JsAccordion = function (settings) {
 		var options = $.extend({
@@ -1046,7 +1078,154 @@ function contactsAccordion() {
 }
 /*accordion end*/
 
-/*popup gallery*/
+/**!
+ * traffic switcher
+ * */
+function trafficSwitcher() {
+	// external js:
+	// 1) TweetMax VERSION: 1.19.0 (widgets.js);
+	// 2) resizeByWidth (resize only width);
+
+	var $main = $('.traffic-js');
+
+	if($main.length){
+		var $anchor = $('.traffic-anchor-js'),
+			$container = $('.traffic-container-js'),
+			$content = $('.traffic-content-js'),
+			$thumb = $('.traffic-tumbler-js'),
+			activeClass = 'active',
+			animationSpeed = 0.3;
+
+		$.each($main, function () {
+			var $this = $(this),
+				$thisAnchor = $this.find($anchor),
+				$thisContainer = $this.find($container),
+				$thisContent = $this.find($content),
+				$thisThumb = $this.find($thumb),
+				dataPrevThumb = $thisThumb.prev().find($anchor).data('for'),
+				dataNextThumb = $thisThumb.next().find($anchor).data('for'),
+				initialDataAtr = 'traffic-map',
+				activeDataAtr = false;
+
+			// prepare traffic content
+			function prepareTrafficContent() {
+				$thisContainer.css({
+					'position': 'relative',
+					'overflow': 'hidden'
+				});
+
+				$thisContent.css({
+					'display': 'block',
+					'position': 'absolute',
+					'left': 0,
+					'right': 0,
+					'width': '100%',
+					'z-index': -1
+				});
+
+				toggleContentView();
+			}
+
+			prepareTrafficContent();
+
+			// switch traffic content
+			$thisAnchor.on('click', function (e) {
+				e.preventDefault();
+
+				var $cur = $(this),
+					dataFor = $cur.data('for');
+
+				if (activeDataAtr === dataFor) return false;
+
+				initialDataAtr = dataFor;
+
+				toggleContentView();
+			});
+
+			// thumb traffic content
+			$thumb.on('click', function (e) {
+				e.preventDefault();
+
+				activeDataAtr = false;
+
+				initialDataAtr = (initialDataAtr === dataPrevThumb) ? dataNextThumb : dataPrevThumb;
+
+				toggleContentView();
+			});
+
+			// toggle content view
+			function toggleContentView() {
+				toggleContent();
+				changeHeightContainer();
+				toggleActiveClass();
+			}
+
+			// show active content and hide other
+			function toggleContent() {
+				var $initialContent = $thisContent.filter('[data-id="' + initialDataAtr + '"]');
+
+				TweenMax.set($thisContent, {
+					autoAlpha: 0,
+					'z-index': -1
+				});
+
+				TweenMax.to($initialContent, animationSpeed, {
+					autoAlpha: 1,
+					onComplete: function () {
+						$initialContent.css('z-index', 2);
+					}
+				});
+			}
+
+			// change container's height
+			function changeHeightContainer() {
+				var $initialContent = $thisContent.filter('[data-id="' + initialDataAtr + '"]');
+
+				TweenMax.to($thisContainer, animationSpeed, {
+					'height': $initialContent.outerHeight()
+				});
+			}
+
+			// change container's height on resize window width
+			$(window).on('resizeByWidth', function () {
+				changeHeightContainer();
+			});
+
+			// toggle class active
+			function toggleActiveClass(){
+				$thisAnchor.removeClass(activeClass);
+				$thisContent.removeClass(activeClass);
+
+				toggleStateThumb();
+
+				if (initialDataAtr !== activeDataAtr) {
+
+					activeDataAtr = initialDataAtr;
+
+					$thisAnchor.filter('[data-for="' + initialDataAtr + '"]').addClass(activeClass);
+					$thisContent.filter('[data-id="' + initialDataAtr + '"]').addClass(activeClass);
+
+					return false;
+				}
+
+				activeDataAtr = false;
+			}
+
+			// toggle thumb's state
+			function toggleStateThumb() {
+				$thisThumb.addClass(activeClass);
+				if (initialDataAtr == dataPrevThumb) {
+					$thisThumb.removeClass(activeClass)
+				}
+			}
+		});
+	}
+}
+/*traffic switcher end*/
+
+/**!
+ * popup gallery
+ * */
 function popupGallery() {
 	// build items array
 	var items = [
@@ -1141,10 +1320,11 @@ function popupGallery() {
 		openPhotoSwipe(galleryIndex);
 	});
 }
-
 /*popup gallery end*/
 
-/*parallax background page*/
+/**!
+ * parallax background page
+ * */
 function parallaxBg() {
 	var $pageBackground = $('body'),
 		startBgPositionY = +$pageBackground.css("background-position-y").replace(/[^\-\d]/g, "");
@@ -1163,7 +1343,9 @@ function parallaxBg() {
 }
 /*parallax background page end*/
 
-/*footer at bottom*/
+/**!
+ * footer at bottom
+ * */
 function footerBottom(){
 	var $footer = $('.footer');
 	if($footer.length){
@@ -1181,8 +1363,8 @@ function footerBottom(){
 	}
 }
 /*footer at bottom end*/
-/** ready/load/resize document **/
 
+/*** ready document ***/
 $(document).ready(function(){
 	placeholderInit();
 	printShow();
@@ -1191,7 +1373,7 @@ $(document).ready(function(){
 	slidersInit();
 	fotoramaInit();
 	equalHeightInit();
-	trafficMainInit();
+	trafficMapInit();
 	if(DESKTOP){
 		customSelect($('select.cselect'));
 	}
@@ -1200,6 +1382,7 @@ $(document).ready(function(){
 	addHoverClass();
 	textToggle();
 	contactsAccordion();
+	trafficSwitcher();
 	popupGallery();
 	// parallaxBg();
 

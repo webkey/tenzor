@@ -161,35 +161,94 @@
 					<!--brief end-->
 
 					<!--traffic-->
-					<section class="traffic">
+					<section class="traffic traffic-js">
 						<div class="max-wrap-md">
 							<div class="traffic-head">
 								<h2>География перевозок</h2>
-								<div class="traffic-switcher">
-									<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js active"><span>карта</span></a></div>
-									<a href="#" class="traffic-switcher__tumbler traffic-switcher__tumbler-js active"><span></span></a>
-									<div class="traffic-switcher__hand"><a href="#" class="traffic-switcher__hand-js"><span>список стран</span></a></div>
+								<div class="traffic-switcher traffic-switcher-js">
+									<div class="traffic-switcher__hand"><a href="#" class="traffic-anchor-js" data-for="traffic-map"><span>карта</span></a></div>
+									<a href="#" class="traffic-switcher__tumbler traffic-tumbler-js"><span></span></a>
+									<div class="traffic-switcher__hand"><a href="#" class="traffic-anchor-js" data-for="traffic-countries"><span>список стран</span></a></div>
 								</div>
 							</div>
 						</div>
-						<div class="traffic-tab active">
-							<div class="max-wrap-lg">
-								<div class="map-container">
-									<div id="traffic-map" class="local-map local-map-js"></div>
+						<div class="traffic-container traffic-container-js">
+							<div class="traffic-content traffic-content-js" data-id="traffic-map">
+								<div class="max-wrap-lg">
+									<div class="map-container">
+										<div id="traffic-map" class="local-map local-map-js"></div>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="traffic-tab">
-							<div class="max-wrap-md">
-								<ul class="traffic-list">
-									<li>список стран</li>
-									<li>список стран</li>
-									<li>список стран</li>
-								</ul>
+							<div class="traffic-content traffic-content-js" data-id="traffic-countries">
+								<div class="max-wrap-md">
+									<div class="trans-container">
+										<h3>Импорт</h3>
+										<div class="trans-box">
+											<div class="trans-title">Откуда</div>
+											<div class="trans-content">
+												<ul class="trans-list">
+													<li><i class="flag flag-de"></i><span>Германия</span></li>
+													<li><i class="flag flag-at"></i><span>Австрия</span></li>
+													<li><i class="flag flag-sk"></i><span>Словакия</span></li>
+													<li><i class="flag flag-hu"></i><span>Венгрия</span></li>
+													<li><i class="flag flag-ch"></i><span>Швейцария</span></li>
+													<li><i class="flag flag-be"></i><span>Бельгия</span></li>
+													<li><i class="flag flag-it"></i><span>Италия</span></li>
+													<li><i class="flag flag-pl"></i><span>Польша</span></li>
+													<li><i class="flag flag-es"></i><span>Испания</span></li>
+													<li><i class="flag flag-ee"></i><span>Эстония</span></li>
+													<li><i class="flag flag-nl"></i><span>Голландия</span></li>
+													<li><i class="flag flag-dk"></i><span>Дания</span></li>
+													<li><i class="flag flag-si"></i><span>Словения</span></li>
+													<li><i class="flag flag-lu"></i><span>Люксембург</span></li>
+													<li><i class="flag flag-fr"></i><span>Франция</span></li>
+													<li><i class="flag flag-cz"></i><span>Чехия</span></li>
+													<li><i class="flag flag-fi"></i><span>Финляндия</span></li>
+													<li><i class="flag flag-rs"></i><span>Сербия</span></li>
+												</ul>
+											</div>
+										</div>
+										<div class="trans-box">
+											<div class="trans-title">Куда</div>
+											<div class="trans-content">
+												<ul class="trans-list">
+													<li><i class="flag flag-by"></i><span>Республика Беларусь</span></li>
+													<li><i class="flag flag-ru"></i><span>Российская Федерация</span></li>
+													<li><i class="flag flag-kz"></i><span>Казахстан</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="trans-container">
+										<h3>Экспорт</h3>
+										<div class="trans-box">
+											<div class="trans-title">Откуда</div>
+											<div class="trans-content">
+												<ul class="trans-list">
+													<li><i class="flag flag-by"></i><span>Республика Беларусь</span></li>
+													<li><i class="flag flag-ru"></i><span>Российская Федерация</span></li>
+												</ul>
+											</div>
+										</div>
+										<div class="trans-box">
+											<div class="trans-title">Куда</div>
+											<div class="trans-content">
+												<ul class="trans-list">
+													<li><i class="flag flag-be"></i><span>Бельгия</span></li>
+													<li><i class="flag flag-de"></i><span>Германия</span></li>
+													<li><i class="flag flag-nl"></i><span>Голландия</span></li>
+													<li><i class="flag flag-fr"></i><span>Франция</span></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</section>
 					<!--traffic end-->
+
 					<!--adt-->
 					<section class="adt-section max-wrap-md">
 						<div class="adt">
@@ -225,6 +284,7 @@
 						</div>
 					</section>
 					<!--adt end-->
+
 					<!--connect-->
 					<section class="connect-section max-wrap-md">
 						<h2>Контакты</h2>
