@@ -395,6 +395,105 @@ var pinMapLarge = 'img/map-pin-lg.png';
 
 var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
 
+
+function trafficMainInit(){
+
+	if ($('#traffic-map').length) {
+		var center = {lat: 51.8636061, lng: 22.59570476},
+			zoom = 4,
+			markers = [],
+			map,
+			neighborhoods = [
+			{lat: 54.7652, lng: 31.9457},
+			{lat: 53.90498896, lng: 27.56152507},
+			{lat: 51.48265070696638, lng: -0.14209550000004564},
+			{lat: 44.78898084979468, lng: 20.435190500000004},
+			{lat: 52.51859331561696, lng: 13.388684499999984},
+			{lat: 46.83827550269821, lng: 7.658038999999963},
+			{lat: 50.85515832404769, lng: 4.375505499999984},
+			{lat: 52.23316822285571, lng: 21.05546399999999},
+			{lat: 48.21522595150553, lng: 16.36892149999997},
+			{lat: 54.680808478682614, lng: 25.234085000000004},
+			{lat: 45.8299993013548, lng: 15.961499500000013},
+			{lat: 47.0003462905448, lng: 28.86084900000001},
+			{lat: 38.74407061995846, lng: -9.160076000000036},
+			{lat: 40.42307257746024, lng: -3.686147000000031},
+			{lat: 48.8591104093667, lng: 2.3337604999999537},
+			{lat: 50.07329247198044, lng: 14.468234499999994},
+			{lat: 56.97178335489475, lng: 24.127997999999998},
+			{lat: 41.8973973793116, lng: 12.49891149999997},
+			{lat: 42.697773059988016, lng: 23.367067000000002},
+			{lat: 59.33385040121799, lng: 17.98478849999999},
+			{lat: 60.20999990190396, lng: 25.016450000000006}
+		];
+
+		map = new google.maps.Map(document.getElementById('traffic-map'), {
+			zoom: zoom,
+			center: center,
+			styles: styleMap,
+			scaleControl: false,
+			scrollwheel: false
+		});
+
+		function drop() {
+			clearMarkers();
+			for (var i = 0; i < neighborhoods.length; i++) {
+				addMarkerWithTimeout(neighborhoods[i], i * 150);
+			}
+		}
+
+		google.maps.event.addListenerOnce(map, 'idle', function(){
+			setTimeout(function () {
+				drop();
+			}, 1000);
+		});
+
+		var icon = {
+			path: "M572.8,182.1c-15.2-35.3-36.6-67.1-63.6-94.7c-27.7-27.7-59.5-49.1-94.7-63.6C377.8,8.5,338.4,0.2,298.3,0.2 s-79.5,7.6-116.2,23.5C146.9,39,115.1,60.4,87.4,87.4c-27.7,27.7-49.1,59.5-63.6,94.7C8.6,218.7,0.3,258.1,0.3,298.2 C0.3,366,48,474.5,142.1,621.8c69.1,107.9,139,197.7,139.7,199.1l15.9,20.7l15.9-20.7c0.7-0.7,70.5-91.3,139.7-199.1 c94-147.3,141.7-255.8,141.7-323.6C595.6,257.4,588,218.7,572.8,182.1z M298.3,399.9c-63.6,0-115.5-51.9-115.5-115.5 s51.9-115.5,115.5-115.5s115.5,51.9,115.5,115.5C413.8,348.7,361.9,399.9,298.3,399.9z",
+			fillColor: '#ca0503',
+			fillOpacity: 1,
+			anchor: new google.maps.Point(300,830),
+			strokeWeight: 0,
+			scale: 0.05
+		};
+
+
+		function addMarkerWithTimeout(position, timeout) {
+			window.setTimeout(function() {
+				markers.push(new google.maps.Marker({
+					position: position,
+					map: map,
+					icon: icon,
+					animation: google.maps.Animation.DROP
+				}));
+			}, timeout);
+		}
+
+		function clearMarkers() {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
+			markers = [];
+		}
+
+		/*move to location*/
+		function trafficMapMoveToCenter(){
+			var local = new google.maps.LatLng(center);
+			map.panTo(local);
+			map.setZoom(zoom);
+		}
+
+		/*aligned after resize*/
+		var resizeTimer;
+		$(window).on('resize', function () {
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+				trafficMapMoveToCenter();
+			}, 500);
+		});
+	}
+}
+
 var localObjects = [
 	[
 		{lat: 54.7652, lng: 31.9457}, //coordinates of marker
@@ -420,76 +519,6 @@ var localObjects = [
 		}
 	]
 ];
-
-function mapMainInit(){
-	if ($('#traffic-map').length) {
-		var neighborhoods = [
-			{lat: 54.7652, lng: 31.9457},
-			{lat: 53.8828, lng: 27.7188},
-			{lat: 51.48265070696638, lng: -0.14209550000004564},
-			{lat: 44.78898084979468, lng: 20.435190500000004},
-			{lat: 52.51859331561696, lng: 13.388684499999984},
-			{lat: 46.83827550269821, lng: 7.658038999999963},
-			{lat: 50.85515832404769, lng: 4.375505499999984},
-			{lat: 52.23316822285571, lng: 21.05546399999999},
-			{lat: 48.21522595150553, lng: 16.36892149999997},
-			{lat: 54.680808478682614, lng: 25.234085000000004},
-			{lat: 45.8299993013548, lng: 15.961499500000013},
-			{lat: 47.0003462905448, lng: 28.86084900000001},
-			{lat: 38.74407061995846, lng: -9.160076000000036},
-			{lat: 40.42307257746024, lng: -3.686147000000031},
-			{lat: 48.8591104093667, lng: 2.3337604999999537},
-			{lat: 50.07329247198044, lng: 14.468234499999994},
-			{lat: 56.97178335489475, lng: 24.127997999999998},
-			{lat: 41.8973973793116, lng: 12.49891149999997},
-			{lat: 42.697773059988016, lng: 23.367067000000002},
-			{lat: 59.33385040121799, lng: 17.98478849999999},
-			{lat: 60.20999990190396, lng: 25.016450000000006}
-		];
-
-		var markers = [];
-		var map;
-
-		map = new google.maps.Map(document.getElementById('traffic-map'), {
-			zoom: 4,
-			center: {lat: 51.6337, lng: 22.5991},
-			styles: styleMap,
-			scaleControl: false,
-			scrollwheel: false
-		});
-
-		function drop() {
-			clearMarkers();
-			for (var i = 0; i < neighborhoods.length; i++) {
-				addMarkerWithTimeout(neighborhoods[i], i * 200);
-			}
-		}
-
-		google.maps.event.addListenerOnce(map, 'idle', function(){
-			setTimeout(function () {
-				drop();
-			}, 1000);
-		});
-
-		function addMarkerWithTimeout(position, timeout) {
-			window.setTimeout(function() {
-				markers.push(new google.maps.Marker({
-					position: position,
-					map: map,
-					icon: pinMap,
-					animation: google.maps.Animation.DROP
-				}));
-			}, timeout);
-		}
-
-		function clearMarkers() {
-			for (var i = 0; i < markers.length; i++) {
-				markers[i].setMap(null);
-			}
-			markers = [];
-		}
-	}
-}
 
 function mapMainInit2(){
 	if (!$('[id*="-map"]').length) {return;}
@@ -1162,7 +1191,7 @@ $(document).ready(function(){
 	slidersInit();
 	fotoramaInit();
 	equalHeightInit();
-	mapMainInit();
+	trafficMainInit();
 	if(DESKTOP){
 		customSelect($('select.cselect'));
 	}
