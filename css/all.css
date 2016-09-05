@@ -3411,9 +3411,12 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	transition-duration: 0.2s;
 }
 .trucks__figure{
+	display: block;
 	position: relative;
 	overflow: hidden;
 	background: #282828;
+	text-decoration: none;
+	color: #000;
 }
 .trucks__figure:before{
 	content: '';
@@ -3514,9 +3517,16 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	}
 }
 @media only screen and (max-width: 597px){
+	.trucks-list{
+		text-align: center;
+	}
 	.trucks-item{
-		display: block;
+		text-align: left;
 		width: auto;
+	}
+	.trucks-item.hover,
+	.no-js .trucks-item {
+		height: auto !important;
 	}
 }
 /*trucks end*/

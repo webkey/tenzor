@@ -868,7 +868,7 @@ function addHoverClass() {
 function textToggle() {
 	$(window).load(function () {
 		if(DESKTOP) {
-			$('.show-container-js a').on('mouseenter', function () {
+			$('.show-container-js').children().on('mouseenter', function () {
 				$(this).closest('.show-container-js').addClass('hover');
 			}).on('mouseleave', function () {
 				$(this).closest('.show-container-js').removeClass('hover');
@@ -883,7 +883,7 @@ function textToggle() {
 				e.stopPropagation();
 
 				var $thisShowBtn = $(this),
-					$thisContainer = $thisShowBtn.closest('.show-container-js'),
+					$thisContainer = $thisShowBtn.closest($showContainer),
 					hoverClass = 'hover';
 
 				if ($thisContainer.hasClass(hoverClass)) {
@@ -899,6 +899,8 @@ function textToggle() {
 
 				$thisContainer.addClass(hoverClass);
 				$thisShowBtn.text($thisShowBtn.data('text-hide'));
+
+				$('html, body').animate({ scrollTop: $thisContainer.offset().top - 15 }, 333);
 
 				e.preventDefault();
 			});
@@ -1123,7 +1125,7 @@ function trafficSwitcher() {
 					'z-index': -1
 				});
 
-				toggleContentView();
+				switchContent();
 			}
 
 			prepareTrafficContent();
@@ -1139,7 +1141,7 @@ function trafficSwitcher() {
 
 				initialDataAtr = dataFor;
 
-				toggleContentView();
+				switchContent();
 			});
 
 			// thumb traffic content
@@ -1150,11 +1152,11 @@ function trafficSwitcher() {
 
 				initialDataAtr = (initialDataAtr === dataPrevThumb) ? dataNextThumb : dataPrevThumb;
 
-				toggleContentView();
+				switchContent();
 			});
 
-			// toggle content view
-			function toggleContentView() {
+			// switch content
+			function switchContent() {
 				toggleContent();
 				changeHeightContainer();
 				toggleActiveClass();
@@ -1214,6 +1216,7 @@ function trafficSwitcher() {
 			// toggle thumb's state
 			function toggleStateThumb() {
 				$thisThumb.addClass(activeClass);
+
 				if (initialDataAtr == dataPrevThumb) {
 					$thisThumb.removeClass(activeClass)
 				}
@@ -1364,7 +1367,9 @@ function footerBottom(){
 }
 /*footer at bottom end*/
 
-/*** ready document ***/
+/***
+ * ready document
+ * ***/
 $(document).ready(function(){
 	placeholderInit();
 	printShow();
