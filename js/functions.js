@@ -1344,7 +1344,7 @@ function popupInitial(){
 		type: 'iframe',
 		mainClass: 'mfp-fade',
 		removalDelay: 160,
-		preloader: true,
+		preloader: false,
 		tClose: 'Закрыть (Esc)',
 		tLoading: 'Загрузка...',
 
@@ -1352,6 +1352,26 @@ function popupInitial(){
 		callbacks:{
 			beforeClose: function() {
 				$('.mfp-opened').removeClass('mfp-opened');
+			}
+		}
+	});
+
+	$('.popup-with-form').magnificPopup({
+		type: 'inline',
+		preloader: false,
+		focus: '#name',
+		mainClass: 'mfp-fade',
+		fixedContentPos: true,
+
+		// When elemened is focused, some mobile browsers in some cases zoom in
+		// It looks not nice, so we disable it:
+		callbacks: {
+			beforeOpen: function() {
+				if($(window).width() < 700) {
+					this.st.focus = false;
+				} else {
+					this.st.focus = '#name';
+				}
 			}
 		}
 	});

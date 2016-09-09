@@ -184,7 +184,7 @@
 								</div>
 							</div>
 							<div class="contacts-footer">
-								<a href="#" class="btn-default">Обратная связь</a>
+								<a href="#test-form" class="btn-default popup-with-form">Обратная связь</a>
 							</div>
 						</div>
 					</section>
@@ -224,6 +224,49 @@
 	<!--footer holder end-->
 </footer>
 <!--footer end-->
+
+<!-- form itself -->
+<div id="test-form" class="mfp-hide inline-popup callback-form-popup">
+	<div class="callback-form">
+		<div class="max-wrap-md">
+			<form action="#" method="get">
+				<h3 class="align-center">Форма обратной связи</h3>
+				<div class="form-row">
+					<div class="input-wrap">
+						<div class="label-holder">
+							<label for="callback-form-name">Имя<span class="form-mark">*</span></label>
+						</div>
+						<input type="text" id="callback-form-name" />
+					</div>
+					<div class="input-wrap">
+						<div class="label-holder">
+							<label for="callback-form-company">Организация<span class="form-mark">*</span></label>
+						</div>
+						<input type="text" id="callback-form-company" />
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<div class="label-holder">
+							<label for="callback-form-phone">Контактный телефон<span class="form-mark">*</span></label>
+						</div>
+						<input type="text" id="callback-form-phone" />
+					</div>
+				</div>
+				<div class="input-wrap">
+					<div class="label-holder">
+						<label for="callback-form-message">Комментарий</label>
+					</div>
+					<textarea id="callback-form-message"></textarea>
+				</div>
+				<div class="form-note align-center">* Поля обязательные для заполнения</div>
+				<div class="form-buttons align-center">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <!--JQuery library-->
 <!--jQuery with fallback to the 1.* for old IE-->
