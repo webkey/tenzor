@@ -410,13 +410,16 @@ function equalHeightInit() {
 /**!
  * map init
  * */
-var pinMap = 'img/map-pin.png';
-var pinMapLarge = 'img/map-pin-lg.png';
-
 var styleMap = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
 
-function trafficMapInit(){
+var pinMap = {
+	path: "M572.8,182.1c-15.2-35.3-36.6-67.1-63.6-94.7c-27.7-27.7-59.5-49.1-94.7-63.6C377.8,8.5,338.4,0.2,298.3,0.2 s-79.5,7.6-116.2,23.5C146.9,39,115.1,60.4,87.4,87.4c-27.7,27.7-49.1,59.5-63.6,94.7C8.6,218.7,0.3,258.1,0.3,298.2 C0.3,366,48,474.5,142.1,621.8c69.1,107.9,139,197.7,139.7,199.1l15.9,20.7l15.9-20.7c0.7-0.7,70.5-91.3,139.7-199.1 c94-147.3,141.7-255.8,141.7-323.6C595.6,257.4,588,218.7,572.8,182.1z M298.3,399.9c-63.6,0-115.5-51.9-115.5-115.5 s51.9-115.5,115.5-115.5s115.5,51.9,115.5,115.5C413.8,348.7,361.9,399.9,298.3,399.9z",
+	fillColor: '#ca0503',
+	fillOpacity: 1,
+	strokeWeight: 0,
+};
 
+function trafficMapInit(){
 	if ($('#traffic-map').length) {
 		var center = {lat: 51.8636061, lng: 22.59570476},
 			zoom = 4,
@@ -468,22 +471,15 @@ function trafficMapInit(){
 			}, 1000);
 		});
 
-		var icon = {
-			path: "M572.8,182.1c-15.2-35.3-36.6-67.1-63.6-94.7c-27.7-27.7-59.5-49.1-94.7-63.6C377.8,8.5,338.4,0.2,298.3,0.2 s-79.5,7.6-116.2,23.5C146.9,39,115.1,60.4,87.4,87.4c-27.7,27.7-49.1,59.5-63.6,94.7C8.6,218.7,0.3,258.1,0.3,298.2 C0.3,366,48,474.5,142.1,621.8c69.1,107.9,139,197.7,139.7,199.1l15.9,20.7l15.9-20.7c0.7-0.7,70.5-91.3,139.7-199.1 c94-147.3,141.7-255.8,141.7-323.6C595.6,257.4,588,218.7,572.8,182.1z M298.3,399.9c-63.6,0-115.5-51.9-115.5-115.5 s51.9-115.5,115.5-115.5s115.5,51.9,115.5,115.5C413.8,348.7,361.9,399.9,298.3,399.9z",
-			fillColor: '#ca0503',
-			fillOpacity: 1,
-			anchor: new google.maps.Point(300,830),
-			strokeWeight: 0,
-			scale: 0.05
-		};
-
+		pinMap['anchor'] = new google.maps.Point(300,830);
+		pinMap['scale'] = 0.05;
 
 		function addMarkerWithTimeout(position, timeout) {
 			window.setTimeout(function() {
 				markers.push(new google.maps.Marker({
 					position: position,
 					map: map,
-					icon: icon,
+					icon: pinMap,
 					animation: google.maps.Animation.DROP
 				}));
 			}, timeout);
@@ -516,32 +512,43 @@ function trafficMapInit(){
 
 var localObjects = [
 	[
-		{lat: 54.7652, lng: 31.9457}, //coordinates of marker
-		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
-		pinMap, //image pin
-		5,
+		{lat: 54.768897, lng: 32.025045}, //coordinates of marker
+		{latBias: 0.7, lngBias: -4}, //bias coordinates for center map
+		pinMap,
+		6,
 		{
-			title: 'Название1',
-			address: '<b>Адрес:</b> <div>214013, г. Смоленск, <br> ул. Кирова, д. 22Б</div>',
+			title: 'Головной офис',
+			address: '<b>Адрес:</b> <div>214013, г. Смоленск,<br> ул. Кирова, д. 22Б</div>',
 			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
 			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
 		}
 	],[
-		{lat: 50.4838, lng: 23.5353}, //coordinates of marker
-		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
-		pinMapLarge, //image pin
-		5,
+		{lat: 55.6058121, lng: 38.1144196}, //coordinates of marker
+		{latBias: 0, lngBias: 0}, //bias coordinates for center map
+		pinMap,
+		6,
 		{
-			title: 'Название2',
-			address: '<b>Адрес:</b> <div>214013, г. Смоленск, <br> ул. Кирова, д. 22Б</div>',
+			title: 'Офис в Москве',
+			address: '<b>Адрес:</b> <div>140180, Московская область,<br> г. Жуковский, ул. Спасателей, д. 2А</div>',
+			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
+			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
+		}
+	],[
+		{lat: 53.8645903, lng: 27.6957017}, //coordinates of marker
+		{latBias: 0, lngBias: 0}, //bias coordinates for center map
+		pinMap,
+		6,
+		{
+			title: 'Офис в Минске',
+			address: '<b>Адрес:</b> <div>223060, Минский район, <br> д. Большое Стиклево, <br> ул. Фабричная, д. 16А</div>',
 			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
 			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
 		}
 	]
 ];
 
-function mapMainInit2(){
-	if (!$('[id*="-map"]').length) {return;}
+function contactsMap(){
+	if (!$('#contacts-map').length) return false;
 
 	function mapCenter(index){
 		var localObject = localObjects[index];
@@ -552,59 +559,35 @@ function mapMainInit2(){
 		};
 	}
 
-	var mapOptions = {};
-
 	var markers = [],
 		elementById = [
-			document.getElementById('traffic-map'),
 			document.getElementById('contacts-map')
 		];
 
-	if($(elementById[0]).length){
-		mapOptions = {
-			zoom: localObjects[0][3],
-			center: mapCenter(0),
-			styles: styleMap,
-			mapTypeControl: false,
-			scaleControl: false,
-			scrollwheel: false
-		};
+	pinMap['anchor'] = new google.maps.Point(300,830);
+	pinMap['scale'] = 0.07;
 
-		var map0 = new google.maps.Map(elementById[0], mapOptions);
-		addMarker(0,map0);
+	var mapOptions = {
+		zoom: localObjects[0][3],
+		center: mapCenter(0),
+		styles: styleMap,
+		mapTypeControl: false,
+		scaleControl: false,
+		scrollwheel: false
+	};
 
-		/*aligned after resize*/
-		var resizeTimer0;
-		$(window).on('resize', function () {
-			clearTimeout(resizeTimer0);
-			resizeTimer0 = setTimeout(function () {
-				moveToLocation(0,map0);
-			}, 500);
-		});
-	}
+	var map0 = new google.maps.Map(elementById[0], mapOptions);
 
-	if($(elementById[1]).length){
-		mapOptions = {
-			zoom: localObjects[1][3],
-			center: mapCenter(1),
-			styles: styleMap,
-			mapTypeControl: false,
-			scaleControl: false,
-			scrollwheel: false
-		};
+	addMarker(0, map0);
 
-		var map1 = new google.maps.Map(elementById[1], mapOptions);
-		addMarker(1,map1);
-
-		/*aligned after resize*/
-		var resizeTimer1;
-		$(window).on('resize', function () {
-			clearTimeout(resizeTimer1);
-			resizeTimer1 = setTimeout(function () {
-				moveToLocation(1,map1);
-			}, 500);
-		});
-	}
+	/*aligned after resize*/
+	var resizeTimer0;
+	$(window).on('resize', function () {
+		clearTimeout(resizeTimer0);
+		resizeTimer0 = setTimeout(function () {
+			moveToLocation(0, map0);
+		}, 500);
+	});
 
 	/*move to location*/
 	function moveToLocation(index, map){
@@ -614,8 +597,27 @@ function mapMainInit2(){
 		map.setZoom(object[3]);
 	}
 
-	var infoWindow = new google.maps.InfoWindow({
-		maxWidth: 220
+	// var infoWindow = new google.maps.InfoWindow({
+	// 	maxWidth: 220
+	// });
+
+	var mapMarkerIndex, currentMapMarkerIndex = 0;
+
+	$('.contacts__title').on('click', function(e) {
+		e.preventDefault();
+
+		var parent = $(this).closest('.contacts');
+
+		mapMarkerIndex = parent.index();
+
+		if (mapMarkerIndex === currentMapMarkerIndex) return false;
+
+		var index = parent.data('location');
+		deleteMarkers();
+		moveToLocation( index, map0 );
+		addMarker(index, map0);
+
+		currentMapMarkerIndex = mapMarkerIndex;
 	});
 
 	function addMarker(index,map) {
@@ -623,38 +625,49 @@ function mapMainInit2(){
 
 		var marker = new google.maps.Marker({
 			position: object[0],
-			//animation: google.maps.Animation.DROP,
 			map: map,
 			icon: object[2],
-			title: object[4].title
+			title: object[4].title,
+			animation: google.maps.Animation.DROP
 		});
 
 		markers.push(marker);
 
-		function onMarkerClick() {
-			var marker = this;
+		// function onMarkerClick() {
+		// 	var marker = this;
+		//
+		// 	infoWindow.setContent(
+		// 		'<div class="map-popup">' +
+		// 		'<h4>'+object[4].title+'</h4>' +
+		// 		'<div class="map-popup__list">' +
+		// 		'<div class="map-popup__row">'+object[4].address+'</div>' +
+		// 		'<div class="map-popup__row">'+object[4].phone+'</div>' +
+		// 		'<div class="map-popup__row">'+object[4].works+'</div>' +
+		// 		'</div>' +
+		// 		'</div>'
+		// 	);
+		//
+		// 	infoWindow.close();
+		//
+		// 	infoWindow.open(map, marker);
+		// }
 
-			infoWindow.setContent(
-				'<div class="map-popup">' +
-				'<h4>'+object[4].title+'</h4>' +
-				'<div class="map-popup__list">' +
-				'<div class="map-popup__row">'+object[4].address+'</div>' +
-				'<div class="map-popup__row">'+object[4].phone+'</div>' +
-				'<div class="map-popup__row">'+object[4].works+'</div>' +
-				'</div>' +
-				'</div>'
-			);
+		// map.addListener('click', function () {
+		// 	infoWindow.close();
+		// });
 
-			infoWindow.close();
+		// marker.addListener('click', onMarkerClick);
+	}
 
-			infoWindow.open(map, marker);
+	function setMapOnAll(map) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(map);
 		}
+	}
 
-		map.addListener('click', function () {
-			infoWindow.close();
-		});
-
-		marker.addListener('click', onMarkerClick);
+	function deleteMarkers() {
+		setMapOnAll(null);
+		//markers = [];
 	}
 }
 /*map init end*/
@@ -967,16 +980,6 @@ function textToggle() {
 	// it takes values false or current index of accordion's content
 	JsAccordion.prototype.activeState = false;
 
-	// show current accordion's content
-	JsAccordion.prototype.showAccordionContent = function () {
-		var self = this;
-		var indexInit = self._indexInit;
-		self.$accordionItem.eq(indexInit).find(self.$accordionContent).fadeIn('slow');
-
-		self.indexActive = indexInit;
-		self.toggleActiveClass();
-	};
-
 	JsAccordion.prototype.bindEvents = function () {
 		var self = this,
 			$accordionContent = self.$accordionContent,
@@ -989,9 +992,7 @@ function textToggle() {
 				$currentItemContent = $currentItem.find($accordionContent),
 				currentIndex = $currentItem.index();
 
-			if($accordionContent.is(':animated')){
-				return;
-			}
+			if($accordionContent.is(':animated')) return false;
 
 			self.indexActive = currentIndex;
 
@@ -1018,6 +1019,17 @@ function textToggle() {
 		});
 	};
 
+	// show current accordion's content
+	JsAccordion.prototype.showAccordionContent = function () {
+		var self = this;
+		var indexInit = self._indexInit;
+		self.$accordionItem.eq(indexInit).find(self.$accordionContent).fadeIn('slow');
+
+		self.indexActive = indexInit;
+		self.toggleActiveClass();
+	};
+
+	// close accordion's content
 	JsAccordion.prototype.closeAccordionContent = function () {
 		var self = this;
 		self.$accordionContent.slideUp(self._animateSpeed);
@@ -1325,6 +1337,27 @@ function popupGallery() {
 }
 /*popup gallery end*/
 
+/*popup initial*/
+function popupInitial(){
+	$('.popup-gmaps').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: true,
+		tClose: 'Закрыть (Esc)',
+		tLoading: 'Загрузка...',
+
+		fixedContentPos: true,
+		callbacks:{
+			beforeClose: function() {
+				$('.mfp-opened').removeClass('mfp-opened');
+			}
+		}
+	});
+}
+/*popup initial end*/
+
 /**!
  * parallax background page
  * */
@@ -1379,6 +1412,7 @@ $(document).ready(function(){
 	fotoramaInit();
 	equalHeightInit();
 	trafficMapInit();
+	contactsMap();
 	if(DESKTOP){
 		customSelect($('select.cselect'));
 	}
@@ -1389,6 +1423,7 @@ $(document).ready(function(){
 	contactsAccordion();
 	trafficSwitcher();
 	popupGallery();
+	popupInitial();
 	// parallaxBg();
 
 	footerBottom();
