@@ -2523,6 +2523,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	opacity: 0.3;
 	overflow: hidden;
 	position: relative;
+	margin: 0;
+	padding: 0;
 	z-index: -1;
 	-webkit-transition-property: opacity;
 	transition-property: opacity;
@@ -2545,6 +2547,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .wide-slider__item a{
 	display: block;
 	position: relative;
+}
+.wide-slider__item figcaption{
+	display: none;
 }
 .wide-slider__zoom{
 	position: absolute;
