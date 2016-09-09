@@ -2293,9 +2293,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	margin: 0 auto 18px;
 	height: 100px;
 	width: 100px;
-	background: #ca0503 no-repeat;
-	-webkit-background-size: contain;
-	background-size: contain;
+	background: #ca0503 no-repeat 50% 50%;
+	-webkit-background-size: 40px auto;
+	background-size: 40px auto;
 	border-radius: 50%;
 }
 .services-list__content{ position: relative; }
@@ -2468,6 +2468,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	transition-property: border, box-shadow;
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
+	cursor: zoom-in;
 }
 .desktop .acts-list__item a:hover{
 	border-color: #000;
@@ -2491,6 +2492,8 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	line-height: 15px;
 	text-align: left;
 	color: #000;
+	height: 75px;
+	overflow: hidden;
 }
 /*acts end*/
 
@@ -2547,6 +2550,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 .wide-slider__item a{
 	display: block;
 	position: relative;
+	cursor: zoom-in;
 }
 .wide-slider__item figcaption{
 	display: none;

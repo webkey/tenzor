@@ -262,11 +262,34 @@ div.cselect.ui-multiselect-menu{}
 /*acts end*/
 
 /*wide slider*/
-.wide-slider{}
+.wide-slider {
+	padding-bottom: 60px;
+}
+.wide-slider__item,
+.wide-slider__img{
+	height: 240px;
+}
+.wide-slider__title {
+	font-size: 16px;
+}
 /*wide slider end*/
 
 /*visual slider*/
-.visual-slider{}
+.visual-slider__label {
+	font-size: 28px;
+	line-height: 32px;
+	height: 64px;
+	margin: 0 0 30px;
+}
+.visual-slider__titles {
+	width: 400px;
+	max-width: 100%;
+}
+.visual-slider__title {
+	font-size: 18px;
+	line-height: 28px;
+	min-height: 140px;
+}
 /*visual slider end*/
 
 /*trans*/
