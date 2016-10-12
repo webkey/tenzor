@@ -2323,7 +2323,7 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	background: #fff;
 	padding: 20px 30px;
 	text-align: left;
-	max-width: 650px;
+	max-width: 700px;
 	margin: 40px auto;
 	position: relative;
 }
@@ -2335,6 +2335,10 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .callback-form form{
 	display: block;
+}
+.inline-popup .callback-form form{
+	max-width: 580px;
+	margin: 0 auto;
 }
 .callback-form h3{ padding-bottom: 21px; }
 .callback-form textarea{
@@ -2825,7 +2829,9 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 }
 .visual__img-about .visual__bg{
 	background-image: url(../img/bg-section-about.png);
-	margin: -112.5% 0 0 -236%;
+	width: 492%;
+	height: 174.6%;
+	margin: -71.9% 0 0 -236.4%;
 }
 .visual__content{
 	overflow: hidden;
@@ -3021,15 +3027,23 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	width: 100%;
 	height: 100%;
 	background-color: rgba(51, 51, 51, 0.42);
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	-webkit-background-size: 30%;
-	background-size: 30%;
 	pointer-events: none;
 	-webkit-transform: rotate(120deg);
 	-ms-transform: rotate(120deg);
 	transform: rotate(120deg);
 	z-index: 2;
+}
+.hex-icon{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: no-repeat 50% 50%;
+	-webkit-background-size: 80px;
+	background-size: 80px;
+	width: 80px;
+	height: 80px;
+	margin: -40px 0 0 -40px;
+	pointer-events: none;
 }
 .hex-substrate{
 	width: 100%;
@@ -4405,6 +4419,55 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	transition-duration: 3s;
 }
 /*developer end*/
+
+/*popup*/
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before{
+	content: none;
+}
+.pswp__button span{
+	pointer-events: none;
+}
+.pswp__button--arrow span{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+.pswp__button--arrow span:before,
+.pswp__button--arrow span:after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 0;
+	width: 17px;
+	border: 1px solid #fff;
+}
+.pswp__button--arrow span:before{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	margin: 6px 0 0 -12px;
+}
+.pswp__button--arrow span:after{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	margin: -6px 0 0 -12px;
+}
+.pswp__button--arrow--right span:before{
+	margin: -6px 0 0 -7px;
+}
+.pswp__button--arrow--right span:after{
+	margin: 6px 0 0 -7px;
+}
+/*popup end*/
 
 /*footer holder end*/
 /*FOOTER end*/

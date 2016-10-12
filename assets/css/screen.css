@@ -514,8 +514,7 @@ section, header, footer {
 	display: none;
 	position: absolute;
 	background: #111;
-	background: rgba(0,0,0,0.9);
-	position: absolute;
+	background: rgba(51, 51, 51, 0.9);
 	bottom: 0;
 	right: 0;
 	min-width: 300px;
