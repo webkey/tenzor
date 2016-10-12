@@ -1486,6 +1486,96 @@ function loadList(){
 
 /* loadList */
 
+/*text slide events*/
+function textSlide() {
+	// external js:
+	// 1) TweetMax VERSION: 1.19.0 (widgets.js);
+	// 2) device.js 0.2.7 (widgets.js);
+	// 3) resizeByWidth (resize only width);
+
+	var $textSlide = $('.text-slide-js');
+
+	if (!$textSlide.length) return false;
+
+	var $window = $( window ),
+		textFull = 'Подробнее',
+		textShort = 'Свернуть',
+		$tplSlideFull = $('<div class="about-preview__buttons text-full-js" style="display: none;"><a href="#" class="btn-default text-slide-switcher-js"><span>' + textFull + '</span></a></div>'),
+		$tplTextSlideInner = $('<div class="text-slide-inner-js" />'),
+		$tplShadow = $('<div class="text-slide-shadow-js" >'),
+		textSlideHeight = $textSlide.outerHeight(),
+		isTextFull = false,
+		minHeight = 192;
+
+	// hide elements
+	TweenMax.set($tplShadow, {autoAlpha: 0});
+	// $tplSlideFull.hide(0);
+
+	// build structure
+	$textSlide
+		.wrapInner($tplTextSlideInner)
+		.after($tplSlideFull)
+		.append($tplShadow);
+
+	$window.on('load resize', function () {
+		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
+
+		$textSlide.css('max-height', 'none');
+
+		if (wrapInnerHeight <= minHeight) {
+			TweenMax.set($textSlide, {height: 'auto'});
+			TweenMax.set($tplShadow, {autoAlpha: 0});
+			$tplSlideFull.hide(0);
+		} else if ( !isTextFull ) {
+			TweenMax.set($textSlide, {height: minHeight});
+			TweenMax.set($tplShadow, {autoAlpha: 1});
+			$tplSlideFull.show(0);
+
+			textSlideHeight = $textSlide.outerHeight();
+		}
+	});
+
+	$textSlide.parent().on('click', '.text-slide-switcher-js', function (e) {
+		e.preventDefault();
+
+		var wrapInnerHeight = $('.text-slide-inner-js').outerHeight();
+
+		if (wrapInnerHeight <= minHeight) return false;
+
+		var $this = $(this);
+
+		if ( isTextFull ) {
+			TweenMax.to($textSlide, 0.5, {
+				height: textSlideHeight,
+				ease: Power3.easeInOut,
+				onComplete: function () {
+					$window.trigger('heightMainRecalc');
+				}
+			});
+			TweenMax.to($tplShadow, 0.5, {autoAlpha: 1});
+
+			$this.removeClass('active').children('span').text(textFull);
+
+			isTextFull = false;
+		} else {
+			TweenMax.to($textSlide, 0.5, {
+				height: wrapInnerHeight,
+				ease: Power3.easeInOut,
+				onComplete: function () {
+					TweenMax.set($textSlide, {height: 'auto'});
+					$window.trigger('heightMainRecalc');
+
+					isTextFull = true;
+				}
+			});
+
+			TweenMax.to($tplShadow, 0.5, {autoAlpha: 0});
+			$this.addClass('active').children('span').text(textShort);
+		}
+	});
+}
+/*text slide events end*/
+
 /**!
  * parallax background page
  * */
@@ -1553,6 +1643,7 @@ $(document).ready(function(){
 	visualSlider();
 	popupInitial();
 	loadList();
+	textSlide();
 	// parallaxBg();
 
 	footerBottom();

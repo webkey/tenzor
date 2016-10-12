@@ -16,6 +16,7 @@
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<!--Main style-->
 	<link href="css/all.css" rel="stylesheet" media="all">
+	<link href="assets/css/screen.css" rel="stylesheet" media="all">
 	<!--Media queries style-->
 	<link href="css/mq-all.css" rel="stylesheet" media="screen">
 	<!--Modernizr-->
@@ -86,8 +87,7 @@
 						<!--call-->
 						<div class="call">
 							<div class="call__holder">
-								<strong class="call__title">Узнать стоимость</strong>
-								<div class="call__phone"><a href="tel:+37517 500-20-02"><span>+37517 500-20-02</span></a></div>
+								<div class="call__phone"><a href="tel:+375175002002"><span>+375 175 002 002</span></a></div>
 							</div>
 						</div>
 						<!--call end-->
@@ -103,8 +103,143 @@
 	<!--MAIN-->
 	<div class="main">
 		<!--promo-->
-		<div class="promo">
-			<img src="img/temp-img-benefits.png" alt="image description" />
+		<script>
+			var preload_files = [
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/bg.png",
+					"size": 113.500
+				},
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/ground.png",
+					"size": 45.000
+				},
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/crane.png",
+					"size": 13.200
+				},
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/customs.png",
+					"size": 13.000
+				},
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/ship.png",
+					"size": 10.500
+				},
+				{
+					"type": "IMAGE",
+					"source": "assets/i/scene/park.png",
+					"size": 10.000
+				}
+			];
+		</script>
+		<div class="scene-wrap">
+			<div class="scene__preloader"><div class='uil-rolling-css' style='transform:scale(0.3);'><div><div></div><div></div></div></div></div>
+			<div class="scene">
+				<div class="scene__ground"></div>
+
+				<div class="scene__garage"></div>
+				<div class="scene__warehouse"></div>
+				<div class="scene__crane"></div>
+
+				<object class="scene__park">
+
+					<object class="scene__truck-platform scene__truck-park">
+						<div class="truck__platform"></div>
+						<div class="scene__truck-box"></div>
+					</object>
+					<div class="truck__solid-alt truck__solid-park-2"></div>
+					<div class="scene__park__door"></div>
+					<div class="scene__park__bld"></div>
+
+					<div class="truck__solid-alt truck__solid-park-1"></div>
+				</object>
+
+				<object  class="scene__car">
+					<div class="scene__car-state state-1"></div>
+				</object>
+
+				<object class="scene__customs">
+					<div class="scene__customs__bar open"></div>
+					<div class="customs__truck-split"></div>
+					<div class="scene__customs__bld"></div>
+				</object>
+
+				<div class="scene__truck-solid">
+					<div class="truck-solid__full"> </div>
+					<div class="truck-solid__transparent"></div>
+					<label class="label-92"></label>
+				</div>
+				<div class="scene__truck-split">
+					<div class="truck-split__full"> </div>
+					<div class="truck-split__transparent"></div>
+					<label class="label-120"></label>
+				</div>
+
+				<object class="scene__truck-platform scene__truck-ship">
+					<div class="truck__platform"></div>
+				</object>
+
+				<object class="scene__ship">
+					<div class="scene__ship-box-1"></div>
+					<div class="scene__ship-box-2"></div>
+				</object>
+
+				<div class="scene__truck-box scene__truck-box-1"></div>
+
+				<object class="scene__satellite">
+					<div class="satellite-line"></div>
+					<div class="satellite-pos"></div>
+					<div class="satellite-obj">
+						<div class="satellite-wav">
+							<i class="satellite-wav-1"></i>
+							<i class="satellite-wav-2"></i>
+							<i class="satellite-wav-3"></i>
+						</div>
+						<div class="satellite-body"></div>
+					</div>
+				</object>
+
+				<div class="scene__label scene__label-1" data-link="1">
+					<div class="scene__label-obj"></div>
+					<div class="scene__label-content">
+						Сегодня автопарк компании, осуществляющий международные грузоперевозки, насчитывает более 400 автомобилей (автомобили объёмом 92 м3 и 120 м3, рефрижераторы).
+					</div>
+				</div>
+
+				<div class="scene__label scene__label-2" data-link="2">
+					<div class="scene__label-obj"></div>
+					<div class="scene__label-content scene__label-yinvert scene__label-xinvert">
+						Клиентами компании "Тензор" являются европейские и российские экспедиторские компании, а также крупные торговые сети. Транспортная компания "Тензор" готова к заключению долгосрочных контрактов на грузоперевозки по выгодным тарифам.
+					</div>
+				</div>
+
+				<div class="scene__label scene__label-3" data-link="3">
+					<div class="scene__label-obj"></div>
+					<div class="scene__label-content">
+						В связи с постоянным обновлением парка группа "Тензор" осуществляет продажу грузовой автотехники: автомобилей, прицепов, полуприцепов.
+					</div>
+				</div>
+
+				<div class="scene__label scene__label-4" data-link="4">
+					<div class="scene__label-obj"></div>
+					<div class="scene__label-content scene__label-yinvert">
+						Транспортные грузоперевозки, осуществляемые нашей группой, также включают такие услуги грузоперевозок, как перевозка сборного груза и рефрижераторная перевозка.
+					</div>
+				</div>
+
+				<div class="scene__label scene__label-5" data-link="5">
+					<div class="scene__label-obj"></div>
+					<div class="scene__label-content scene__label-yinvert scene__label-xinvert">
+						Тарифы грузоперевозки всегда может уточнить наш диспетчер грузоперевозок.
+					</div>
+				</div>
+
+			</div>
 		</div>
 		<!--promo end-->
 		<div class="main-holder">
@@ -117,11 +252,8 @@
 							<div class="brief__frame">
 								<div class="about-preview">
 									<h2>Тензор — 17 лет</h2>
-									<div class="about-preview__text">
+									<div class="about-preview__text text-slide-js">
 										<p>Транспортная компания "Тензор" оказывает качественные транспортные услуги на рынке автомобильных международных грузоперевозок на протяжении более чем десяти лет. Перевозка грузов осуществляется только собственным автомобильным транспортом. Сегодня автопарк компании, осуществляющий международные грузоперевозки, насчитывает более 400 автомобилей (автомобили объёмом 92 м3 и 120 м3, рефрижераторы). Таким образом, группа компаний "Тензор" имеет возможность осуществлять разнообразные грузоперевозки максимально быстро и качественно. Тарифы грузоперевозки всегда может уточнить наш диспетчер грузоперевозок.Специализация нашей компании - международные автомобильные грузоперевозки по России, СНГ (например, перевозка груза в Казахстан и Беларусь), из Европы (из Германии, Бельгии, Голландии, Франции, Австрии, Италии, Дании, Чехии, Словакии, Польши, Словении, Венгрии, Финляндии, Испании, Люксембурга, Швейцарии), из Прибалтики (Литвы, Латвии, Эстонии). При огромной географии российских и международных грузоперевозок мы всегда рассмотрим заявки на перевозку попутного груза. Транспортные грузоперевозки, осуществляемые нашей группой, также включают такие услуги грузоперевозок, как перевозка сборного груза и рефрижераторная перевозка. Благодаря профессиональной команде менеджеров и дисциплинированным водителям перевозка груза будет осуществлена в полном соответствии с правилами перевозки грузов. Сотрудники транспортной группы "Тензор" обрабатывают 200-230 загрузок автомобилей в неделю. Клиентами компании "Тензор" являются европейские и российские экспедиторские компании, а также крупные торговые сети. Транспортная компания "Тензор" готова к заключению долгосрочных контрактов на грузоперевозки по выгодным тарифам. В связи с постоянным обновлением парка группа "Тензор" осуществляет продажу грузовой автотехники: автомобилей, прицепов, полуприцепов.</p>
-									</div>
-									<div class="about-preview__buttons">
-										<a href="#" class="btn-default">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -373,5 +505,8 @@
 <script src="js/widgets.js"></script>
 <!--Main functions-->
 <script src="js/functions.js"></script>
+<!-- scenes -->
+<script src="assets/js/lib/jquery-html5-loader/jquery.html5-loader-1.8.0.js"></script>
+<script type="text/javascript" src="assets/js/common.js"></script>
 </body>
 </html>

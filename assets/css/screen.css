@@ -1,0 +1,669 @@
+section, header, footer {
+	display: block;
+}
+
+.scene__preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.9);
+	z-index: 100;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHdpZHRoPScxOTJweCcgaGVpZ2h0PScxOTJweCcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIGNsYXNzPSJ1aWwtcmluZyI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiIGNsYXNzPSJiayI+PC9yZWN0PjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQwIiBzdHJva2UtZGFzaGFycmF5PSIxNjMuMzYyODE3OTg2NjY5MjYgODcuOTY0NTk0MzAwNTE0MiIgc3Ryb2tlPSIjZDI1MzUzIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIwIj48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgdmFsdWVzPSIwIDUwIDUwOzE4MCA1MCA1MDszNjAgNTAgNTA7IiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIwcyI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvc3ZnPg==);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	-webkit-background-size: 48px;
+	background-size: 48px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.scene-wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.scene {
+	position: relative;
+	height: 550px;
+	background:transparent url('../i/scene/bg.png') 50% 0 no-repeat;
+	width:  100%;
+	height: 585px;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.scene__ground {
+	background:transparent url('../i/scene/ground.png') 50% 0 no-repeat;
+	width:  100%;
+	height: 585px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 0;
+}
+
+.scene__ship {
+	background: transparent url('../i/scene/ship.png') 0 0 no-repeat;
+	width: 408px;
+	height: 191px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: 17px 0 0 99px;
+	z-index: 20;
+}
+
+.scene__ship-box-1 {
+	background: transparent url('../i/scene/ship-box-1.png') 0 0 no-repeat;
+	position: absolute;
+	top:  36px;
+	left: 166px;
+	width:  115px;
+	height: 52px;
+}
+
+.scene__ship-box-2 {
+	background: transparent url('../i/scene/ship-box-2.png') 0 0 no-repeat;
+	position: absolute;
+	top:  47px;
+	left: 196px;
+	width:  115px;
+	height: 52px;
+}
+
+.scene__crane {
+	background: transparent url('../i/scene/crane.png') 0 0 no-repeat;
+	width:  297px;
+	height: 142px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -97px 0 0 276px;
+	z-index: 20;
+}
+
+.scene__warehouse {
+	background: transparent url('../i/scene/warehouse.png') 0 0 no-repeat;
+	width:  264px;
+	height: 114px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -178px 0 0 265px;
+}
+
+.scene__garage {
+	background: transparent url('../i/scene/garage.png') 0 0 no-repeat;
+	width:  209px;
+	height: 91px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -92px 0 0 -651px;
+}
+
+.scene__customs {
+	background: transparent url('../i/scene/customs.png') 0 0 no-repeat;
+	width:  422px;
+	height: 189px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -17px 0 0 -465px;
+	pointer-events: none;
+}
+
+.scene__customs__bld {
+	background: transparent url('../i/scene/customs-bld.png') 0 0 no-repeat;
+	position: absolute;
+	top:  13px;
+	left: 0;
+	width:  181px;
+	height: 176px;
+}
+
+.scene__customs__bar {
+	background: transparent url('../i/scene/bar.png') 0 0 no-repeat;
+	position: absolute;
+	width: 93px;
+	height: 5px;
+	top:  149px;
+	left: 162px;
+
+	-webkit-transform-origin: 91% 50%;
+	-moz-transform-origin: 91% 50%;
+	-ms-transform-origin: 91% 50%;
+	-o-transform-origin: 91% 50%;
+	transform-origin: 91% 50%;
+
+	-webkit-transform: rotate(-19deg);
+	-ms-transform: rotate(-19deg);
+	-o-transform: rotate(-19deg);
+	transform: rotate(-19deg);
+}
+
+.scene__customs__bar.important {
+	z-index: 10;
+}
+
+.customs__truck-split {
+	background: transparent url('../i/scene/truck-split.png') 0 0 no-repeat;
+	width: 189px;
+	height: 85px;
+	position: absolute;
+	top: 152px;
+	left: 217px;
+}
+
+.scene__truck-solid {
+	width: 173px;
+	height: 79px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -44px 0 0 1px;
+}
+
+.truck-solid__full {
+	background: transparent url('../i/scene/truck-solid.png') 0 0 no-repeat;
+	width: 173px;
+	height: 79px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.truck-solid__transparent {
+	background: transparent url('../i/scene/truck-solid-transparent.png') 0 0 no-repeat;
+	width: 173px;
+	height: 79px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.scene__truck-split {
+	width: 189px;
+	height: 85px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -29px 0 0 -72px;
+}
+
+
+.truck-split__full {
+	background: transparent url('../i/scene/truck-split.png') 0 0 no-repeat;
+	width: 189px;
+	height: 85px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.truck-split__transparent {
+	background: transparent url('../i/scene/truck-split-transparent.png') 0 0 no-repeat;
+	width: 189px;
+	height: 85px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.label-120 {
+	background: transparent url('../i/scene/label-120.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	width:  45px;
+	height: 25px;
+	top:  40px;
+	left: 67px;
+}
+
+.label-92 {
+	background: transparent url('../i/scene/label-92.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	width:  38px;
+	height: 22px;
+	top:  27px;
+	left: 37px;
+}
+
+.truck__solid-alt {
+	background: transparent url('../i/scene/truck-solid-alt.png') 0 0 no-repeat;
+	width: 164px;
+	height: 80px;
+	position: absolute;
+	top:  0;
+	left: 0;
+}
+
+.truck__solid-park-1 {
+	top:   96px;
+	left: -102px;
+}
+
+.truck__solid-park-2 {
+	top:  148px;
+	left: 39px;
+}
+
+.scene__park {
+	background: transparent url('../i/scene/park.png') 0 0 no-repeat;
+	width:  420px;
+	height: 192px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -227px 0 0 -365px;
+}
+
+.scene__park__bld {
+	background: transparent url('../i/scene/park-bld.png') 0 0 no-repeat;
+	position: absolute;
+	top:  25px;
+	right: 0;
+	width:  244px;
+	height: 167px;
+}
+
+.scene__park__door {
+	background: transparent url('../i/scene/park-door.png') 0 0 no-repeat;
+	position: absolute;
+	top:  131px;
+	left: 176px;
+	width:  30px;
+	height: 47px;
+}
+
+.scene__car {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width:  90px;
+	height: 90px;
+}
+
+.scene__car.important {
+	z-index: 10;
+}
+
+.scene__car-state {
+	width:  90px;
+	height: 90px;
+	background: transparent url('../i/scene/car.png') 0 0 no-repeat;
+	
+}
+
+.scene__car .state-1 {
+	background-position: 0 0;
+	cursor: pointer;
+}
+
+.scene__car .state-2 {
+	background-position: 0 -90px;
+}
+
+.scene__car .state-3 {
+	background-position: 0 -180px;
+}
+
+.scene__car .state-4 {
+	background-position: 0 -270px;
+}
+
+
+.scene__truck-platform {
+	width: 148px;
+	height: 52px;
+	position: absolute;
+	top:  50%;
+	left: 50%;
+}
+
+.truck__platform {
+	background: transparent url('../i/scene/truck-platform.png') 0 0 no-repeat;
+	width: 148px;
+	height: 52px;
+	position: absolute;
+	top:  0;
+	left: 0;
+}
+
+.scene__truck-box {
+	background: transparent url('../i/scene/truck-box-1.png') 0 0 no-repeat;
+	position: absolute;
+	top: -12px;
+	left: 51px;
+	width:  51px;
+	height: 38px;
+}
+
+.scene__truck-box-1 {
+	top: 50%;
+	left: 50%;
+	margin: 75px 0 0 88px;
+	z-index: 20;
+}
+
+.scene__truck-ship {
+	margin: 86px 0 0 36px;
+}
+
+.scene__truck-park {
+	top:  150px;
+	left: -31px;
+}
+
+.scene__satellite {
+	position: absolute;
+	top:  50%;
+	left: 50%;
+	width:  171px;
+	height: 192px;
+	margin: -205px 0 0 69px;
+}
+
+.satellite-obj {
+	position: absolute;
+	top:  9px;
+	left: 12px;
+	width: 159px;
+	height: 73px;
+}
+
+.satellite-pos {
+	background: transparent url('../i/scene/satellite-pos.png') 0 0 no-repeat;
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+	width: 114px;
+	height: 74px;
+}
+
+.satellite-line {
+	position: absolute;
+	width: 0;
+	height: 75px;
+	border-left: 2px dashed rgba(255,255,255,0.3);
+	bottom: 72px;
+	left: 100px;
+}
+
+.satellite-body {
+	background: transparent url('../i/scene/satellite-obj.png') 0 0 no-repeat;
+	position: absolute;
+	top:  0;
+	left: 0;
+	width: 159px;
+	height: 73px;
+}
+
+.satellite-wav {
+	position: absolute;
+	top:  0;
+	left: 0;
+	width:  32px;
+	height: 40px;
+	margin: -6px 0 0 -14px;
+}
+
+.satellite-wav-1 {
+	background: transparent url('../i/scene/wav-1.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:  15px;
+	height: 40px;
+	opacity: 0.3;
+}
+
+.satellite-wav-2 {
+	background: transparent url('../i/scene/wav-2.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	top: 8px;
+	left: 10px;
+	width:  12px;
+	height: 25px;
+	opacity: 0.3;
+}
+
+.satellite-wav-3 {
+	background: transparent url('../i/scene/wav-3.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	top: 14px;
+	left: 20px;
+	width:  13px;
+	height: 14px;
+	opacity: 0.3;
+}
+
+.scene__label {
+	width:  40px;
+	height: 40px;
+	position: absolute;
+	top:  50%;
+	left: 50%;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 50;
+}
+
+.scene__label-obj {
+	background: transparent url('../i/scene/obj-label.png') 0 0 no-repeat;
+	width:  45px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transition: .2s;
+	-o-transition: .2s;
+	transition: .2s;
+}
+
+.scene__label:hover .scene__label-obj {
+	-webkit-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8);
+}
+
+.scene__label-1 {
+	margin: -68px 0 0 0px;
+}
+
+.scene__label-2 {
+	margin: -165px 0 0 -143px;
+}
+
+.scene__label-3 {
+	margin: 10px 0 0 -300px;
+}
+
+.scene__label-4 {
+	margin: 48px 0 0 71px;
+}
+
+.scene__label-5 {
+	margin: -212px 0 0 160px;
+}
+
+.scene__label.active {
+	z-index: 60;
+}
+
+.scene__label.active:hover .scene__label-obj {
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+.scene__label-content {
+	display: none;
+	position: absolute;
+	background: #111;
+	background: rgba(0,0,0,0.9);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	min-width: 300px;
+	border-radius: 10px;
+	padding: 20px 30px;
+	font-size: 18px;
+	line-height: 1.4;
+	font-family: Tahoma, sans-serif;
+	font-weight: 400;
+	color: #ddd;
+	-webkit-box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
+	box-shadow: 0 0 0 10px rgba(0,0,0,0.2);
+}
+
+.scene__label-yinvert {
+	top: 0;
+	bottom: auto;
+}
+
+.scene__label-xinvert {
+	left: 0;
+	right: auto;
+}
+
+@media screen and (max-width: 780px) and (orientation: landscape) {
+	.scene-wrap {
+		border: 1px solid red;
+	}
+	.scene {
+		-webkit-transform: scale(0.5);
+		-ms-transform: scale(0.5);
+		-o-transform: scale(0.5);
+		transform: scale(0.5);
+		margin-top: -100px;
+		margin-bottom: -100px;
+	}
+	.scene__ground {
+		width: 200%;
+		left: -50%;
+	}
+}
+
+@media screen and (max-width: 780px) and (orientation: portrait) {
+	.scene {
+		-webkit-transform: scale(0.66);
+		-ms-transform: scale(0.66);
+		-o-transform: scale(0.66);
+		transform: scale(0.66);
+		margin-top: -100px;
+	}
+	.scene__ground {
+		width: 200%;
+		left: -50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*inner pages*/
+.figure-1 {
+	background: transparent url('../i/inner/1/bg.png') 0 0 no-repeat;
+	position: relative;
+	width: 510px;
+	height: 186px;
+	pointer-events: none;
+}
+
+.figure-1__truck-1 {
+	background: transparent url('../i/inner/1/truck-1.png') 0 0 no-repeat;
+	position: absolute;
+	top: 10px;
+	left: 136px;
+	width: 149px;
+	height: 65px;
+	will-change: auto;
+}
+
+.figure-1__truck-2 {
+	background: transparent url('../i/inner/1/truck-2.png') 0 0 no-repeat;
+	position: absolute;
+	top: 91px;
+	left: 136px;
+	width: 185px;
+	height: 78px;
+	will-change: auto;
+}
+
+.figure-1__truck-3 {
+	background: transparent url('../i/inner/1/truck-3.png') 0 0 no-repeat;
+	position: absolute;
+	top: 72px;
+	right: 16px;
+	width: 184px;
+	height: 70px;
+	will-change: auto;
+}
+
+
+
+
+.figure-2 {
+	background: transparent url('../i/inner/2/bg.png') 0 0 no-repeat;
+	position: relative;
+	width: 544px;
+	height: 315px;
+	margin-left: -17px;
+	pointer-events: none;
+}
+
+.figure-2__cloud-1 {
+	background: transparent url('../i/inner/2/cloud-1.png') 0 0 no-repeat;
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 22px;
+	left: 166px;
+	width: 61px;
+	height: 50px;
+	will-change: auto;
+}
+
+.figure-2__cloud-2 {
+	background: transparent url('../i/inner/2/cloud-2.png') 0 0 no-repeat;
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 83px;
+	left: 300px;
+	width: 74px;
+	height: 60px;
+	will-change: auto;
+}
+
+.figure-2__cloud-3 {
+	background: transparent url('../i/inner/2/cloud-3.png') 0 0 no-repeat;
+	position: absolute;
+	bottom: 100%;
+	margin-bottom: 8px;
+	left: 400px;
+	width: 63px;
+	height: 52px;
+	will-change: auto;
+}
