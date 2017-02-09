@@ -519,8 +519,8 @@ var localObjects = [
 		{
 			title: 'Головной офис',
 			address: '<b>Адрес:</b> <div>214013, г. Смоленск,<br> ул. Кирова, д. 22Б</div>',
-			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
-			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
+			phone: '<b>Тел.:</b> <div><a href="tel:+37517 500-20-02">+37517 500-20-02</a></div>',
+			works: '<b>E-mail:</b> <div><a href="mailto:info@tenzor.su">info@tenzor.su</a></div>'
 		}
 	],[
 		{lat: 55.6058121, lng: 38.1144196}, //coordinates of marker
@@ -530,8 +530,8 @@ var localObjects = [
 		{
 			title: 'Офис в Москве',
 			address: '<b>Адрес:</b> <div>140180, Московская область,<br> г. Жуковский, ул. Спасателей, д. 2А</div>',
-			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
-			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
+			phone: '<b>Тел.:</b> <div><a href="tel:+37517 500-20-02">+37517 500-20-02</a></div>',
+			works: '<b>E-mail:</b> <div><a href="mailto:info@tenzor.su">info@tenzor.su</a></div>'
 		}
 	],[
 		{lat: 53.8645903, lng: 27.6957017}, //coordinates of marker
@@ -541,8 +541,8 @@ var localObjects = [
 		{
 			title: 'Офис в Минске',
 			address: '<b>Адрес:</b> <div>223060, Минский район, <br> д. Большое Стиклево, <br> ул. Фабричная, д. 16А</div>',
-			phone: '<b>Тел.:</b> <div><a href="tel:2145613922">+37517 500-20-02</a></div>',
-			works: '<b>E-mail:</b> <div><a href="mailto:info@aztoys.com">info@tenzor.su</a></div>'
+			phone: '<b>Тел.:</b> <div><a href="tel:+37517 500-20-02">+37517 500-20-02</a></div>',
+			works: '<b>E-mail:</b> <div><a href="mailto:info@tenzor.su">info@tenzor.su</a></div>'
 		}
 	]
 ];
