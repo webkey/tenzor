@@ -226,13 +226,13 @@ var sceneInit = function() {
 
 				var tl2   = new TimelineLite();
 
-				tl2.to('.truck__solid-park-2', 1.3, {
+				tl2.to('.truck__solid-park-2', 3, {
 					x: -350,
 					y: 127,
-					ease: Back.easeIn.config(0.5),
+					ease: Back.easeIn.config(0.25),
 					onStart: function() {
-						TweenMax.to('.truck__solid-park-2', 0.3, {
-							delay: 1,
+						TweenMax.to('.truck__solid-park-2', 0.5, {
+							delay: 2.5,
 							opacity: 0
 						});
 					}
@@ -249,7 +249,7 @@ var sceneInit = function() {
 					y: -55
 				});
 
-				tl2.to('.truck__solid-park-2', 0.5, {
+				tl2.to('.truck__solid-park-2', 0.7, {
 					x: 0,
 					y: 0,
 					ease: Power1.easeInOut
@@ -269,11 +269,16 @@ var sceneInit = function() {
 
 				var tl3 = new TimelineLite();
 
-				tl3.to('.customs__truck-split', 1, {
-					x: 200,
-					y: 69,
-					opacity: 0,
-					ease: Power1.easeIn
+				tl3.to('.customs__truck-split', 1.25, {
+					x: 225,
+					y: 78,
+					ease: Power1.easeIn,
+					onStart: function() {
+						TweenMax.to('.customs__truck-split', 0.25, {
+							delay: 1,
+							opacity: 0
+						});
+					}
 				});
 
 				tl3.set('.customs__truck-split', {
@@ -510,21 +515,21 @@ function figureInit(n) {
 
 			tf1.set(tf1elem, {
 				x: 400,
-				y: -145,
+				y: -400/2.7,
 				opacity: 0
 			});
 
 			tf1.to(tf1elem, 6, {
 				delay: 3,
-				x: -400,
-				y: 145,
+				x: -475,
+				y: 475/2.7,
 				ease: Linear.easeNone,
 				onStart: function() {
 					TweenMax.to(tf1elem, 0.5, {
 						opacity: 1
 					});
-					TweenMax.to(tf1elem, 0.5, {
-						delay: 5.5,
+					TweenMax.to(tf1elem, 0.25, {
+						delay: 6 - 0.25,
 						opacity: 0
 					});
 				},
@@ -541,17 +546,17 @@ function figureInit(n) {
 				opacity: 0
 			});
 
-			tf2.to(tf2elem, 4.5, {
+			tf2.to(tf2elem, 5.5, {
 				delay: 1.5,
-				x: 500,
-				y: -190,
+				x: 825,
+				y: -825/2.7,
 				ease: Linear.easeNone,
 				onStart: function() {
 					TweenMax.to(tf2elem, 0.5, {
 						opacity: 1
 					});
-					TweenMax.to(tf2elem, 0.5, {
-						delay: 4,
+					TweenMax.to(tf2elem, 0.25, {
+						delay: 5,
 						opacity: 0
 					});
 				},
@@ -570,17 +575,17 @@ function figureInit(n) {
 				opacity: 0
 			});
 
-			tf3.to(tf3elem, 5.5, {
+			tf3.to(tf3elem, 6.5, {
 				delay: 5,
-				x: 400,
-				y: -145,
+				x: 700,
+				y: -700/2.7,
 				ease: Linear.easeNone,
 				onStart: function() {
 					TweenMax.to(tf3elem, 0.5, {
 						opacity: 1
 					});
-					TweenMax.to(tf3elem, 0.5, {
-						delay: 5,
+					TweenMax.to(tf3elem, 0.25, {
+						delay: 6,
 						opacity: 0
 					});
 				},

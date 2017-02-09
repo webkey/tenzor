@@ -461,28 +461,26 @@ function trafficMapInit(){
 		function drop() {
 			clearMarkers();
 			for (var i = 0; i < neighborhoods.length; i++) {
-				addMarkerWithTimeout(neighborhoods[i], i * 150);
+				addMarkerWithTimeout(neighborhoods[i], i * 0);
 			}
 		}
 
 		google.maps.event.addListenerOnce(map, 'idle', function(){
 			setTimeout(function () {
 				drop();
-			}, 1000);
+			}, 0);
 		});
 
 		pinMap['anchor'] = new google.maps.Point(300,830);
 		pinMap['scale'] = 0.05;
 
 		function addMarkerWithTimeout(position, timeout) {
-			window.setTimeout(function() {
-				markers.push(new google.maps.Marker({
-					position: position,
-					map: map,
-					icon: pinMap,
-					animation: google.maps.Animation.DROP
-				}));
-			}, timeout);
+			markers.push(new google.maps.Marker({
+				position: position,
+				map: map,
+				icon: pinMap
+				//animation: google.maps.Animation.DROP
+			}));
 		}
 
 		function clearMarkers() {
@@ -628,7 +626,7 @@ function contactsMap(){
 			map: map,
 			icon: object[2],
 			title: object[4].title,
-			animation: google.maps.Animation.DROP
+			//animation: google.maps.Animation.DROP
 		});
 
 		markers.push(marker);
@@ -1293,11 +1291,11 @@ function popupGalleryArray() {
 /*popup initial*/
 function popupInitial(){
 	$('.popup-gmaps').magnificPopup({
-		disableOn: 700,
+		// disableOn: 700,
 		type: 'iframe',
 		mainClass: 'mfp-fade',
 		removalDelay: 160,
-		preloader: false,
+		preloader: true,
 		tClose: 'Закрыть (Esc)',
 		tLoading: 'Загрузка...',
 
