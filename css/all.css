@@ -1744,12 +1744,15 @@ div.cselect .ui-multiselect-checkboxes input[type="radio"] + span:after{ content
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 }
-.desktop .nav-list a:hover{
+.desktop .nav-list a:hover,
+.desktop .nav-list .active a{
 	text-decoration: none;
 	background: #980000;
 }
-.desktop .nav-list a[href^="javascript:"]:hover{
-	background: none;
+.nav-list a[href^="javascript:"],
+.nav-list a[href^="javascript:"]:hover{
+	text-decoration: none;
+	background: #980000;
 }
 /*main navigation end*/
 

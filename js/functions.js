@@ -157,7 +157,7 @@ function printShow() {
 
 		self.preparationAnimation();
 
-		$buttonMenu.on('click', function (e) {
+		$buttonMenu.on('mousedown touchstart vmousedown', function (e) {
 			if (self.navIsOpened) {
 				self.closeNav();
 			} else {
@@ -281,7 +281,7 @@ function mainNavigationInit(){
  * drop language
  * */
 function languageEvents() {
-	$('.lang-current').on('click', function (e) {
+	$('.lang-current').on('mousedown touchstart vmousedown', function (e) {
 		e.preventDefault();
 		$(this).closest('.lang').toggleClass('lang-opened');
 		e.stopPropagation();
