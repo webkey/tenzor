@@ -727,6 +727,8 @@
 
 	/*visual*/
 	.visual__content { max-width: 90%; }
+	.figure__img-hidden { display: block; }
+	.figure__img-hidden + div { display: none !important; }
 	/*visual end*/
 
 	/*wide slider*/
@@ -734,6 +736,7 @@
 	.wide-slider__item,
 	.wide-slider__img{ height: 240px; }
 	.wide-slider__title { font-size: 16px; }
+	.visual__img-about .visual__bg { transform: translate(-37.8%, -33%); }
 	/*wide slider end*/
 
 	/*visual slider*/

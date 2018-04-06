@@ -581,7 +581,8 @@ section, header, footer {
 	}
 
 	.scene__label {
-		opacity: 0.5
+		opacity: 0.5;
+		display: none !important;
 	}
 
 	.scene__label-content {
